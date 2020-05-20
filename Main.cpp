@@ -4,15 +4,20 @@
 #include <cstdlib>
 using namespace std;
 class Data{
-	string name;
+	string Name;
 	long long int Password;
 	int key,n;
 	public:
-	void setvalues(string nameuser,long long int p,int no){
-		Password=p;              //master password
-		key=rand()%10;               //key
-		name=nameuser;            
-		n=no;           //No. oF passwords
+	int setvalues(){
+		cout<<"Please Enter Your Name:";
+		getline(cin,Name);
+		cout<<"Hello!! "<<Name<<" I will asist you in the process\n";
+		cout<<"How Many Passwords Do you want to save:";
+		cin>>n;
+		cout<<"Please Enter A master password(Integers Only):";
+		cin>>Password;
+		key=rand()%10;               //key 
+		return n;         
 	}
 	void addno(int no){
 		
@@ -42,8 +47,6 @@ class Credentials{
 int main()
 {
 	int choice,n;
-	string Name;
-	long long int Password;
 	cout<<"\t\tWelcome To Password Store\n";
 	cout<<"Enter Your Choice:\n";
 	cout<<"1.New User\n2.Retrive Your Passwords\n3.Exit\n";
@@ -51,19 +54,12 @@ int main()
 	if(choice==1){
 		Data D;
 		cin.ignore();
-		cout<<"Please Enter Your Name:";
-		getline(cin,Name);
-		cout<<"Hello!! "<<Name<<" I will asist you in the process\n";
-		cout<<"How Many Passwords Do you want to save:";
-		cin>>n;
-		cout<<"Please Enter A master password(Integers Only):";
-		cin>>Password;
-		D.setvalues(Name,Password,n);
+		n=D.setvalues();
 		ofstream ofile("Data.txt",ios::out|ios::binary);
 		ofile.write((char*)&D,sizeof(D));
 		ofile.close();
 		Credentials a;
-		ofstream oofile("Credentials.txt",ios::out|ios::binary);
+		ofstream oofile("Credentials.txt",ios::out|ios::binary|ios::app);
 		cin.ignore();
 		for(int i=0;i<n;i++){
 			a.setData();
