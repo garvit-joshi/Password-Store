@@ -72,13 +72,12 @@ int main()
 		oofile.close();
 	}
 	else if(choice==2){
-		vector <Credentials> User;
+		Credentials a;
 		ifstream ifile("Credentials.txt",ios::in|ios::binary);
-		ifile.seekg(0);
-		ifile.read((char*)&User,sizeof(User));
-		for(int i=0;i<User.size();i++){
-			User[i].printData();
+		while(ifile.read((char*)&a,sizeof(a))){
+			a.printData();
 		}
+		ifile.close();
 	}
 	return 0;
 }
