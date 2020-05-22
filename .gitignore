@@ -1,5 +1,7 @@
 *.out
 Credentials.txt
 Data.txt
+libgcc_s_seh-1.dll
+libstdc++-6.dll
 *.exe
 *.vscode
