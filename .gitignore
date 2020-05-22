@@ -1,4 +1,5 @@
 *.out
-*.txt
+Credentials.txt
+Data.txt
 *.exe
 *.vscode
