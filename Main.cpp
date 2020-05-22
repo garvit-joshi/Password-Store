@@ -4,8 +4,8 @@
 using namespace std;
 class Data{
 	char Name[100];
-	long long int Password;
-	int n,an;
+	long long int Password=0;
+	int n=0,an=0;
 	public:
 	int setValues(){
 		cout<<"Please Enter Your Name:";
@@ -23,17 +23,17 @@ class Data{
 		cout<<"\nMaster Passwords:"<<Password<<"\n\n";
 	}
 	int incNumber(){
-		cout<<"How many No. Do you want to add:";
+		cout<<"How many Entries Do you want to add:";
 		cin>>an;
 		n+=an;
 		return n;
 	}
-	bool checkMasterPass(int passtemp){
+	int checkMasterPass(int passtemp){
 		if(passtemp==Password)
 		{
-			return true;
+			return n;
 		}
-		return false;
+		return -1;
 	}
 };
 class Credentials{
@@ -56,6 +56,55 @@ class Credentials{
 		cout<<"\nYour Password:"<<password<<endl;
 	}
 };
+void outputCredentialData(int n)
+{
+	int EntryNumber=1;
+	Credentials a;
+	ifstream ifile("Credentials.txt",ios::in|ios::binary);
+	ifile.seekg(0);
+	while(ifile.read((char*)&a,sizeof(a))){
+		cout<<"Entry "<<EntryNumber<<" of "<<n;
+		a.printData();
+		EntryNumber++;
+	}
+	ifile.close();
+}
+void inputCredentialData(int n,bool type=false) 
+{
+	Credentials a;
+	if(type==false){
+		/**
+		 * Type Will Tell If data is appended or new data is written
+		 * type=false :New data is being writter
+		 * type=true  :Old data is being updated
+		**/
+		ofstream ofile("Credentials.txt",ios::out|ios::binary|ios::trunc);
+		for(int i=0;i<n;i++){
+			a.setData();
+			ofile.write((char*)&a,sizeof(a));
+		}
+		ofile.close();
+	}
+	else
+	{
+		ofstream ofile("Credentials.txt",ios::out|ios::binary|ios::app);
+		for(int i=0;i<n;i++){
+			a.setData();
+			ofile.write((char*)&a,sizeof(a));
+		}
+		ofile.close();
+	}
+}
+void inputDatafile(){
+	int n;
+	Data D;
+	cin.ignore();
+	n=D.setValues();
+	ofstream ofile("Data.txt",ios::out|ios::binary|ios::trunc);
+	ofile.write((char*)&D,sizeof(D));
+	ofile.close();
+	inputCredentialData(n);
+}
 int main()
 {
 	char ch='Y';
@@ -68,19 +117,7 @@ int main()
 		cin>>choice;
 		if(choice==1){
 			cout<<"Warning:Before Entering Information Please make sure you have saved \nyour previous Data.txt and Credentials.txt.\n";
-			Data D;
-			cin.ignore();
-			n=D.setValues();
-			ofstream ofile1("Data.txt",ios::out|ios::binary|ios::trunc);
-			ofile1.write((char*)&D,sizeof(D));
-			ofile1.close();
-			Credentials a;
-			ofstream ofile2("Credentials.txt",ios::out|ios::binary|ios::trunc);
-			for(int i=0;i<n;i++){
-				a.setData();
-				ofile2.write((char*)&a,sizeof(a));
-			}
-			ofile2.close();
+			inputDatafile();
 		}
 		else if(choice==2){
 			cout<<"Please Enter Master Password:\n";
@@ -88,21 +125,16 @@ int main()
 			Data D;
 			ifstream ifile1("Data.txt",ios::in|ios::binary);
 			ifile1.read((char*)&D,sizeof(D));
-			bool check=D.checkMasterPass(masterPass);
-			if(check==false)
+			n=D.checkMasterPass(masterPass);
+			if(n==-1)
 			{
+				cout<<"Password Was Wrong\n";
 				system("pause");
 				return 0;	
 			}
 			D.getValues();
 			ifile1.close();
-			Credentials a;
-			ifstream ifile2("Credentials.txt",ios::in|ios::binary);
-			ifile2.seekg(0);
-			while(ifile2.read((char*)&a,sizeof(a))){
-				a.printData();
-			}
-			ifile2.close();
+			outputCredentialData(n);
 		}
 		else if(choice==3){
 			cout<<"Will Add Later\n";
