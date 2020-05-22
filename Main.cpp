@@ -6,7 +6,7 @@ using namespace std;
 class Data{
 	string Name;
 	long long int Password;
-	int key,n;
+	int n;
 	public:
 	int setvalues(){
 		cout<<"Please Enter Your Name:";
@@ -16,16 +16,13 @@ class Data{
 		cin>>n;
 		cout<<"Please Enter A master password(Integers Only):";
 		cin>>Password;
-		key=rand()%10;               //key 
 		return n;         
 	}
-	void addno(int no){
-		
+	void getValues(){
+		cout<<"Name:"<<Name;
+		cout<<"\nNo. Of Passwords:"<<n;
+		cout<<"\nMaster Passwords:"<<Password;
 	}
-	void decreseno(int no){
-	
-	}
-	
 };
 class Credentials{
 	string company,username,password;
@@ -39,9 +36,9 @@ class Credentials{
 		getline(cin,password);
 	}
 	void printData(){
-		cout<<"The Companies Name:"<<company;
+		cout<<"\nThe Companies Name:"<<company;
 		cout<<"\nYour Username/Email:"<<username;
-		cout<<"Your Password:"<<password;
+		cout<<"\nYour Password:"<<password;
 	}
 };
 int main()
@@ -55,26 +52,31 @@ int main()
 		Data D;
 		cin.ignore();
 		n=D.setvalues();
-		ofstream ofile("Data.txt",ios::out|ios::binary);
-		ofile.write((char*)&D,sizeof(D));
-		ofile.close();
+		ofstream ofile1("Data.txt",ios::out|ios::binary|ios::trunc);
+		ofile1.write((char*)&D,sizeof(D));
+		ofile1.close();
 		Credentials a;
-		ofstream oofile("Credentials.txt",ios::out|ios::binary|ios::app);
+		ofstream ofile2("Credentials.txt",ios::out|ios::binary|ios::trunc);
 		cin.ignore();
 		for(int i=0;i<n;i++){
 			a.setData();
-			oofile.write((char*)&a,sizeof(a));
+			ofile2.write((char*)&a,sizeof(a));
 		}
-		oofile.close();
+		ofile2.close();
 	}
 	else if(choice==2){
+		Data D;
+		ifstream ifile1("Data.txt",ios::in|ios::binary);
+		ifile1.read((char*)&D,sizeof(D));
+		D.getValues();
+		ifile1.close();
 		Credentials a;
-		ifstream ifile("Credentials.txt",ios::in|ios::binary);
-		ifile.seekg(0);
-		while(ifile.read((char*)&a,sizeof(a))){
+		ifstream ifile2("Credentials.txt",ios::in|ios::binary);
+		ifile2.seekg(0);
+		while(ifile2.read((char*)&a,sizeof(a))){
 			a.printData();
 		}
-		ifile.close();
+		ifile2.close();
 	}
 	system("pause");
 	return 0;
