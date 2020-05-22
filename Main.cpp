@@ -1,7 +1,7 @@
 #include<iostream>
 #include<fstream>
 #include<vector>
-#include <cstdlib>
+#include<cstdlib>
 using namespace std;
 class Data{
 	char Name[100];
@@ -21,7 +21,7 @@ class Data{
 	void getValues(){
 		cout<<"Welcome"<<Name;
 		cout<<"\nNo. Of Passwords you have saved:"<<n;
-		cout<<"\nMaster Passwords:"<<Password;
+		cout<<"\nMaster Passwords:"<<Password<<"\n\n";
 	}
 	int incNumber(){
 		cout<<"How many No. Do you want to add:";
@@ -106,11 +106,11 @@ int main()
 			ifile2.close();
 		}
 		else if(choice==3){
-			cout<<"Will Add Later";
+			cout<<"Will Add Later\n";
 		}
 		cout<<"Menu(Y/N):";
 		cin>>ch;
 	}
 	system("pause");
 	return 0;
-}
+} 
