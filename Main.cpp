@@ -70,10 +70,12 @@ int main()
 	else if(choice==2){
 		Credentials a;
 		ifstream ifile("Credentials.txt",ios::in|ios::binary);
+		ifile.seekg(0);
 		while(ifile.read((char*)&a,sizeof(a))){
 			a.printData();
 		}
 		ifile.close();
 	}
+	system("pause");
 	return 0;
 }
