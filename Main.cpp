@@ -8,7 +8,7 @@ class Data{
 	long long int Password;
 	int n;
 	public:
-	int setvalues(){
+	int setValues(){
 		cout<<"Please Enter Your Name:";
 		getline(cin,Name);
 		cout<<"Hello!! "<<Name<<" I will asist you in the process\n";
@@ -25,20 +25,23 @@ class Data{
 	}
 };
 class Credentials{
-	string company,username,password;
+	char company[100],username[100],password[100];
 	public:
 	void setData(){
+		cin.ignore();
 		cout<<"Enter The Companies Name:";
-		getline(cin,company);
+		cin.get(company,100);
+		cin.ignore();
 		cout<<"Enter Your Username/Email:";
-		getline(cin,username);
+		cin.get(username,100);
 		cout<<"Enter Your Password:";
-		getline(cin,password);
+		cin.ignore();
+		cin.get(password,100);
 	}
 	void printData(){
 		cout<<"\nThe Companies Name:"<<company;
 		cout<<"\nYour Username/Email:"<<username;
-		cout<<"\nYour Password:"<<password;
+		cout<<"\nYour Password:"<<password<<endl;
 	}
 };
 int main()
@@ -51,13 +54,12 @@ int main()
 	if(choice==1){
 		Data D;
 		cin.ignore();
-		n=D.setvalues();
+		n=D.setValues();
 		ofstream ofile1("Data.txt",ios::out|ios::binary|ios::trunc);
 		ofile1.write((char*)&D,sizeof(D));
 		ofile1.close();
 		Credentials a;
 		ofstream ofile2("Credentials.txt",ios::out|ios::binary|ios::trunc);
-		cin.ignore();
 		for(int i=0;i<n;i++){
 			a.setData();
 			ofile2.write((char*)&a,sizeof(a));
