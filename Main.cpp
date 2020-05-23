@@ -26,6 +26,10 @@ class Data{
 		n+=an;
 		return n;
 	}
+	int decNumber(){
+		n--;
+		return n;
+	}
 	int checkMasterPass(long long int passtemp){
 		if(passtemp==Password)
 		{
@@ -52,6 +56,21 @@ class Credentials{
 		cout<<"\nThe Companies Name:"<<company;
 		cout<<"\nYour Username/Email:"<<username;
 		cout<<"\nYour Password:"<<password<<endl;
+	}
+	void setCompName(){
+		cout<<"Enter The Companies Name:";
+		cin.ignore();
+		cin.get(company,100);
+	}
+	void setUserEmail(){
+		cout<<"Enter Your Username/Email:";
+		cin.ignore();
+		cin.get(username,100);
+	}
+	void setPassword(){
+		cout<<"Enter Your Password:";
+		cin.ignore();
+		cin.get(password,100);
 	}
 };
 void outputCredentialData(int n)
@@ -114,10 +133,107 @@ void inputDatafile(bool type=false,int an=0){
 		DataFile2.close();
 	}
 }
+int deleteCredential(int an)
+{
+	int count=1,flag=0;
+	Credentials a;
+	ifstream Credentialsfile("Credentials.txt",ios::in|ios::binary);
+	ofstream tempfile("Temp.txt",ios::out|ios::binary|ios::trunc);
+	while(Credentialsfile.read((char*)&a,sizeof(a)))
+	{
+		if(count==an)
+		{
+			flag=1;
+		}
+		else
+		{
+			tempfile.write((char*)&a,sizeof(a));
+		}
+		count++;
+	}
+	tempfile.close();
+	Credentialsfile.close();
+	if(flag==1)
+	{
+		ifstream datafile("Data.txt",ios::binary|ios::in);
+		Data D;
+		datafile.read((char*)&D,sizeof(D));
+		D.decNumber();
+		datafile.close();
+		ofstream newdatafile("Data.txt",ios::binary|ios::out|ios::trunc);
+		newdatafile.write((char*)&D,sizeof(D));
+		ifstream newtempfile("Temp.txt",ios::in|ios::binary);
+		ofstream newCredentialsfile("Credentials.txt",ios::out|ios::binary|ios::trunc);
+		while(newtempfile.read((char*)&a,sizeof(a)))
+		{
+			newCredentialsfile.write((char*)&a,sizeof(a));
+		}
+		newdatafile.close();
+		newCredentialsfile.close();
+		newtempfile.close();
+	}
+	remove("Temp.txt");
+	return flag;
+}
+int editCredential(int an)
+{
+	int count=1,flag=0,choice;
+	Credentials a;
+	ifstream Credentialsfile("Credentials.txt",ios::in|ios::binary);
+	ofstream tempfile("Temp.txt",ios::out|ios::binary|ios::trunc);
+	while(Credentialsfile.read((char*)&a,sizeof(a)))
+	{
+		if(count==an)
+		{
+			flag=1;
+			cout<<"Credential Found!!";
+			a.printData();
+			cout<<"What Do you want to edit:";
+			cout<<"\n1. Comapny Name:";
+			cout<<"\n2. Username/email:";
+			cout<<"\n3. Password:";
+			cout<<"\n4. Edit Whole Credential";
+			cin>>choice;
+			if(choice==1){
+				a.setCompName();
+			}
+			else if(choice==2){
+				a.setUserEmail();
+			}
+			else if(choice==3){
+				a.setPassword();
+			}
+			else if(choice==4){
+				a.setData();
+			}
+			tempfile.write((char*)&a,sizeof(a));
+		}
+		else
+		{
+			tempfile.write((char*)&a,sizeof(a));
+		}
+		count++;
+	}
+	tempfile.close();
+	Credentialsfile.close();
+	if(flag==1)
+	{
+		ifstream newtempfile("Temp.txt",ios::in|ios::binary);
+		ofstream newCredentialsfile("Credentials.txt",ios::out|ios::binary|ios::trunc);
+		while(newtempfile.read((char*)&a,sizeof(a)))
+		{
+			newCredentialsfile.write((char*)&a,sizeof(a));
+		}
+		newCredentialsfile.close();
+		newtempfile.close();
+	}
+	remove("Temp.txt");
+	return flag;
+}
 int main()
 {
 	char ch='Y';
-	int choice1,choice2,n,an;
+	int choice1,choice2,n,an,flag;
 	long long int masterPass;
 	cout<<"\t\tWelcome To Password Store\n";
 	while(ch=='Y'||ch=='y')
@@ -155,10 +271,28 @@ int main()
 				inputCredentialData(an,true);
 			}
 			else if(choice2==2){
-
+				cout<<"Which Creddential Entry do you want to delete:";
+				cin>>an;
+				flag=deleteCredential(an);
+				if(flag==0)
+				{
+					cout<<"\n No data Was Deleted Please Enter A Correct Entry:";
+				}
+				else
+				{
+					cout<<"Data Deleted Successfully";	
+				}
 			}
 			else if(choice2==3){
-
+				cout<<"Which Creddential Entry do you want to Edit:";
+				cin>>an;
+				flag=editCredential(an);
+				if(flag==0){
+					cout<<"\n No Record Found for that Perticular Entry";
+				}
+				else{
+					cout<<"\n Data Has been Edited Successfully";
+				}
 			}
 		}
 		else if(choice1==3){
@@ -166,6 +300,7 @@ int main()
 		}
 		cout<<"Menu(Y/N):";
 		cin>>ch;
+		system("cls");
 	}
 	system("pause");
 	return 0;
