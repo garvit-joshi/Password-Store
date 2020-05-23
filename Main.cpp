@@ -28,7 +28,7 @@ class Data{
 		n+=an;
 		return n;
 	}
-	int checkMasterPass(int passtemp){
+	int checkMasterPass(long long int passtemp){
 		if(passtemp==Password)
 		{
 			return n;
@@ -75,7 +75,7 @@ void inputCredentialData(int n,bool type=false)
 	if(type==false){
 		/**
 		 * Type Will Tell If data is appended or new data is written
-		 * type=false :New data is being writter
+		 * type=false :New data is being written
 		 * type=true  :Old data is being updated
 		**/
 		ofstream ofile("Credentials.txt",ios::out|ios::binary|ios::trunc);
@@ -103,28 +103,29 @@ void inputDatafile(){
 	ofstream ofile("Data.txt",ios::out|ios::binary|ios::trunc);
 	ofile.write((char*)&D,sizeof(D));
 	ofile.close();
-	inputCredentialData(n);
+	inputCredentialData(n);   //new data will be written
 }
 int main()
 {
 	char ch='Y';
-	int choice,n,masterPass;
+	int choice1,choice2,n,an;
+	long long int masterPass;
 	cout<<"\t\tWelcome To Password Store\n";
 	while(ch=='Y'||ch=='y')
 	{
 		cout<<"Enter Your Choice:\n";
 		cout<<"1.New User\n2.Retrive Your Passwords\n3.About\n";
-		cin>>choice;
-		if(choice==1){
+		cin>>choice1;
+		if(choice1==1){
 			cout<<"Warning:Before Entering Information Please make sure you have saved \nyour previous Data.txt and Credentials.txt.\n";
 			inputDatafile();
 		}
-		else if(choice==2){
+		else if(choice1==2){
 			cout<<"Please Enter Master Password:\n";
 			cin>>masterPass;
 			Data D;
-			ifstream ifile1("Data.txt",ios::in|ios::binary);
-			ifile1.read((char*)&D,sizeof(D));
+			ifstream ifile("Data.txt",ios::in|ios::binary);
+			ifile.read((char*)&D,sizeof(D));
 			n=D.checkMasterPass(masterPass);
 			if(n==-1)
 			{
@@ -133,10 +134,23 @@ int main()
 				return 0;	
 			}
 			D.getValues();
-			ifile1.close();
+			ifile.close();
 			outputCredentialData(n);
+			cout<<"You can Perform These Functions:\n";
+			cout<<"1. Insert New Credentials:\n2. Delete a Credential:\n3. Edit A Credential\n";
+			cin>>choice2;
+			if(choice2==1){
+				cout<<"\nHow Many New Credential do you want to save:";
+				cin>>
+			}
+			else if(choice2==2){
+
+			}
+			else if(choice2==3){
+
+			}
 		}
-		else if(choice==3){
+		else if(choice1==3){
 			cout<<"Will Add Later\n";
 		}
 		cout<<"Menu(Y/N):";
@@ -144,4 +158,4 @@ int main()
 	}
 	system("pause");
 	return 0;
-} 
+}
