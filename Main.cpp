@@ -5,7 +5,7 @@ using namespace std;
 class Data{
 	char Name[100];
 	long long int Password=0;
-	int n=0,an=0;
+	int n=0;
 	public:
 	int setValues(){
 		cout<<"Please Enter Your Name:";
@@ -22,9 +22,7 @@ class Data{
 		cout<<"\nNo. Of Passwords you have saved:"<<n;
 		cout<<"\nMaster Passwords:"<<Password<<"\n\n";
 	}
-	int incNumber(){
-		cout<<"How many Entries Do you want to add:";
-		cin>>an;
+	int incNumber(int an){
 		n+=an;
 		return n;
 	}
@@ -95,15 +93,26 @@ void inputCredentialData(int n,bool type=false)
 		ofile.close();
 	}
 }
-void inputDatafile(){
-	int n;
+void inputDatafile(bool type=false,int an=0){
 	Data D;
-	cin.ignore();
-	n=D.setValues();
-	ofstream ofile("Data.txt",ios::out|ios::binary|ios::trunc);
-	ofile.write((char*)&D,sizeof(D));
-	ofile.close();
-	inputCredentialData(n);   //new data will be written
+	int n;
+	if(type==false){
+		cin.ignore();
+		n=D.setValues();
+		ofstream ofile("Data.txt",ios::out|ios::binary|ios::trunc);
+		ofile.write((char*)&D,sizeof(D));
+		ofile.close();
+		inputCredentialData(n);   //new data will be written
+	}
+	else if(type==true){
+		ifstream DataFile1("Data.txt",ios::in|ios::binary);
+		DataFile1.read((char*)&D,sizeof(D));
+		n=D.incNumber(an);
+		DataFile1.close();
+		ofstream DataFile2("Data.txt",ios::in|ios::binary|ios::trunc);
+		DataFile2.write((char*)&D,sizeof(D));
+		DataFile2.close();
+	}
 }
 int main()
 {
@@ -141,7 +150,9 @@ int main()
 			cin>>choice2;
 			if(choice2==1){
 				cout<<"\nHow Many New Credential do you want to save:";
-				cin>>
+				cin>>an;
+				inputDatafile(true,an);
+				inputCredentialData(an,true);
 			}
 			else if(choice2==2){
 
