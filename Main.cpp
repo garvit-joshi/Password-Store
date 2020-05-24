@@ -1,7 +1,11 @@
 #include<iostream>
+
 #include<fstream>
+
 #include<cstdlib>
+
 using namespace std;
+
 class Data{
 	char Name[100];
 	long long int Password=0;
@@ -38,6 +42,8 @@ class Data{
 		return -1;
 	}
 };
+
+
 class Credentials{
 	char company[100],username[100],password[100];
 	public:
@@ -73,6 +79,10 @@ class Credentials{
 		cin.get(password,100);
 	}
 };
+
+
+
+
 void outputCredentialData(int n)
 {
 	int EntryNumber=1;
@@ -86,6 +96,8 @@ void outputCredentialData(int n)
 	}
 	ifile.close();
 }
+
+
 void inputCredentialData(int n,bool type=false) 
 {
 	Credentials a;
@@ -112,6 +124,8 @@ void inputCredentialData(int n,bool type=false)
 		ofile.close();
 	}
 }
+
+
 void inputDatafile(bool type=false,int an=0){
 	Data D;
 	int n;
@@ -133,6 +147,8 @@ void inputDatafile(bool type=false,int an=0){
 		DataFile2.close();
 	}
 }
+
+
 int deleteCredential(int an)
 {
 	int count=1,flag=0;
@@ -175,6 +191,9 @@ int deleteCredential(int an)
 	remove("Temp.txt");
 	return flag;
 }
+
+
+
 int editCredential(int an)
 {
 	int count=1,flag=0,choice;
@@ -230,6 +249,9 @@ int editCredential(int an)
 	remove("Temp.txt");
 	return flag;
 }
+
+
+
 int main()
 {
 	char ch='Y';
@@ -263,6 +285,7 @@ int main()
 			outputCredentialData(n);
 			cout<<"You can Perform These Functions:\n";
 			cout<<"1. Insert New Credentials:\n2. Delete a Credential:\n3. Edit A Credential\n";
+			cout<<"Enter Your Choice:";
 			cin>>choice2;
 			if(choice2==1){
 				cout<<"\nHow Many New Credential do you want to save:";

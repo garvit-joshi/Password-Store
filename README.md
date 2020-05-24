@@ -1,2 +1,5 @@
 # Password-Store
-Saves your password with cryptography so only you can decode it.
+Saves your password in a binary file.
+
+## Will Add later:
+-> Cryptography<br>
