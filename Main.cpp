@@ -257,17 +257,22 @@ int main()
 	char ch='Y';
 	int choice1,choice2,n,an,flag;
 	long long int masterPass;
-	cout<<"\t\tWelcome To Password Store\n";
+	cout<<"\t\t\t\tWelcome To Password Store\n";
 	while(ch=='Y'||ch=='y')
 	{
-		cout<<"Enter Your Choice:\n";
 		cout<<"1.New User\n2.Retrive Your Passwords\n3.About\n";
+		cout<<"Enter Your Choice:";
 		cin>>choice1;
 		if(choice1==1){
 			cout<<"Warning:Before Entering Information Please make sure you have saved \nyour previous Data.txt and Credentials.txt.\n";
 			inputDatafile();
 		}
 		else if(choice1==2){
+			ifstream check1,check2;
+   			check1.open("Data.txt");
+			if(!check1){
+      		cout<<"file doesn't exist";
+   			}
 			cout<<"Please Enter Master Password:\n";
 			cin>>masterPass;
 			Data D;
