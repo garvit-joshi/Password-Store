@@ -8,7 +8,6 @@ using namespace std;
 
 class Data{
 	char Name[100];
-	long long int Password=0;
 	int n=0;
 	public:
 	int setValues(){
@@ -17,14 +16,11 @@ class Data{
 		cout<<"Hello!! "<<Name<<" I will asist you in the process\n";
 		cout<<"How Many Passwords Do you want to save:";
 		cin>>n;
-		cout<<"Please Enter A master password(Integers Only):";
-		cin>>Password;
 		return n;         
 	}
 	void getValues(){
 		cout<<"Welcome"<<Name;
 		cout<<"\nNo. Of Passwords you have saved:"<<n;
-		cout<<"\nMaster Passwords:"<<Password<<"\n\n";
 	}
 	int incNumber(int an){
 		n+=an;
@@ -33,13 +29,6 @@ class Data{
 	int decNumber(){
 		n--;
 		return n;
-	}
-	int checkMasterPass(long long int passtemp){
-		if(passtemp==Password)
-		{
-			return n;
-		}
-		return -1;
 	}
 };
 
@@ -127,6 +116,7 @@ void inputCredentialData(int n,bool type=false)
 
 
 void inputDatafile(bool type=false,int an=0){
+	long long int Password;
 	Data D;
 	int n;
 	if(type==false){
@@ -255,8 +245,9 @@ int editCredential(int an)
 int main()
 {
 	char ch='Y';
+	char sysArgument[100];
 	int choice1,choice2,n,an,flag;
-	long long int masterPass;
+	long long int Password;
 	cout<<"\t\t\t\tWelcome To Password Store\n";
 	while(ch=='Y'||ch=='y')
 	{
@@ -266,25 +257,27 @@ int main()
 		if(choice1==1){
 			cout<<"Warning:Before Entering Information Please make sure you have saved \nyour previous Data.txt and Credentials.txt.\n";
 			inputDatafile();
+			system("python");
+			system("python Encryption.py");
 		}
 		else if(choice1==2){
 			ifstream check1,check2;
-   			check1.open("Data.txt");
+			system("python Decryption.py");
+			check1.open("Data.txt");
 			if(!check1){
-      		cout<<"file doesn't exist";
+      			cout<<"Data.txt Does Not Exist.";
+				system("pause");
+				return 0;
    			}
-			cout<<"Please Enter Master Password:\n";
-			cin>>masterPass;
+			check2.open("Credentials.txt");
+			if(!check2){
+      			cout<<"Credentials.txt Does Not Exist.";
+				system("pause");
+				return 0;
+   			}
 			Data D;
 			ifstream ifile("Data.txt",ios::in|ios::binary);
 			ifile.read((char*)&D,sizeof(D));
-			n=D.checkMasterPass(masterPass);
-			if(n==-1)
-			{
-				cout<<"Password Was Wrong\n";
-				system("pause");
-				return 0;	
-			}
 			D.getValues();
 			ifile.close();
 			outputCredentialData(n);
@@ -322,6 +315,7 @@ int main()
 					cout<<"\n Data Has been Edited Successfully";
 				}
 			}
+			system("python Encryption.py");
 		}
 		else if(choice1==3){
 			cout<<"Will Add Later\n";

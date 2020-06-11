@@ -1,20 +1,12 @@
-import sys
 import pyAesCrypt
-arguments=sys.argv
-choice=arguments[1]
-password=arguments[2]
+import os
+password=input("Please Enter A master password(Integers Only):")
 bufferSize = 64 * 1024
-if(choice=="1"):
-    # encrypt
-    try:
-        pyAesCrypt.encryptFile("data.txt", "data.txt.aes", password, bufferSize)
-    except:
-        print("An Error Is Encountered")
-        print("May be Files are not present at the desired location")
-else:
-    # decrypt
-    try:
-        pyAesCrypt.decryptFile("data.txt.aes", "dataout.txt", password, bufferSize)
-    except:
-        print("An Error Is Encountered")
-        print("May be Files are not present at the desired location")
+try:
+    pyAesCrypt.encryptFile("Data.txt", "Data.txt.aes", password, bufferSize)
+    pyAesCrypt.encryptFile("Credentials.txt", "Credentials.txt.aes", password, bufferSize)
+    os.remove("Data.txt")
+    os.remove("Credentials.txt")
+except:
+    print("An Error Is Encountered")
+    print("May be Files are not present at the desired location")
