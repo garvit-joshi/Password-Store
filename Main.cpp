@@ -258,11 +258,11 @@ int main()
 		if (choice1 == 1) {
 			cout << "Warning:Before Entering Information Please make sure you have saved \nyour previous Data.txt and Credentials.txt.\n";
 			inputDatafile();
-			system("Encryption.pyc");
+			system("python Encryption.py");
 		}
 		else if (choice1 == 2) {
 			ifstream check1, check2;
-			system("Decryption.pyc");
+			system("python Decryption.py");
 			check1.open("Data.txt");
 			if (!check1) {
 				cout << "Data.txt Does Not Exist.";
@@ -315,12 +315,12 @@ int main()
 					cout << "\n Data Has been Edited Successfully";
 				}
 			}
-			system("Encryption.pyc");
+			system("python Encryption.py");
 		}
 		else if (choice1 == 3) {
 			cout << "Dear Users,\nPassword-store is a Program that will store your password in";
 			cout << "files that will be protected in a file with AES-256 bit Encryption. Feel";
-			cout << "free to contact me on any reported bug and pull requests are very much welcomed ";
+			cout << "free to contact me on any reported bug and pull requests are very much welcomed.";
 			cout << "\nCreator\nGarvit Joshi(garvitjoshi9@gmail.com)\n";
 		}
 		cout << "Menu(Y/N):";
