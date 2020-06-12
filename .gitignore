@@ -6,3 +6,5 @@ libstdc++-6.dll
 *.exe
 *.vscode
 *.aes
+Test.cpp
+Test.exe

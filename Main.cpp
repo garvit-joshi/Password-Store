@@ -79,11 +79,14 @@ void outputCredentialData(int n)
 	Credentials a;
 	ifstream ifile("Credentials.txt", ios::in | ios::binary);
 	ifile.seekg(0);
+	cout<<"\n======================================================================\n";
 	while (ifile.read((char*)&a, sizeof(a))) {
 		cout << "Entry " << EntryNumber << " of " << n;
 		a.printData();
+		cout<<"\n===================================================\n\n";
 		EntryNumber++;
 	}
+	cout<<"======================================================================\n\n";
 	ifile.close();
 }
 
@@ -255,11 +258,11 @@ int main()
 		if (choice1 == 1) {
 			cout << "Warning:Before Entering Information Please make sure you have saved \nyour previous Data.txt and Credentials.txt.\n";
 			inputDatafile();
-			system("python Encryption.py");
+			system("Encryption.pyc");
 		}
 		else if (choice1 == 2) {
 			ifstream check1, check2;
-			system("python Decryption.py");
+			system("Decryption.pyc");
 			check1.open("Data.txt");
 			if (!check1) {
 				cout << "Data.txt Does Not Exist.";
@@ -312,10 +315,13 @@ int main()
 					cout << "\n Data Has been Edited Successfully";
 				}
 			}
-			system("python Encryption.py");
+			system("Encryption.pyc");
 		}
 		else if (choice1 == 3) {
-			cout << "Will Add Later\n";
+			cout << "Dear Users,\nPassword-store is a Program that will store your password in";
+			cout << "files that will be protected in a file with AES-256 bit Encryption. Feel";
+			cout << "free to contact me on any reported bug and pull requests are very much welcomed ";
+			cout << "\nCreator\nGarvit Joshi(garvitjoshi9@gmail.com)\n";
 		}
 		cout << "Menu(Y/N):";
 		cin >> ch;
