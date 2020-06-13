@@ -1,6 +1,7 @@
 import pyAesCrypt
 import os
 #for installing pyAesCrypt please run this command:pip install pyAesCrypt
+#or click "4" In Menu for Support.
 password=input("Please Enter Your Master Password:")
 bufferSize = 64 * 1024
 try:

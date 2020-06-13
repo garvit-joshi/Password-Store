@@ -1,6 +1,7 @@
 import pyAesCrypt
 import os
-#for installing pyAesCrypt please run this command:pip install pyAesCrypt
+#for installing pyAesCrypt please run this command(cmd):pip install pyAesCrypt
+#or click "4" In Menu for Support.
 password=input("Please Enter A master password:")
 print("\nFor Your Ease, the proram can store your password in a file(Password.txt)")
 choice=input("\n Do you want to save the file in Password.txt(Y/N):")
@@ -20,3 +21,6 @@ try:
 except:
     print("An Error Is Encountered")
     print("May be Files are not present at the desired location")
+    if(choice == "Y" or choice == "y"):
+        os.remove("Password.txt")
+        print("We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted.")

@@ -252,15 +252,67 @@ int editCredential(int an)
 	return flag;
 }
 
+void About() {
+	system("CLS");
+	cout<<"\n\n\n";
+    cout<<"\t ||                                                                                         ||\n";
+    cout<<"\t=================================================================================================\n";
+    cout<<"\t ||                                  Password-Store                                         ||\n";
+    cout<<"\t ||                                               --Garvit Joshi                            ||\n";
+	cout<<"\t ||Dear Users,                                                                              ||\n";
+    cout<<"\t ||          Password-store is a Program that will store your password in files that will   ||\n";
+    cout<<"\t ||be protected in a file with AES-256 bit Encryption. Feel free to contact me on any       ||\n";
+	cout<<"\t ||reported bug. All the files are compiled and kept ready to use for the sake of your      ||\n";
+	cout<<"\t ||convenience.                                                                             ||\n";
+	cout<<"\t ||                                                                                         ||\n";
+    cout<<"\t=================================================================================================\n";
+    cout<<"\t ||  Git-Hub: https://github.com/garvit-joshi/Password-Store                                ||\n";
+	cout<<"\t ||  E-mail:  garvitjoshi9@gmail.com, garvitjoshi9@studentpartner.com                       ||\n";
+	cout<<"\t ||                                                                                         ||\n";
+    cout<<"\t=================================================================================================\n";
+    cout<<"\t ||                                                                                         ||\n";
+}
+
+
+void systemHelp() {
+	/*
+	For Adding Desired Modules To python
+	You May need this option if and only if you are building all files from source.
+	*/
+	system("cls");
+	system("pip install pyAesCrypt");
+	cout<<"\n\n\n";
+	cout<<"\t ||                                                                                            ||\n";
+	cout<<"\t===================================================================================================\n";
+    cout<<"\t ||                                  Password-Store                                            ||\n";
+    cout<<"\t ||                                                                                            ||\n";
+	cout<<"\t ||Note: Supported Modules Need not to be installed until you are building this app from       ||\n";
+	cout<<"\t ||source.                                                                                     ||\n";
+	cout<<"\t ||                                                                                            ||\n";
+	cout<<"\t ||Dear Users,                                                                                 ||\n";
+    cout<<"\t ||  If an error occurs saying \"'pip' is not recognized as an internal or external command,\"   ||\n";
+    cout<<"\t ||  please download and install python from python.org and add it to Environment variable.    ||\n";
+	cout<<"\t ||                                                                                            ||\n";
+    cout<<"\t====================================================================================================\n";
+	cout<<"\t ||  Git-Hub: https://github.com/garvit-joshi/Password-Store                                   ||\n";
+	cout<<"\t ||  E-mail:  garvitjoshi9@gmail.com, garvitjoshi9@studentpartner.com                          ||\n";
+	cout<<"\t ||                                                                                            ||\n";
+    cout<<"\t=================================================================================================\n";
+    cout<<"\t ||                                                                                            ||\n";
+
+
+}
+
 
 
 int main()
 {
 	char ch = 'Y';
 	int choice1, choice2, n, an, flag;
-	cout << "\t\t\t\tWelcome To Password Store\n";
+	cout << "\t\t\t\tWelcome To Password-Store\n\n\n";
 	while (ch == 'Y' || ch == 'y')
 	{
+		cout<<"\t\t\t\t\tMain Menu\n";
 		cout << "1.New User\n2.Retrive Your Passwords\n3.About\n4.For installing supported modules(may require internet connection)\n";
 		cout << "Enter Your Choice:";
 		cin >> choice1;
@@ -328,17 +380,10 @@ int main()
 			system("python Encryption.py");
 		}
 		else if (choice1 == 3) {
-			cout << "Dear Users,\nPassword-store is a Program that will store your password in";
-			cout << "files that will be protected in a file with AES-256 bit Encryption. Feel";
-			cout << "free to contact me on any reported bug and pull requests are very much welcomed.";
-			cout << "\nCreator\nGarvit Joshi(garvitjoshi9@gmail.com)\n";
+			About();
 		}
 		else if(choice1 == 4) {
-			system("pip install pyAesCrypt");
-			cout << "==================================================================\n";
-			cout << "if an error occurs saying \"'pip' is not recognized as an internal \n";
-			cout << "or external command,\"\nplease download and install python from \n";
-			cout << "python.org and add it to Environment variable.\n";
+			systemHelp();
 		}
 		cout << "Menu(Y/N):";
 		cin >> ch;
