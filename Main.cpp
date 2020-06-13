@@ -79,7 +79,7 @@ void outputCredentialData(int n)
 	Credentials a;
 	ifstream ifile("Credentials.txt", ios::in | ios::binary);
 	ifile.seekg(0);
-	cout<<"\n======================================================================\n";
+	cout<<"\n\n======================================================================\n";
 	while (ifile.read((char*)&a, sizeof(a))) {
 		cout << "Entry " << EntryNumber << " of " << n;
 		a.printData();
@@ -144,6 +144,11 @@ void inputDatafile(bool type = false, int an = 0) {
 
 int deleteCredential(int an)
 {
+	/*
+	Will Delete A credential from the decrypted file.
+	The (an) argument in the function tells the number 
+	of the credential which has to be deleted.
+	*/
 	int count = 1, flag = 0;
 	Credentials a;
 	ifstream Credentialsfile("Credentials.txt", ios::in | ios::binary);
@@ -162,6 +167,10 @@ int deleteCredential(int an)
 	}
 	tempfile.close();
 	Credentialsfile.close();
+	/* 
+	In the above code all the data except the record that has to be deleted 
+	is written into Temporary file
+	*/
 	if (flag == 1)
 	{
 		ifstream datafile("Data.txt", ios::binary | ios::in);
@@ -252,7 +261,7 @@ int main()
 	cout << "\t\t\t\tWelcome To Password Store\n";
 	while (ch == 'Y' || ch == 'y')
 	{
-		cout << "1.New User\n2.Retrive Your Passwords\n3.About\n";
+		cout << "1.New User\n2.Retrive Your Passwords\n3.About\n4.For installing supported modules(may require internet connection)\n";
 		cout << "Enter Your Choice:";
 		cin >> choice1;
 		if (choice1 == 1) {
@@ -283,6 +292,7 @@ int main()
 			outputCredentialData(n);
 			cout << "You can Perform These Functions:\n";
 			cout << "1. Insert New Credentials:\n2. Delete a Credential:\n3. Edit A Credential\n";
+			cout << "4. No Action";
 			cout << "Enter Your Choice:";
 			cin >> choice2;
 			if (choice2 == 1) {
@@ -322,6 +332,13 @@ int main()
 			cout << "files that will be protected in a file with AES-256 bit Encryption. Feel";
 			cout << "free to contact me on any reported bug and pull requests are very much welcomed.";
 			cout << "\nCreator\nGarvit Joshi(garvitjoshi9@gmail.com)\n";
+		}
+		else if(choice1 == 4) {
+			system("pip install pyAesCrypt");
+			cout << "==================================================================\n";
+			cout << "if an error occurs saying \"'pip' is not recognized as an internal \n";
+			cout << "or external command,\"\nplease download and install python from \n";
+			cout << "python.org and add it to Environment variable.\n";
 		}
 		cout << "Menu(Y/N):";
 		cin >> ch;
