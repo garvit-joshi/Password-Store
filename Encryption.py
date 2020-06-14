@@ -10,6 +10,7 @@ if(choice=="Y" or choice == "y"):
     ofile.write("Password:"+password)
     print("\n Password has been stored in Password.txt")
     ofile.write("\nPlease copy this password in a diary and delete this file Permanently.\n")
+    ofile.close()
 else:
     print("\nAs per your request, Password.txt will not be created. Please Memorize the password.\n")
 bufferSize = 64 * 1024
@@ -18,6 +19,7 @@ try:
     pyAesCrypt.encryptFile("Credentials.txt", "Credentials.txt.aes", password, bufferSize)
     os.remove("Data.txt")
     os.remove("Credentials.txt")
+    print("\tFiles have been Encrypted")
 except:
     print("An Error Is Encountered")
     print("May be Files are not present at the desired location")

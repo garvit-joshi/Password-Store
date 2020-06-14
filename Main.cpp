@@ -2,8 +2,6 @@
 
 #include<fstream>
 
-#include<cstdlib>
-
 using namespace std;
 
 class Data {
@@ -13,13 +11,15 @@ public:
 	int setValues() {
 		cout << "Please Enter Your Name:";
 		cin.get(Name, 100);
-		cout << "Hello!! " << Name << " I will asist you in the process\n";
-		cout << "How Many Passwords Do you want to save:";
+		cout << "\n\n\tHello!! " << Name << " I will asist you in the process\n\n\n";
+		cout << "\tHow Many Passwords Do you want to save:";
 		cin >> n;
+		system("cls");
 		return n;
 	}
 	int getValues() {
-		cout << "Welcome" << Name;
+		system("cls");
+		cout << "Welcome!! " << Name;
 		cout << "\nNo. Of Passwords you have saved:" << n;
 		return n;
 	}
@@ -39,19 +39,19 @@ class Credentials {
 public:
 	void setData() {
 		cin.ignore();
-		cout << "Enter The Companies Name:";
+		cout << "\t\tEnter The Companies Name:";
 		cin.get(company, 100);
 		cin.ignore();
-		cout << "Enter Your Username/Email:";
+		cout << "\t\tEnter Your Username/Email:";
 		cin.get(username, 100);
-		cout << "Enter Your Password:";
+		cout << "\t\tEnter Your Password:";
 		cin.ignore();
 		cin.get(password, 100);
 	}
 	void printData() {
-		cout << "\nThe Companies Name:" << company;
-		cout << "\nYour Username/Email:" << username;
-		cout << "\nYour Password:" << password << endl;
+		cout << "\n\t\tThe Companies Name:" << company;
+		cout << "\n\t\tYour Username/Email:" << username;
+		cout << "\n\t\tYour Password:" << password << endl;
 	}
 	void setCompName() {
 		cout << "Enter The Companies Name:";
@@ -83,7 +83,7 @@ void outputCredentialData(int n)
 	while (ifile.read((char*)&a, sizeof(a))) {
 		cout << "Entry " << EntryNumber << " of " << n;
 		a.printData();
-		cout<<"\n===================================================\n\n";
+		cout<<"\n==================================================================\n\n";
 		EntryNumber++;
 	}
 	cout<<"======================================================================\n\n";
@@ -102,6 +102,7 @@ void inputCredentialData(int n, bool type = false)
 		**/
 		ofstream ofile("Credentials.txt", ios::out | ios::binary | ios::trunc);
 		for (int i = 0; i < n; i++) {
+			cout << "\nEntry "<<i+1 << " of "<<n <<" \n";
 			a.setData();
 			ofile.write((char*)&a, sizeof(a));
 		}
@@ -299,8 +300,6 @@ void systemHelp() {
 	cout<<"\t ||                                                                                            ||\n";
     cout<<"\t=================================================================================================\n";
     cout<<"\t ||                                                                                            ||\n";
-
-
 }
 
 
@@ -316,8 +315,9 @@ int main()
 		cout << "1.New User\n2.Retrive Your Passwords\n3.About\n4.For installing supported modules(may require internet connection)\n";
 		cout << "Enter Your Choice:";
 		cin >> choice1;
+		system("cls");
 		if (choice1 == 1) {
-			cout << "Warning:Before Entering Information Please make sure you have saved \nyour previous Data.txt and Credentials.txt.\n";
+			cout << "\n\n\t";
 			inputDatafile();
 			system("python Encryption.py");
 		}
@@ -336,6 +336,8 @@ int main()
 				system("pause");
 				return 0;
 			}
+			check1.close();
+			check2.close();
 			Data D;
 			ifstream ifile("Data.txt", ios::in | ios::binary);
 			ifile.read((char*)&D, sizeof(D));
@@ -344,7 +346,7 @@ int main()
 			outputCredentialData(n);
 			cout << "You can Perform These Functions:\n";
 			cout << "1. Insert New Credentials:\n2. Delete a Credential:\n3. Edit A Credential\n";
-			cout << "4. No Action";
+			cout << "4. No Action\n";
 			cout << "Enter Your Choice:";
 			cin >> choice2;
 			if (choice2 == 1) {
@@ -389,6 +391,7 @@ int main()
 		cin >> ch;
 		system("cls");
 	}
+	cout<<"Please!! Remove Data.txt and Credential.txt manually if they are present.";
 	system("pause");
 	return 0;
 }
