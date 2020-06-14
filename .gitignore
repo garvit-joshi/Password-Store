@@ -8,3 +8,4 @@ libstdc++-6.dll
 *.obj
 *.pdb
 *.ilk
+*.txt
