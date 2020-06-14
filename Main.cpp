@@ -159,6 +159,8 @@ int deleteCredential(int an)
 		if (count == an)
 		{
 			flag = 1;
+			cout << "Credential Found!!\n";
+			a.printData();
 		}
 		else
 		{
@@ -215,6 +217,7 @@ int editCredential(int an)
 			cout << "\n2. Username/email:";
 			cout << "\n3. Password:";
 			cout << "\n4. Edit Whole Credential";
+			cout << "\n\t\tChoice:";
 			cin >> choice;
 			if (choice == 1) {
 				a.setCompName();
@@ -252,6 +255,7 @@ int editCredential(int an)
 	remove("Temp.txt");
 	return flag;
 }
+
 
 void About() {
 	system("CLS");
@@ -376,7 +380,7 @@ int main()
 					cout << "\n No Record Found for that Perticular Entry";
 				}
 				else {
-					cout << "\n Data Has been Edited Successfully";
+					cout << "\n Data Has been Edited Successfully\n";
 				}
 			}
 			system("python Encryption.py");
@@ -391,7 +395,7 @@ int main()
 		cin >> ch;
 		system("cls");
 	}
-	cout<<"Please!! Remove Data.txt and Credential.txt manually if they are present.";
+	cout<<"Please!! Remove Data.txt and Credential.txt manually if they are present.\n";
 	system("pause");
 	return 0;
 }
