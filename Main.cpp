@@ -323,11 +323,11 @@ int main()
 		if (choice1 == 1) {
 			cout << "\n\n\t";
 			inputDatafile();
-			system("python Encryption.py");
+			system("Encryption.pyc");
 		}
 		else if (choice1 == 2) {
 			ifstream check1, check2;
-			system("python Decryption.py");
+			system("Decryption.pyc");
 			check1.open("Data.txt");
 			if (!check1) {
 				cout << "Data.txt Does Not Exist.";
@@ -383,7 +383,7 @@ int main()
 					cout << "\n Data Has been Edited Successfully\n";
 				}
 			}
-			system("python Encryption.py");
+			system("Encryption.pyc");
 		}
 		else if (choice1 == 3) {
 			About();
