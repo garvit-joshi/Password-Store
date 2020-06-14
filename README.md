@@ -8,4 +8,4 @@ Added Support to AES-256 bit Encryption.
 2. Install a C++ Compiler(Copiler Used In this project:Microsoft Visual Studio C++ Compiler)
 3. Open cmd in folder and compile Encryption.py and Decryption.py (python -m compileall .)
 4. Build Main.cpp from source.
-5. Run Main.cpp
+5. Run Main.exe
