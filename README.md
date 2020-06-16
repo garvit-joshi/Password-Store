@@ -2,6 +2,10 @@
 Saves your password in a binary file.<br>
 Added Support to AES-256 bit Encryption.
 
+## Prerequisite
+
+Python3 Downloaded and Installed with Environment Variables. [click here](https://www.python.org/)<br>
+
 ## Building The app from source.
 
 1. Install Python3 with Environment Path.
