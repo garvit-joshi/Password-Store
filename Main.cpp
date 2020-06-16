@@ -335,6 +335,9 @@ void systemHelp() {
 int main()
 {
 	char ch = 'Y';
+	/******************************
+	 *  This is menu driven program
+	*******************************/
 	int choice1, choice2, n, an, flag;
 	cout << "\t\t\t\tWelcome To Password-Store\n\n\n";
 	while (ch == 'Y' || ch == 'y')
