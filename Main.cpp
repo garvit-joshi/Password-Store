@@ -20,6 +20,7 @@
 
 #include<fstream>
 
+
 using namespace std;
 
 class Data {
@@ -141,6 +142,11 @@ void inputCredentialData(int n, bool type = false)
 void inputDatafile(bool type = false, int an = 0) {
 	Data D;
 	int n;
+	/**
+	 * Type Will Tell If data is appended or new data is written
+	 * type=false :New data is being written
+	 * type=true  :Old data is being updated
+	**/
 	if (type == false) {
 		cin.ignore();
 		n = D.setValues();
@@ -298,10 +304,10 @@ void About() {
 
 
 void systemHelp() {
-	/*
-	For Adding Desired Modules To python
-	You May need this option if and only if you are building all files from source.
-	*/
+	/**********************************
+	 * For Adding Desired Modules To python
+	 * ->pyAesCrypt
+	************************************/
 	system("cls");
 	system("pip install pyAesCrypt");
 	cout<<"\n\n\n";
@@ -309,8 +315,8 @@ void systemHelp() {
 	cout<<"\t===================================================================================================\n";
     cout<<"\t ||                                  Password-Store                                            ||\n";
     cout<<"\t ||                                                                                            ||\n";
-	cout<<"\t ||Note: Supported Modules Need not to be installed until you are building this app from       ||\n";
-	cout<<"\t ||source.                                                                                     ||\n";
+	cout<<"\t ||Note: Some Supported Modules Need to be installed when using this application.              ||\n";
+	cout<<"\t ||                                                                                            ||\n";
 	cout<<"\t ||                                                                                            ||\n";
 	cout<<"\t ||Dear Users,                                                                                 ||\n";
     cout<<"\t ||  If an error occurs saying \"'pip' is not recognized as an internal or external command,\"   ||\n";
