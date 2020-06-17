@@ -22,7 +22,7 @@ try:
     print("\tFiles have been Encrypted")
 except:
     print("An Error Is Encountered")
-    print("May be Files are not present at the desired location")
+    print("Error 404:May be Files are not present at the desired location")
     if(choice == "Y" or choice == "y"):
         os.remove("Password.txt")
         print("We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted.")

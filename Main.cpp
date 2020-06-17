@@ -334,7 +334,7 @@ void systemHelp() {
 
 int main()
 {
-	char ch = 'Y';
+	char ch = 'Y',ch1='Y';
 	/******************************
 	 *  This is menu driven program
 	*******************************/
@@ -355,61 +355,67 @@ int main()
 		else if (choice1 == 2) {
 			ifstream check1, check2;
 			system("Decryption.pyc");
-			check1.open("Data.txt");
-			if (!check1) {
-				cout << "Data.txt Does Not Exist.";
-				system("pause");
-				return 0;
-			}
-			check2.open("Credentials.txt");
-			if (!check2) {
-				cout << "Credentials.txt Does Not Exist.";
-				system("pause");
-				return 0;
-			}
-			check1.close();
-			check2.close();
-			Data D;
-			ifstream ifile("Data.txt", ios::in | ios::binary);
-			ifile.read((char*)&D, sizeof(D));
-			n=D.getValues();
-			ifile.close();
-			outputCredentialData(n);
-			cout << "You can Perform These Functions:\n";
-			cout << "1. Insert New Credentials:\n2. Delete a Credential:\n3. Edit A Credential\n";
-			cout << "4. No Action\n";
-			cout << "Enter Your Choice:";
-			cin >> choice2;
-			if (choice2 == 1) {
-				cout << "\nHow Many New Credential do you want to save:";
-				cin >> an;
-				inputDatafile(true, an);
-				inputCredentialData(an, true);
-			}
-			else if (choice2 == 2) {
-				cout << "Which Creddential Entry do you want to delete:";
-				cin >> an;
-				flag = deleteCredential(an);
-				if (flag == 0)
-				{
-					cout << "\n No data Was Deleted Please Enter A Correct Entry:";
+			while(ch1== 'Y' || ch1== 'y'){
+				check1.open("Data.txt");
+				if (!check1) {
+					cout << "Error 404: Data.txt Does Not Exist.\n\n";
+					system("pause");
+					return 0;
 				}
-				else
-				{
-					cout << "Data Deleted Successfully";
+				check2.open("Credentials.txt");
+				if (!check2) {
+					cout << "Error 404: Credentials.txt Does Not Exist.\n\n";
+					system("pause");
+					return 0;
 				}
+				check1.close();
+				check2.close();
+				Data D;
+				ifstream ifile("Data.txt", ios::in | ios::binary);
+				ifile.read((char*)&D, sizeof(D));
+				n=D.getValues();
+				ifile.close();
+				outputCredentialData(n);
+				cout << "You can Perform These Functions:\n";
+				cout << "1. Insert New Credentials:\n2. Delete a Credential:\n3. Edit A Credential\n";
+				cout << "4. No Action\n";
+				cout << "Enter Your Choice:";
+				cin >> choice2;
+				if (choice2 == 1) {
+					cout << "\nHow Many New Credential do you want to save:";
+					cin >> an;
+					inputDatafile(true, an);
+					inputCredentialData(an, true);
+				}
+				else if (choice2 == 2) {
+					cout << "Which Creddential Entry do you want to delete:";
+					cin >> an;
+					flag = deleteCredential(an);
+					if (flag == 0)
+					{
+						cout << "\n No data Was Deleted Please Enter A Correct Entry:";
+					}
+					else
+					{
+						cout << "Data Deleted Successfully";
+					}
+				}
+				else if (choice2 == 3) {
+					cout << "Which Creddential Entry do you want to Edit:";
+					cin >> an;
+					flag = editCredential(an);
+					if (flag == 0) {
+						cout << "\n No Record Found for that Perticular Entry";
+					}
+					else {
+						cout << "\n Data Has been Edited Successfully\n";
+					}
+				}
+				cout << "Do You Want to see the Records Again(Y/N):";
+				cin >> ch1;
+				system("cls");
 			}
-			else if (choice2 == 3) {
-				cout << "Which Creddential Entry do you want to Edit:";
-				cin >> an;
-				flag = editCredential(an);
-				if (flag == 0) {
-					cout << "\n No Record Found for that Perticular Entry";
-				}
-				else {
-					cout << "\n Data Has been Edited Successfully\n";
-				}
-			}
+			cout << "Program will be Encrypting your file again(You are free to choose a new password.)\n";
 			system("Encryption.pyc");
 		}
 		else if (choice1 == 3) {
@@ -422,7 +428,7 @@ int main()
 		cin >> ch;
 		system("cls");
 	}
-	cout<<"Please!! Remove Data.txt and Credential.txt manually if they are present.\n";
+	cout << "Please!! Remove Data.txt and Credential.txt manually if they are present.\n";
 	system("pause");
 	return 0;
 }
