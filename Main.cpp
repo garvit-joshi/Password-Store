@@ -114,11 +114,11 @@ void inputCredentialData(int n, bool type = false)
 {
 	Credentials a;
 	if (type == false) {
-		/**
+		/**************************************************************
 		 * Type Will Tell If data is appended or new data is written
 		 * type=false :New data is being written
 		 * type=true  :Old data is being updated
-		**/
+		***************************************************************/
 		ofstream ofile("Credentials.txt", ios::out | ios::binary | ios::trunc);
 		for (int i = 0; i < n; i++) {
 			cout << "\nEntry "<<i+1 << " of "<<n <<" \n";
@@ -142,11 +142,11 @@ void inputCredentialData(int n, bool type = false)
 void inputDatafile(bool type = false, int an = 0) {
 	Data D;
 	int n;
-	/**
+	/***********************************************************
 	 * Type Will Tell If data is appended or new data is written
 	 * type=false :New data is being written
 	 * type=true  :Old data is being updated
-	**/
+	************************************************************/
 	if (type == false) {
 		cin.ignore();
 		n = D.setValues();
@@ -382,7 +382,7 @@ int main()
 				cout << "Enter Your Choice:";
 				cin >> choice2;
 				if (choice2 == 1) {
-					cout << "\nHow Many New Credential do you want to save:";
+					cout << "\nHow Many New Credential do you want to add:";
 					cin >> an;
 					inputDatafile(true, an);
 					inputCredentialData(an, true);
