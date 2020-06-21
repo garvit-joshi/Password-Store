@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Password-store:Stores your Credential in AES-256 bit Encryption
- 
+
 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -131,6 +131,7 @@ void inputCredentialData(int n, bool type = false)
 	{
 		ofstream ofile("Credentials.txt", ios::out | ios::binary | ios::app);
 		for (int i = 0; i < n; i++) {
+			cout << "\nEntry "<<i+1 << " of "<<n <<" \n";
 			a.setData();
 			ofile.write((char*)&a, sizeof(a));
 		}
@@ -139,7 +140,7 @@ void inputCredentialData(int n, bool type = false)
 }
 
 
-void inputDatafile(bool type = false, int an = 0) {
+int inputDatafile(bool type = false, int an = 0) {
 	Data D;
 	int n;
 	/***********************************************************
@@ -164,6 +165,7 @@ void inputDatafile(bool type = false, int an = 0) {
 		DataFile2.write((char*)&D, sizeof(D));
 		DataFile2.close();
 	}
+	return n;
 }
 
 
@@ -339,7 +341,7 @@ int main()
 	 *  This is menu driven program
 	*******************************/
 	int choice1, choice2, n, an, flag;
-	cout << "\t\t\t\tWelcome To Password-Store\n\n\n";
+	cout << "\t\t\t\tWelcome To Password-Store \n\n\n";
 	while (ch == 'Y' || ch == 'y')
 	{
 		cout<<"\t\t\t\t\tMain Menu\n";
@@ -384,8 +386,9 @@ int main()
 				if (choice2 == 1) {
 					cout << "\nHow Many New Credential do you want to add:";
 					cin >> an;
-					inputDatafile(true, an);
 					inputCredentialData(an, true);
+					n = inputDatafile(true, an);
+					system("Encryption.pyc");
 				}
 				else if (choice2 == 2) {
 					cout << "Which Creddential Entry do you want to delete:";
@@ -393,7 +396,7 @@ int main()
 					flag = deleteCredential(an);
 					if (flag == 0)
 					{
-						cout << "\n No data Was Deleted Please Enter A Correct Entry:";
+						cout << "\n No data was deleted, Please enter a correct entry:";
 					}
 					else
 					{
