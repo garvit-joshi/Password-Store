@@ -171,11 +171,11 @@ int inputDatafile(bool type = false, int an = 0) {
 
 int deleteCredential(int an)
 {
-	/*
+	/**************************************************
 	Will Delete A credential from the decrypted file.
 	The (an) argument in the function tells the number
 	of the credential which has to be deleted.
-	*/
+	**************************************************/
 	int count = 1, flag = 0;
 	Credentials a;
 	ifstream Credentialsfile("Credentials.txt", ios::in | ios::binary);
@@ -196,10 +196,10 @@ int deleteCredential(int an)
 	}
 	tempfile.close();
 	Credentialsfile.close();
-	/*
+	/********************************************************************
 	In the above code all the data except the record that has to be deleted
 	is written into Temporary file
-	*/
+	*********************************************************************/
 	if (flag == 1)
 	{
 		ifstream datafile("Data.txt", ios::binary | ios::in);
@@ -220,6 +220,10 @@ int deleteCredential(int an)
 		newtempfile.close();
 	}
 	remove("Temp.txt");
+	/**********************************************************************************
+	 * The data in temporary file is now written back into Credential.txt
+	 * and Temp.txt(Temporary File) is deleted after this operation
+	**********************************************************************************/ 
 	return flag;
 }
 
@@ -227,6 +231,9 @@ int deleteCredential(int an)
 
 int editCredential(int an)
 {
+	/*********************************************************************************
+	 * the an arument tells the numbber of the credential that is to be edited
+	*********************************************************************************/  
 	int count = 1, flag = 0, choice;
 	Credentials a;
 	ifstream Credentialsfile("Credentials.txt", ios::in | ios::binary);
@@ -235,6 +242,11 @@ int editCredential(int an)
 	{
 		if (count == an)
 		{
+			/***********************************************************
+			 * if the data is found then prompt the user that credential
+			 * is found and ask him what to edit in that credential,
+			 * and flag is set to 1.
+			***********************************************************/
 			flag = 1;
 			cout << "Credential Found!!";
 			a.printData();
@@ -258,10 +270,17 @@ int editCredential(int an)
 				a.setData();
 			}
 			tempfile.write((char*)&a, sizeof(a));
+			/******************************************
+			 * Write the new data in a temp file
+			******************************************/
 		}
 		else
 		{
 			tempfile.write((char*)&a, sizeof(a));
+			/*****************************************
+			 * Everydata that has not to be edited is
+			 * written as it is into temp.txt
+			*****************************************/ 
 		}
 		count++;
 	}
@@ -269,6 +288,11 @@ int editCredential(int an)
 	Credentialsfile.close();
 	if (flag == 1)
 	{
+		/**************************************************************
+		 * flag=1 tells that data has been edited sucsesfully and new 
+		 * data is present in temp.txt so the new data is now written
+		 * into Credential.txt
+		*************************************************************/ 
 		ifstream newtempfile("Temp.txt", ios::in | ios::binary);
 		ofstream newCredentialsfile("Credentials.txt", ios::out | ios::binary | ios::trunc);
 		while (newtempfile.read((char*)&a, sizeof(a)))
@@ -311,6 +335,10 @@ void systemHelp() {
 	 * ->pyAesCrypt
 	************************************/
 	system("cls");
+	cout<<"Python Version Installed:";
+	cout<<"\n============================\n";
+	system("python --version");
+	cout<<"\n============================\n";
 	system("pip install pyAesCrypt");
 	cout << "\n\n\n";
 	cout << "\t ||                                                                                            ||\n";
