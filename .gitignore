@@ -1,11 +1,24 @@
-*.out
-Credentials.txt
-Data.txt
+#dll files(used in wine64 on Ubuntu) and object code of Ubuntu
 libgcc_s_seh-1.dll
 libstdc++-6.dll
-*.vscode
-*.aes
-*.obj
-*.pdb
-*.ilk
+*.out
+
+#Unecrypted text files(for testing)
+Credentials.txt
+Data.txt
 *.txt
+
+#vscode folder(compiler settings)
+*.vscode
+
+#Encrypted files
+*.aes
+
+#Compiler Object File(MSVC)
+*.obj
+
+#proprietary file format for storing debugging information about this program(MSVC)
+*.pdb
+
+#used by linker(MSVC)
+*.ilk
