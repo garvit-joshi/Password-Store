@@ -94,6 +94,10 @@ public:
 
 void outputCredentialData(int n)
 {
+	/********************************************
+	 * n = No of credential that are present in 
+	 * Credential.txt
+	*********************************************/
 	int EntryNumber = 1;
 	Credentials a;
 	ifstream ifile("Credentials.txt", ios::in | ios::binary);
@@ -113,12 +117,12 @@ void outputCredentialData(int n)
 void inputCredentialData(int n, bool type = false)
 {
 	Credentials a;
+	/**************************************************************
+	 * Type Will Tell If data is appended or new data is written
+	 * type=false :New data is being written
+	 * type=true  :Old data is being updated
+	***************************************************************/
 	if (type == false) {
-		/**************************************************************
-		 * Type Will Tell If data is appended or new data is written
-		 * type=false :New data is being written
-		 * type=true  :Old data is being updated
-		***************************************************************/
 		ofstream ofile("Credentials.txt", ios::out | ios::binary | ios::trunc);
 		for (int i = 0; i < n; i++) {
 			cout << "\nEntry " << i + 1 << " of " << n << " \n";
