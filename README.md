@@ -6,8 +6,8 @@ Added Support to AES-256 bit Encryption.<br>
 ## Prerequisite
 
 1. Python3 Downloaded and Installed with Environment Variables. [click here](https://www.python.org/)<br>
-2. pyAesCrypt Installed In python, if python is installed with Environment variables. the you can run Main.exe and click 4 and press Enter. it will install Required Mudule (Note: Internet Connection may be required). <br>
-More About [pyAesCrypt](https://pypi.org/project/pyAesCrypt/)
+2. pyAesCrypt Installed In python, if python is installed with Environment variables, then you can run Main.exe and click 4 and press Enter, it will install Required Module (Note: Internet Connection may be required). <br> <br>
+[More About pyAesCrypt(Encrypt/decrypt a file using AES256-CBC.)](https://pypi.org/project/pyAesCrypt/)
 
 ## Building The app from source.
 
