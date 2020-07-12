@@ -22,7 +22,7 @@ Although Everything is compiled and you can directly run Main.exe, first two ste
 
 ### Support
 
-1. For configuring Microsoft C/C++ for Visual Studio Code, [click here](https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2019) <br>
+1. For configuring Microsoft C/C++ for Visual Studio Code, [click here](https://code.visualstudio.com/docs/cpp/config-msvc#:~:text=Install%20Visual%20Studio%20Code.,C%2B%2B%20(MSVC)%20compiler%20toolset.) <br>
 2. For Downloading Python, [click here](https://www.python.org/) <br>
 Note : Please click on 'Add Python 3.xx to PATH' while installing. <br>
 3. Install Required Modules: <br>
