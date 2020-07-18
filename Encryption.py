@@ -15,8 +15,12 @@ else:
     print("\nAs per your request, Password.txt will not be created. Please Memorize the password.\n")
 bufferSize = 64 * 1024
 try:
-    pyAesCrypt.encryptFile("Data.txt", "Data.txt.aes", password, bufferSize)
-    pyAesCrypt.encryptFile("Credentials.txt", "Credentials.txt.aes", password, bufferSize)
+    with open("Data.txt", "rb") as fIn1:
+        with open("Data.txt.aes", "wb") as fOut1:
+            pyAesCrypt.encryptStream(fIn1, fOut1, password, bufferSize)
+    with open("Credentials.txt", "rb") as fIn2:
+        with open("Credentials.txt.aes", "wb") as fOut2:
+            pyAesCrypt.encryptStream(fIn2, fOut2, password, bufferSize)
     os.remove("Data.txt")
     os.remove("Credentials.txt")
     print("\tFiles have been Encrypted")

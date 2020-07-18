@@ -16,7 +16,7 @@ Although Everything is compiled and you can directly run Main.exe, first two ste
 1. Install [git](https://git-scm.com/download/win) and Run git Bash, then Enter ```git clone https://github.com/garvit-joshi/Password-Store.git```
 2. Install Python3 with Environment Path. [click here](https://www.python.org/)
 3. Install a C++ Compiler(Copiler Used In this project:Microsoft C++ Compiler-MSVC)
-4. Open cmd in folder and compile Encryption.py and Decryption.py (python -m compileall .)
+4. Open cmd in folder and compile Encryption.py and Decryption.py ```python -m compileall .```
 5. Build Main.cpp from source.
 6. Run Main.exe
 

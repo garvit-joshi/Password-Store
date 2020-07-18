@@ -8,8 +8,9 @@ Credentials.txt
 Data.txt
 *.txt
 
-#vscode folder(compiler settings)
+#vscode(compiler settings),__pycache__(python precompiled files) folder
 *.vscode
+__pycache__
 
 #Encrypted files
 *.aes
