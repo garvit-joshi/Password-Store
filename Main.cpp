@@ -20,8 +20,14 @@
 
 #include<fstream>
 
+#include<Windows.h>
 
 using namespace std;
+
+
+TCHAR szEXEPath[2048];
+
+
 
 class Data {
 	char Name[100];
@@ -310,6 +316,15 @@ int editCredential(int an)
 	return flag;
 }
 
+void Encryption()
+{
+	system("Encryption.pyc");
+}
+
+void Decryption()
+{
+	system("Decryption.pyc");
+}
 
 void About() {
 	system("CLS");
@@ -384,11 +399,11 @@ int main()
 		if (choice1 == 1) {
 			cout << "\n\n\t";
 			inputDatafile();
-			system("Encryption.pyc");
+			Encryption();
 		}
 		else if (choice1 == 2) {
 			ifstream check1, check2;
-			system("Decryption.pyc");
+			Decryption();
 			while (ch1 == 'Y' || ch1 == 'y') {
 				check1.open("Data.txt");
 				if (!check1) {
@@ -420,7 +435,7 @@ int main()
 					cin >> an;
 					inputCredentialData(an, true);
 					n = inputDatafile(true, an);
-					system("Encryption.pyc");
+					Encryption();
 				}
 				else if (choice2 == 2) {
 					cout << "Which Creddential Entry do you want to delete:";
@@ -451,7 +466,7 @@ int main()
 				system("cls");
 			}
 			cout << "Program will be Encrypting your file again(You are free to choose a new password.)\n";
-			system("Encryption.pyc");
+			Encryption();
 		}
 		else if (choice1 == 3) {
 			About();
