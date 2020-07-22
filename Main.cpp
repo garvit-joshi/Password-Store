@@ -22,9 +22,12 @@
 
 #include<Windows.h>
 
+#include <atlstr.h>
+
 using namespace std;
 
 
+string UniPath;           //Will Contain Folder Location
 
 
 class Data {
@@ -235,6 +238,48 @@ int deleteCredential(int an)
 	return flag;
 }
 
+string stringFunctions(string str)
+{
+    for(int i=0;i<8;i++)
+	{
+		str.pop_back();
+	}
+
+    string s1="";
+
+
+    for(int i=0;i<str.length();i++) 
+    {
+        if(str[i]!='\\')
+        {
+            s1=s1+str[i];
+        }
+        else
+        { 
+            s1=s1+str[i]+"\\";
+
+        }
+    }
+
+
+    return s1;
+}
+
+void PathCalculator()
+{
+	TCHAR UPath[200];
+	GetModuleFileName(NULL, UPath, MAX_PATH);
+    string temp;
+	#ifndef UNICODE
+    temp = UPath;
+	#else
+    std::wstring wStr = UPath;
+    temp = std::string(wStr.begin(), wStr.end());
+	#endif
+	temp=stringFunctions(temp);
+	_tcscpy_s(UPath, CA2T(temp.c_str()));
+	UniPath=temp;
+}
 
 
 int editCredential(int an)
@@ -316,12 +361,60 @@ int editCredential(int an)
 
 void Encryption()
 {
-	system("Encryption.pyc");
+	string Encryption_File=UniPath;
+	TCHAR Path[200];
+	STARTUPINFO si;
+	PROCESS_INFORMATION pi;
+	
+
+	ZeroMemory( &si, sizeof(si) );
+	si.cb = sizeof(si);
+	ZeroMemory( &pi, sizeof(pi) );
+	
+
+	Encryption_File.append("ECaller.exe");
+	_tcscpy_s(Path, CA2T(Encryption_File.c_str()));
+	if (CreateProcess(Path,NULL,NULL,NULL,FALSE,CREATE_NEW_CONSOLE,NULL,NULL,&si,&pi))
+	{
+		// Wait until child process exits.
+		WaitForSingleObject( pi.hProcess, INFINITE );
+		// Close process and thread handles. 
+    	CloseHandle( pi.hProcess );
+    	CloseHandle( pi.hThread );
+	}
+	else
+	{
+		cout<<"Unable To Execute";
+	}
 }
 
 void Decryption()
 {
-	system("Decryption.pyc");
+	string Decryption_File=UniPath;
+	TCHAR Path[200];
+	STARTUPINFO si;
+	PROCESS_INFORMATION pi;
+
+
+	ZeroMemory( &si, sizeof(si) );
+	si.cb = sizeof(si);
+	ZeroMemory( &pi, sizeof(pi) );
+
+
+	Decryption_File.append("DCaller.exe");
+	_tcscpy_s(Path, CA2T(Decryption_File.c_str()));
+	if (CreateProcess(Path,NULL,NULL,NULL,FALSE,CREATE_NEW_CONSOLE,NULL,NULL,&si,&pi))
+	{
+		// Wait until child process exits.
+		WaitForSingleObject( pi.hProcess, INFINITE );
+		// Close process and thread handles. 
+    	CloseHandle( pi.hProcess );
+    	CloseHandle( pi.hThread );
+	}
+	else
+	{
+		cout<<"Unable To Execute";
+	}
 }
 
 void About() {
@@ -385,8 +478,9 @@ int main()
 	/******************************
 	 *  This is menu driven program
 	*******************************/
-	int choice1, choice2, n, an, flag;
+	int choice1, choice2, n, an, flag=0;
 	cout << "\t\t\t\tWelcome To Password-Store \n\n\n";
+	PathCalculator();
 	while (ch == 'Y' || ch == 'y')
 	{
 		cout << "\t\t\t\t\tMain Menu\n";

@@ -25,3 +25,4 @@ if(flag==0):
             os.remove("Credentials.txt")
             print("An Error Is Encountered")
             print("Error 401(@2): Password May be wrong")
+input("Press Enter to continue...")
