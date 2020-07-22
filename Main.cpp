@@ -25,8 +25,6 @@
 using namespace std;
 
 
-TCHAR szEXEPath[2048];
-
 
 
 class Data {
