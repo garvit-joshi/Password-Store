@@ -31,7 +31,7 @@ string UniPath;           //Will Contain Folder Location
 
 
 class Data {
-	char Name[100];
+	char Name[100]="None";
 	int n = 0;
 public:
 	int setValues() {
@@ -102,7 +102,7 @@ public:
 void outputCredentialData(int n)
 {
 	/********************************************
-	 * n = No of credential that are present in 
+	 * n = No of credential that are present in
 	 * Credential.txt
 	*********************************************/
 	int EntryNumber = 1;
@@ -153,7 +153,7 @@ void inputCredentialData(int n, bool type = false)
 
 int inputDatafile(bool type = false, int an = 0) {
 	Data D;
-	int n;
+	int n=0;
 	/***********************************************************
 	 * Type Will Tell If data is appended or new data is written
 	 * type=false :New data is being written
@@ -234,51 +234,51 @@ int deleteCredential(int an)
 	/**********************************************************************************
 	 * The data in temporary file is now written back into Credential.txt
 	 * and Temp.txt(Temporary File) is deleted after this operation
-	**********************************************************************************/ 
+	**********************************************************************************/
 	return flag;
 }
 
 string stringFunctions(string str)
 {
-    for(int i=0;i<8;i++)
+	for (int i = 0; i < 8; i++)
 	{
 		str.pop_back();
 	}
 
-    string s1="";
+	string s1 = "";
 
 
-    for(int i=0;i<str.length();i++) 
-    {
-        if(str[i]!='\\')
-        {
-            s1=s1+str[i];
-        }
-        else
-        { 
-            s1=s1+str[i]+"\\";
+	for (unsigned int i = 0; i < str.length(); i++)
+	{
+		if (str[i] != '\\')
+		{
+			s1 = s1 + str[i];
+		}
+		else
+		{
+			s1 = s1 + str[i] + "\\";
 
-        }
-    }
+		}
+	}
 
 
-    return s1;
+	return s1;
 }
 
 void PathCalculator()
 {
 	TCHAR UPath[200];
 	GetModuleFileName(NULL, UPath, MAX_PATH);
-    string temp;
-	#ifndef UNICODE
-    temp = UPath;
-	#else
-    std::wstring wStr = UPath;
-    temp = std::string(wStr.begin(), wStr.end());
-	#endif
-	temp=stringFunctions(temp);
+	string temp;
+#ifndef UNICODE
+	temp = UPath;
+#else
+	std::wstring wStr = UPath;
+	temp = std::string(wStr.begin(), wStr.end());
+#endif
+	temp = stringFunctions(temp);
 	_tcscpy_s(UPath, CA2T(temp.c_str()));
-	UniPath=temp;
+	UniPath = temp;
 }
 
 
@@ -286,7 +286,7 @@ int editCredential(int an)
 {
 	/*********************************************************************************
 	 * the an arument tells the numbber of the credential that is to be edited
-	*********************************************************************************/  
+	*********************************************************************************/
 	int count = 1, flag = 0, choice;
 	Credentials a;
 	ifstream Credentialsfile("Credentials.txt", ios::in | ios::binary);
@@ -333,7 +333,7 @@ int editCredential(int an)
 			/*****************************************
 			 * Everydata that has not to be edited is
 			 * written as it is into temp.txt
-			*****************************************/ 
+			*****************************************/
 		}
 		count++;
 	}
@@ -342,10 +342,10 @@ int editCredential(int an)
 	if (flag == 1)
 	{
 		/**************************************************************
-		 * flag=1 tells that data has been edited sucsesfully and new 
+		 * flag=1 tells that data has been edited sucsesfully and new
 		 * data is present in temp.txt so the new data is now written
 		 * into Credential.txt
-		*************************************************************/ 
+		*************************************************************/
 		ifstream newtempfile("Temp.txt", ios::in | ios::binary);
 		ofstream newCredentialsfile("Credentials.txt", ios::out | ios::binary | ios::trunc);
 		while (newtempfile.read((char*)&a, sizeof(a)))
@@ -361,59 +361,59 @@ int editCredential(int an)
 
 void Encryption()
 {
-	string Encryption_File=UniPath;
+	string Encryption_File = UniPath;
 	TCHAR Path[200];
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi;
-	
 
-	ZeroMemory( &si, sizeof(si) );
+
+	ZeroMemory(&si, sizeof(si));
 	si.cb = sizeof(si);
-	ZeroMemory( &pi, sizeof(pi) );
-	
+	ZeroMemory(&pi, sizeof(pi));
+
 
 	Encryption_File.append("ECaller.exe");
 	_tcscpy_s(Path, CA2T(Encryption_File.c_str()));
-	if (CreateProcess(Path,NULL,NULL,NULL,FALSE,CREATE_NEW_CONSOLE,NULL,NULL,&si,&pi))
+	if (CreateProcess(Path, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
 	{
 		// Wait until child process exits.
-		WaitForSingleObject( pi.hProcess, INFINITE );
+		WaitForSingleObject(pi.hProcess, INFINITE);
 		// Close process and thread handles. 
-    	CloseHandle( pi.hProcess );
-    	CloseHandle( pi.hThread );
+		CloseHandle(pi.hProcess);
+		CloseHandle(pi.hThread);
 	}
 	else
 	{
-		cout<<"Unable To Execute";
+		cout << "Unable To Execute";
 	}
 }
 
 void Decryption()
 {
-	string Decryption_File=UniPath;
+	string Decryption_File = UniPath;
 	TCHAR Path[200];
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi;
 
 
-	ZeroMemory( &si, sizeof(si) );
+	ZeroMemory(&si, sizeof(si));
 	si.cb = sizeof(si);
-	ZeroMemory( &pi, sizeof(pi) );
+	ZeroMemory(&pi, sizeof(pi));
 
 
 	Decryption_File.append("DCaller.exe");
 	_tcscpy_s(Path, CA2T(Decryption_File.c_str()));
-	if (CreateProcess(Path,NULL,NULL,NULL,FALSE,CREATE_NEW_CONSOLE,NULL,NULL,&si,&pi))
+	if (CreateProcess(Path, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
 	{
 		// Wait until child process exits.
-		WaitForSingleObject( pi.hProcess, INFINITE );
+		WaitForSingleObject(pi.hProcess, INFINITE);
 		// Close process and thread handles. 
-    	CloseHandle( pi.hProcess );
-    	CloseHandle( pi.hThread );
+		CloseHandle(pi.hProcess);
+		CloseHandle(pi.hThread);
 	}
 	else
 	{
-		cout<<"Unable To Execute";
+		cout << "Unable To Execute";
 	}
 }
 
@@ -445,10 +445,10 @@ void systemHelp() {
 	 * ->pyAesCrypt
 	************************************/
 	system("cls");
-	cout<<"Python Version Installed:";
-	cout<<"\n============================\n";
+	cout << "Python Version Installed:";
+	cout << "\n============================\n";
 	system("python --version");
-	cout<<"\n============================\n";
+	cout << "\n============================\n";
 	system("pip install pyAesCrypt");
 	cout << "\n\n\n";
 	cout << "\t ||                                                                                            ||\n";
@@ -478,7 +478,7 @@ int main()
 	/******************************
 	 *  This is menu driven program
 	*******************************/
-	int choice1, choice2, n, an, flag=0;
+	int choice1, choice2, n, an, flag = 0;
 	cout << "\t\t\t\tWelcome To Password-Store \n\n\n";
 	PathCalculator();
 	while (ch == 'Y' || ch == 'y')

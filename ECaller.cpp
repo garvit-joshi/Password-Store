@@ -20,35 +20,31 @@
 
 #include <windows.h>
 
-#include <stdio.h>
-
-#include <tchar.h>
-
 #include <atlstr.h>
 
 
 using namespace std;
 
 
-string stringFunctions(string str)
+inline string stringFunctions(string str)
 {
-    for(int i=0;i<11;i++)
-	{
-		str.pop_back();
-	}
-
-    string s1="";
-
-
-    for(int i=0;i<str.length();i++) 
+    for (int i = 0; i < 11; i++)
     {
-        if(str[i]!='\\')
+        str.pop_back();
+    }
+
+    string s1 = "";
+
+
+    for (int i = 0; i < str.length(); i++)
+    {
+        if (str[i] != '\\')
         {
-            s1=s1+str[i];
+            s1 = s1 + str[i];
         }
         else
-        { 
-            s1=s1+str[i]+"\\";
+        {
+            s1 = s1 + str[i] + "\\";
 
         }
     }
@@ -61,19 +57,19 @@ void _tmain(int argc, char** argv)
 {
     char n;
     TCHAR path[MAX_PATH];
-	GetModuleFileName(NULL, path, MAX_PATH);
+    GetModuleFileName(NULL, path, MAX_PATH);
     string s;
-	#ifndef UNICODE
+#ifndef UNICODE
     s = path;
-	#else
+#else
     std::wstring wStr = path;
     s = std::string(wStr.begin(), wStr.end());
-	#endif
-	s=stringFunctions(s);
-	s.append("Encryption.pyc");
-	_tcscpy_s(path, CA2T(s.c_str()));
-    ShellExecute(NULL, NULL,path, NULL, NULL, SW_SHOWNA);
-    cout<<"\nPlease do not close this window!! This Window acts bridge between Python File and Main C++ File.\n";
-    cout<<"After The Python Encryption File is closed, Please Type any Character and press Enter\n";
-    cin>>n;
+#endif
+    s = stringFunctions(s);
+    s.append("Encryption.pyc");
+    _tcscpy_s(path, CA2T(s.c_str()));
+    ShellExecute(NULL, NULL, path, NULL, NULL, SW_SHOWNA);
+    cout << "\nPlease do not close this window!! This Window acts bridge between Python File and Main C++ File.\n";
+    cout << "After The Python Encryption File is closed, Please Type any Character and press Enter\n";
+    cin >> n;
 }
