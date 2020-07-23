@@ -21,8 +21,6 @@ try:
     with open("Credentials.txt", "rb") as fIn2:
         with open("Credentials.txt.aes", "wb") as fOut2:
             pyAesCrypt.encryptStream(fIn2, fOut2, password, bufferSize)
-    os.remove("Data.txt")
-    os.remove("Credentials.txt")
     print("\tFiles have been Encrypted")
 except:
     print("An Error Is Encountered")
