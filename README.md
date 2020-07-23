@@ -1,5 +1,5 @@
 # Password-Store
-Saves your password in a binary file.<br>
+Saves your password in two Encrypted files.<br>
 Added Support to AES-256 bit Encryption.<br>
 ``` git clone https://github.com/garvit-joshi/Password-Store.git ```
 
