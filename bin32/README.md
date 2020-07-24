@@ -1,0 +1,1 @@
+If you are using **64-bit Windows**, please use [***64-bit Binaries***](https://github.com/garvit-joshi/Password-Store/tree/master/bin64).
