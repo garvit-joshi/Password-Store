@@ -31,7 +31,7 @@ string UniPath;           //Will Contain Folder Location
 
 
 class Data {
-	char Name[100]="None";
+	char Name[100] = "None";
 	int n = 0;
 public:
 	int setValues() {
@@ -110,6 +110,7 @@ void outputCredentialData(int n)
 	ifstream ifile("Credentials.txt", ios::in | ios::binary);
 	ifile.seekg(0);
 	cout << "\n\n======================================================================\n";
+	cout << "\n==================================================================\n\n";
 	while (ifile.read((char*)&a, sizeof(a))) {
 		cout << "Entry " << EntryNumber << " of " << n;
 		a.printData();
@@ -153,7 +154,7 @@ void inputCredentialData(int n, bool type = false)
 
 int inputDatafile(bool type = false, int an = 0) {
 	Data D;
-	int n=0;
+	int n = 0;
 	/***********************************************************
 	 * Type Will Tell If data is appended or new data is written
 	 * type=false :New data is being written
@@ -384,7 +385,7 @@ void Encryption()
 	}
 	else
 	{
-		cout << "Unable To Execute";
+		cout << "\n** Unable To Execute **\n";
 	}
 }
 
@@ -426,9 +427,8 @@ void About() {
 	cout << "\t ||                                               --Garvit Joshi                            ||\n";
 	cout << "\t ||Dear Users,                                                                              ||\n";
 	cout << "\t ||          Password-store is a Program that will store your password in files that will   ||\n";
-	cout << "\t ||be protected in a file with AES-256 bit Encryption. Feel free to contact me on any       ||\n";
-	cout << "\t ||reported bug. All the files are compiled and kept ready to use for the sake of your      ||\n";
-	cout << "\t ||convenience.                                                                             ||\n";
+	cout << "\t ||be protected with AES-256 bit Encryption. Feel free to contact me on any reported bug.   ||\n";
+	cout << "\t ||All the files are compiled and kept ready to use for the sake of your convenience.       ||\n";
 	cout << "\t ||                                                                                         ||\n";
 	cout << "\t=================================================================================================\n";
 	cout << "\t ||  Git-Hub: https://github.com/garvit-joshi/Password-Store                                ||\n";
@@ -478,22 +478,24 @@ int main()
 	/******************************
 	 *  This is menu driven program
 	*******************************/
-	int choice1, choice2, n, an, flag = 0;
+	int n, an, flag = 0, flag1 = 0;
+	char choice1, choice2;
 	cout << "\t\t\t\tWelcome To Password-Store \n\n\n";
 	PathCalculator();
 	while (ch == 'Y' || ch == 'y')
 	{
 		cout << "\t\t\t\t\tMain Menu\n";
-		cout << "1.New User\n2.Retrive Your Passwords\n3.About\n4.For installing supported modules(may require internet connection)\n";
+		cout << "1. New User\n2. Retrive Your Passwords\n3. About\n4. For installing supported modules(may require internet connection)\n";
+		cout << "5. For Encrypting Files(Data.txt, Credentials.txt)\n6. Exit\n";
 		cout << "Enter Your Choice:";
-		cin >> choice1;
+		choice1 = getchar();
 		system("cls");
-		if (choice1 == 1) {
+		if (choice1 == '1') {
 			cout << "\n\n\t";
 			inputDatafile();
 			Encryption();
 		}
-		else if (choice1 == 2) {
+		else if (choice1 == '2') {
 			ifstream check1, check2;
 			Decryption();
 			while (ch1 == 'Y' || ch1 == 'y') {
@@ -522,14 +524,14 @@ int main()
 				cout << "4. No Action\n";
 				cout << "Enter Your Choice:";
 				cin >> choice2;
-				if (choice2 == 1) {
+				if (choice2 == '1') {
 					cout << "\nHow Many New Credential do you want to add:";
 					cin >> an;
 					inputCredentialData(an, true);
 					n = inputDatafile(true, an);
 					Encryption();
 				}
-				else if (choice2 == 2) {
+				else if (choice2 == '2') {
 					cout << "Which Creddential Entry do you want to delete:";
 					cin >> an;
 					flag = deleteCredential(an);
@@ -542,7 +544,7 @@ int main()
 						cout << "Data Deleted Successfully";
 					}
 				}
-				else if (choice2 == 3) {
+				else if (choice2 == '3') {
 					cout << "Which Creddential Entry do you want to Edit:";
 					cin >> an;
 					flag = editCredential(an);
@@ -560,17 +562,63 @@ int main()
 			cout << "Program will be Encrypting your file again(You are free to choose a new password.)\n";
 			Encryption();
 		}
-		else if (choice1 == 3) {
+		else if (choice1 == '3') {
 			About();
 		}
-		else if (choice1 == 4) {
+		else if (choice1 == '4') {
 			systemHelp();
 		}
+		else if (choice1 == '5') {
+			ifstream DataTXT, CredentialsTXT;
+			DataTXT.open("Data.txt");
+			if (!DataTXT) {
+				cout << "\n** No Data.txt Found **\n";
+				flag1 = 1;
+			}
+			DataTXT.close();
+			CredentialsTXT.open("Credentials.txt");
+			if (!CredentialsTXT) {
+				cout << "\n** No Credentials.txt Found **\n";
+				flag1 = 1;
+			}
+			CredentialsTXT.close();
+			if (flag1 == 0)
+			{
+				Encryption();
+			}
+			flag1 = 0;
+		}
+		else if (choice1 == '6') {
+			About();
+			system("pause");
+			return 0;
+		}
+		getchar();
 		cout << "Menu(Y/N):";
-		cin >> ch;
+		ch = getchar();
+		getchar();
 		system("cls");
 	}
-	cout << "Please!! Remove Data.txt and Credential.txt manually if they are present.\n";
+	ifstream DataAES, CredentialsAES, DataTXT, CredentialsTXT;
+	DataAES.open("Data.txt.aes");
+	DataTXT.open("Data.txt");
+	if (DataAES) {
+		if (DataTXT) {
+			DataTXT.close();
+			remove("Data.txt");
+		}
+	}
+	DataAES.close();
+	CredentialsAES.open("Credentials.txt.aes");
+	CredentialsTXT.open("Credentials.txt");
+	if (CredentialsAES) {
+		if (CredentialsTXT) {
+			CredentialsTXT.close();
+			remove("Credentials.txt");
+		}
+	}
+	CredentialsAES.close();
+	cout << "\n\nPlease!! Remove Data.txt and Credential.txt manually if they are present.\n";
 	system("pause");
 	return 0;
 }
