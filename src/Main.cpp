@@ -373,7 +373,7 @@ void Encryption()
 	ZeroMemory(&pi, sizeof(pi));
 
 
-	Encryption_File.append("ECaller.exe");
+	Encryption_File.append("Encryption.exe");
 	_tcscpy_s(Path, CA2T(Encryption_File.c_str()));
 	if (CreateProcess(Path, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
 	{
@@ -385,7 +385,7 @@ void Encryption()
 	}
 	else
 	{
-		cout << "\n** Unable To Execute **\n";
+		cout << "\n** Unable To Execute (Encryption.exe)**\n";
 	}
 }
 
@@ -402,7 +402,7 @@ void Decryption()
 	ZeroMemory(&pi, sizeof(pi));
 
 
-	Decryption_File.append("DCaller.exe");
+	Decryption_File.append("Decryption.exe");
 	_tcscpy_s(Path, CA2T(Decryption_File.c_str()));
 	if (CreateProcess(Path, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
 	{
@@ -414,7 +414,7 @@ void Decryption()
 	}
 	else
 	{
-		cout << "Unable To Execute";
+		cout << "\n** Unable To Execute (Decryption.exe)**\n";
 	}
 }
 
@@ -439,38 +439,6 @@ void About() {
 }
 
 
-void systemHelp() {
-	/**********************************
-	 * For Adding Desired Modules To python
-	 * ->pyAesCrypt
-	************************************/
-	system("cls");
-	cout << "Python Version Installed:";
-	cout << "\n============================\n";
-	system("python --version");
-	cout << "\n============================\n";
-	system("pip install pyAesCrypt");
-	cout << "\n\n\n";
-	cout << "\t ||                                                                                            ||\n";
-	cout << "\t===================================================================================================\n";
-	cout << "\t ||                                  Password-Store                                            ||\n";
-	cout << "\t ||                                                                                            ||\n";
-	cout << "\t ||Note: Some Supported Modules Need to be installed when using this application.              ||\n";
-	cout << "\t ||                                                                                            ||\n";
-	cout << "\t ||                                                                                            ||\n";
-	cout << "\t ||Dear Users,                                                                                 ||\n";
-	cout << "\t ||  If an error occurs saying \"'pip' is not recognized as an internal or external command,\"   ||\n";
-	cout << "\t ||  please download and install python from python.org and add it to Environment variable.    ||\n";
-	cout << "\t ||                                                                                            ||\n";
-	cout << "\t====================================================================================================\n";
-	cout << "\t ||  Git-Hub: https://github.com/garvit-joshi/Password-Store                                   ||\n";
-	cout << "\t ||  E-mail:  garvitjoshi9@gmail.com, garvitjoshi9@studentpartner.com                          ||\n";
-	cout << "\t ||                                                                                            ||\n";
-	cout << "\t=================================================================================================\n";
-	cout << "\t ||                                                                                            ||\n";
-}
-
-
 
 int main()
 {
@@ -485,8 +453,8 @@ int main()
 	while (ch == 'Y' || ch == 'y')
 	{
 		cout << "\t\t\t\t\tMain Menu\n";
-		cout << "1. New User\n2. Retrive Your Passwords\n3. About\n4. For installing supported modules(may require internet connection)\n";
-		cout << "5. For Encrypting Files(Data.txt, Credentials.txt)\n6. Exit\n";
+		cout << "1. New User\n2. Retrive Your Passwords\n3. About\n";
+		cout << "4. For Encrypting Files(Data.txt, Credentials.txt)\n5. Exit\n";
 		cout << "Enter Your Choice:";
 		choice1 = getchar();
 		system("cls");
@@ -501,13 +469,13 @@ int main()
 			while (ch1 == 'Y' || ch1 == 'y') {
 				check1.open("Data.txt");
 				if (!check1) {
-					cout << "Error 404: Data.txt Does Not Exist.\n\n";
+					cout << "\nError 404: Data.txt Does Not Exist.\n\n";
 					system("pause");
 					return 0;
 				}
 				check2.open("Credentials.txt");
 				if (!check2) {
-					cout << "Error 404: Credentials.txt Does Not Exist.\n\n";
+					cout << "\nError 404: Credentials.txt Does Not Exist.\n\n";
 					system("pause");
 					return 0;
 				}
@@ -566,9 +534,6 @@ int main()
 			About();
 		}
 		else if (choice1 == '4') {
-			systemHelp();
-		}
-		else if (choice1 == '5') {
 			ifstream DataTXT, CredentialsTXT;
 			DataTXT.open("Data.txt");
 			if (!DataTXT) {
@@ -588,7 +553,7 @@ int main()
 			}
 			flag1 = 0;
 		}
-		else if (choice1 == '6') {
+		else if (choice1 == '5') {
 			About();
 			system("pause");
 			return 0;
