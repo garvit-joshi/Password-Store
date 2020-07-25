@@ -18,10 +18,14 @@ try:
     with open("Data.txt", "rb") as fIn1:
         with open("Data.txt.aes", "wb") as fOut1:
             pyAesCrypt.encryptStream(fIn1, fOut1, password, bufferSize)
+    fIn1.close()
+    fOut1.close()
     with open("Credentials.txt", "rb") as fIn2:
         with open("Credentials.txt.aes", "wb") as fOut2:
             pyAesCrypt.encryptStream(fIn2, fOut2, password, bufferSize)
     print("\tFiles have been Encrypted")
+    fIn2.close()
+    fOut2.close()
 except:
     print("An Error Is Encountered")
     print("Error 404:May be Files are not present at the desired location")
