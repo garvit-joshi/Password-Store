@@ -22,11 +22,11 @@ Although Everything is compiled and you can directly run [Main.exe](https://gith
 ### Support (for only building app from source):
 
 1. For Downloading Python, [click here](https://www.python.org/) <br>
-Note : Please click on 'Add Python 3.xx to PATH' while installing. <br>
-2. Install Required Modules: <br>
-2.1. Open command prompt. <br>
-2.2. Run ```pip install pyAesCrypt``` <br>
-2.3. Run ```pip install cython```
+Note : Please click on 'Add Python 3.xx to PATH' while installing.
+2. Install Required Modules:
+    1. Open command prompt.
+    2. Run ```pip install pyAesCrypt```
+    3. Run ```pip install cython```
 
 ### Notes:
 
