@@ -1,13 +1,12 @@
-# Password-Store
+# Password-Store:
 Saves your password in two Encrypted files.<br>
-Added Support to AES-256 bit Encryption.<br>
-``` git clone https://github.com/garvit-joshi/Password-Store.git ```
+Added Support to AES-256-CBC bit Encryption.<br>
 
 ## Prerequisite (for only building app from source):
 1. [Python 3 (>=3.8.5)](https://www.python.org/)
 2. [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 
-## Building the app from source.
+## Steps for building the app from source:
 
 Although Everything is compiled and you can directly run [Main.exe](https://github.com/garvit-joshi/Password-Store/tree/master/bin64). Here are steps for building app from source.
 
