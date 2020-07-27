@@ -17,6 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 *******************************************************************************/
+
 #define PY_SSIZE_T_CLEAN
 #include "Python.h"
 #ifndef Py_PYTHON_H
@@ -1232,6 +1233,7 @@ static const char __pyx_k_As_per_your_request_Password_tx[] = "\nAs per your req
 static const char __pyx_k_Do_you_want_to_save_the_file_in[] = "\n Do you want to save the file in Password.txt(Y/N):";
 static const char __pyx_k_For_Your_Ease_the_program_can_s[] = "\nFor Your Ease, the program can store your password in a file(Password.txt)";
 static const char __pyx_k_Password_has_been_stored_in_Pas[] = "\nPassword has been stored in Password.txt";
+static const char __pyx_k_Password_store_Stores_your_Cred[] = "\n * Password-store:Stores your Credential in AES-256 bit Encryption\n\n\n * This program is free software; you can redistribute it and/or modify\n * it under the terms of the GNU General Public License as published by\n * the Free Software Foundation; either version 2 of the License, or\n * (at your option) any later version.\n\n * This program is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n * GNU General Public License for more details.\n\n * You should have received a copy of the GNU General Public License along\n * with this program; if not, write to the Free Software Foundation, Inc.,\n * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.\n";
 static const char __pyx_k_Error_404_May_be_Files_are_not_p[] = "Error 404:May be Files are not present at the desired location";
 static const char __pyx_k_We_Have_Deleted_Password_txt_for[] = "We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted.";
 static PyObject *__pyx_kp_s_An_Error_Is_Encountered;
@@ -1314,7 +1316,7 @@ static PyModuleDef_Slot __pyx_moduledef_slots[] = {
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
     "Encryption",
-    0, /* m_doc */
+    __pyx_k_Password_store_Stores_your_Cred, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
   #else
@@ -1393,8 +1395,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_input = __Pyx_GetBuiltinName(__pyx_n_s_input); if (!__pyx_builtin_input) __PYX_ERR(0, 5, __pyx_L1_error)
-  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_builtin_input = __Pyx_GetBuiltinName(__pyx_n_s_input); if (!__pyx_builtin_input) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 27, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -1404,114 +1406,114 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "Encryption.py":5
+  /* "Encryption.py":23
  * #for installing pyAesCrypt please run this command(cmd):pip install pyAesCrypt
  * #or click "4" In Menu for Support.
  * password=input("Please Enter A master password:")             # <<<<<<<<<<<<<<
  * print("\nFor Your Ease, the program can store your password in a file(Password.txt)")
  * choice=input("\n Do you want to save the file in Password.txt(Y/N):")
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_Please_Enter_A_master_password); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_Please_Enter_A_master_password); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "Encryption.py":7
+  /* "Encryption.py":25
  * password=input("Please Enter A master password:")
  * print("\nFor Your Ease, the program can store your password in a file(Password.txt)")
  * choice=input("\n Do you want to save the file in Password.txt(Y/N):")             # <<<<<<<<<<<<<<
  * if(choice=="Y" or choice == "y"):
  *     ofile=open("Password.txt","w")
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_Do_you_want_to_save_the_file_in); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_Do_you_want_to_save_the_file_in); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "Encryption.py":9
+  /* "Encryption.py":27
  * choice=input("\n Do you want to save the file in Password.txt(Y/N):")
  * if(choice=="Y" or choice == "y"):
  *     ofile=open("Password.txt","w")             # <<<<<<<<<<<<<<
  *     ofile.write("Password:"+password)
  *     print("\nPassword has been stored in Password.txt")
  */
-  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_kp_s_Password_txt, __pyx_n_s_w); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_kp_s_Password_txt, __pyx_n_s_w); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "Encryption.py":12
+  /* "Encryption.py":30
  *     ofile.write("Password:"+password)
  *     print("\nPassword has been stored in Password.txt")
  *     ofile.write("\nPlease copy this password in a diary and delete this file Permanently.\n")             # <<<<<<<<<<<<<<
  *     ofile.close()
  * else:
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_Please_copy_this_password_in_a); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_Please_copy_this_password_in_a); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "Encryption.py":18
+  /* "Encryption.py":36
  * bufferSize = 64 * 1024
  * try:
  *     with open("Data.txt", "rb") as fIn1:             # <<<<<<<<<<<<<<
  *         with open("Data.txt.aes", "wb") as fOut1:
  *             pyAesCrypt.encryptStream(fIn1, fOut1, password, bufferSize)
  */
-  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_kp_s_Data_txt, __pyx_n_s_rb); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_kp_s_Data_txt, __pyx_n_s_rb); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "Encryption.py":19
+  /* "Encryption.py":37
  * try:
  *     with open("Data.txt", "rb") as fIn1:
  *         with open("Data.txt.aes", "wb") as fOut1:             # <<<<<<<<<<<<<<
  *             pyAesCrypt.encryptStream(fIn1, fOut1, password, bufferSize)
  *     fIn1.close()
  */
-  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_kp_s_Data_txt_aes, __pyx_n_s_wb); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_kp_s_Data_txt_aes, __pyx_n_s_wb); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_tuple__7 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "Encryption.py":23
+  /* "Encryption.py":41
  *     fIn1.close()
  *     fOut1.close()
  *     with open("Credentials.txt", "rb") as fIn2:             # <<<<<<<<<<<<<<
  *         with open("Credentials.txt.aes", "wb") as fOut2:
  *             pyAesCrypt.encryptStream(fIn2, fOut2, password, bufferSize)
  */
-  __pyx_tuple__8 = PyTuple_Pack(2, __pyx_kp_s_Credentials_txt, __pyx_n_s_rb); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(2, __pyx_kp_s_Credentials_txt, __pyx_n_s_rb); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
 
-  /* "Encryption.py":24
+  /* "Encryption.py":42
  *     fOut1.close()
  *     with open("Credentials.txt", "rb") as fIn2:
  *         with open("Credentials.txt.aes", "wb") as fOut2:             # <<<<<<<<<<<<<<
  *             pyAesCrypt.encryptStream(fIn2, fOut2, password, bufferSize)
  *     print("\tFiles have been Encrypted")
  */
-  __pyx_tuple__9 = PyTuple_Pack(2, __pyx_kp_s_Credentials_txt_aes, __pyx_n_s_wb); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(2, __pyx_kp_s_Credentials_txt_aes, __pyx_n_s_wb); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "Encryption.py":33
+  /* "Encryption.py":51
  *     print("Error 404:May be Files are not present at the desired location")
  *     if(choice == "Y" or choice == "y"):
  *         os.remove("Password.txt")             # <<<<<<<<<<<<<<
  *         print("We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted.")
  * input("\nPress Enter to continue...")
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_Password_txt); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_Password_txt); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
 
-  /* "Encryption.py":35
+  /* "Encryption.py":53
  *         os.remove("Password.txt")
  *         print("We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted.")
  * input("\nPress Enter to continue...")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_Press_Enter_to_continue); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_Press_Enter_to_continue); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
   __Pyx_RefNannyFinishContext();
@@ -1768,7 +1770,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("Encryption", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("Encryption", __pyx_methods, __pyx_k_Password_store_Stores_your_Cred, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -1814,163 +1816,166 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "Encryption.py":1
+  /* "Encryption.py":19
+ *  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ * """
  * import pyAesCrypt             # <<<<<<<<<<<<<<
  * import os
  * #for installing pyAesCrypt please run this command(cmd):pip install pyAesCrypt
  */
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_pyAesCrypt, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_pyAesCrypt, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyAesCrypt, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyAesCrypt, __pyx_t_1) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "Encryption.py":2
+  /* "Encryption.py":20
+ * """
  * import pyAesCrypt
  * import os             # <<<<<<<<<<<<<<
  * #for installing pyAesCrypt please run this command(cmd):pip install pyAesCrypt
  * #or click "4" In Menu for Support.
  */
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_os, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_os, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_os, __pyx_t_1) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_os, __pyx_t_1) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "Encryption.py":5
+  /* "Encryption.py":23
  * #for installing pyAesCrypt please run this command(cmd):pip install pyAesCrypt
  * #or click "4" In Menu for Support.
  * password=input("Please Enter A master password:")             # <<<<<<<<<<<<<<
  * print("\nFor Your Ease, the program can store your password in a file(Password.txt)")
  * choice=input("\n Do you want to save the file in Password.txt(Y/N):")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_password, __pyx_t_1) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_password, __pyx_t_1) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "Encryption.py":6
+  /* "Encryption.py":24
  * #or click "4" In Menu for Support.
  * password=input("Please Enter A master password:")
  * print("\nFor Your Ease, the program can store your password in a file(Password.txt)")             # <<<<<<<<<<<<<<
  * choice=input("\n Do you want to save the file in Password.txt(Y/N):")
  * if(choice=="Y" or choice == "y"):
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_For_Your_Ease_the_program_can_s) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_For_Your_Ease_the_program_can_s) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
 
-  /* "Encryption.py":7
+  /* "Encryption.py":25
  * password=input("Please Enter A master password:")
  * print("\nFor Your Ease, the program can store your password in a file(Password.txt)")
  * choice=input("\n Do you want to save the file in Password.txt(Y/N):")             # <<<<<<<<<<<<<<
  * if(choice=="Y" or choice == "y"):
  *     ofile=open("Password.txt","w")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_choice, __pyx_t_1) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_choice, __pyx_t_1) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "Encryption.py":8
+  /* "Encryption.py":26
  * print("\nFor Your Ease, the program can store your password in a file(Password.txt)")
  * choice=input("\n Do you want to save the file in Password.txt(Y/N):")
  * if(choice=="Y" or choice == "y"):             # <<<<<<<<<<<<<<
  *     ofile=open("Password.txt","w")
  *     ofile.write("Password:"+password)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_choice); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_choice); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_n_s_Y, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_n_s_Y, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (!__pyx_t_3) {
   } else {
     __pyx_t_2 = __pyx_t_3;
     goto __pyx_L3_bool_binop_done;
   }
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_choice); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_choice); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_n_s_y, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_n_s_y, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_2 = __pyx_t_3;
   __pyx_L3_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "Encryption.py":9
+    /* "Encryption.py":27
  * choice=input("\n Do you want to save the file in Password.txt(Y/N):")
  * if(choice=="Y" or choice == "y"):
  *     ofile=open("Password.txt","w")             # <<<<<<<<<<<<<<
  *     ofile.write("Password:"+password)
  *     print("\nPassword has been stored in Password.txt")
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_d, __pyx_n_s_ofile, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_d, __pyx_n_s_ofile, __pyx_t_1) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "Encryption.py":10
+    /* "Encryption.py":28
  * if(choice=="Y" or choice == "y"):
  *     ofile=open("Password.txt","w")
  *     ofile.write("Password:"+password)             # <<<<<<<<<<<<<<
  *     print("\nPassword has been stored in Password.txt")
  *     ofile.write("\nPlease copy this password in a diary and delete this file Permanently.\n")
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_ofile); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_ofile); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_password); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_password); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = PyNumber_Add(__pyx_kp_s_Password, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __pyx_t_5 = PyNumber_Add(__pyx_kp_s_Password, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "Encryption.py":11
+    /* "Encryption.py":29
  *     ofile=open("Password.txt","w")
  *     ofile.write("Password:"+password)
  *     print("\nPassword has been stored in Password.txt")             # <<<<<<<<<<<<<<
  *     ofile.write("\nPlease copy this password in a diary and delete this file Permanently.\n")
  *     ofile.close()
  */
-    if (__Pyx_PrintOne(0, __pyx_kp_s_Password_has_been_stored_in_Pas) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
+    if (__Pyx_PrintOne(0, __pyx_kp_s_Password_has_been_stored_in_Pas) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
 
-    /* "Encryption.py":12
+    /* "Encryption.py":30
  *     ofile.write("Password:"+password)
  *     print("\nPassword has been stored in Password.txt")
  *     ofile.write("\nPlease copy this password in a diary and delete this file Permanently.\n")             # <<<<<<<<<<<<<<
  *     ofile.close()
  * else:
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_ofile); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_ofile); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 12, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "Encryption.py":13
+    /* "Encryption.py":31
  *     print("\nPassword has been stored in Password.txt")
  *     ofile.write("\nPlease copy this password in a diary and delete this file Permanently.\n")
  *     ofile.close()             # <<<<<<<<<<<<<<
  * else:
  *     print("\nAs per your request, Password.txt will not be created. Please Memorize the password.\n")
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_ofile); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_ofile); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_close); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_close); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 31, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "Encryption.py":8
+    /* "Encryption.py":26
  * print("\nFor Your Ease, the program can store your password in a file(Password.txt)")
  * choice=input("\n Do you want to save the file in Password.txt(Y/N):")
  * if(choice=="Y" or choice == "y"):             # <<<<<<<<<<<<<<
@@ -1980,7 +1985,7 @@ if (!__Pyx_RefNanny) {
     goto __pyx_L2;
   }
 
-  /* "Encryption.py":15
+  /* "Encryption.py":33
  *     ofile.close()
  * else:
  *     print("\nAs per your request, Password.txt will not be created. Please Memorize the password.\n")             # <<<<<<<<<<<<<<
@@ -1988,20 +1993,20 @@ if (!__Pyx_RefNanny) {
  * try:
  */
   /*else*/ {
-    if (__Pyx_PrintOne(0, __pyx_kp_s_As_per_your_request_Password_tx) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
+    if (__Pyx_PrintOne(0, __pyx_kp_s_As_per_your_request_Password_tx) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
   }
   __pyx_L2:;
 
-  /* "Encryption.py":16
+  /* "Encryption.py":34
  * else:
  *     print("\nAs per your request, Password.txt will not be created. Please Memorize the password.\n")
  * bufferSize = 64 * 1024             # <<<<<<<<<<<<<<
  * try:
  *     with open("Data.txt", "rb") as fIn1:
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_bufferSize, __pyx_int_65536) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_bufferSize, __pyx_int_65536) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
 
-  /* "Encryption.py":17
+  /* "Encryption.py":35
  *     print("\nAs per your request, Password.txt will not be created. Please Memorize the password.\n")
  * bufferSize = 64 * 1024
  * try:             # <<<<<<<<<<<<<<
@@ -2017,7 +2022,7 @@ if (!__Pyx_RefNanny) {
     __Pyx_XGOTREF(__pyx_t_8);
     /*try:*/ {
 
-      /* "Encryption.py":18
+      /* "Encryption.py":36
  * bufferSize = 64 * 1024
  * try:
  *     with open("Data.txt", "rb") as fIn1:             # <<<<<<<<<<<<<<
@@ -2025,13 +2030,13 @@ if (!__Pyx_RefNanny) {
  *             pyAesCrypt.encryptStream(fIn1, fOut1, password, bufferSize)
  */
       /*with:*/ {
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L5_error)
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_9 = __Pyx_PyObject_LookupSpecial(__pyx_t_1, __pyx_n_s_exit); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 18, __pyx_L5_error)
+        __pyx_t_9 = __Pyx_PyObject_LookupSpecial(__pyx_t_1, __pyx_n_s_exit); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 36, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_5 = __Pyx_PyObject_LookupSpecial(__pyx_t_1, __pyx_n_s_enter); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 18, __pyx_L11_error)
+        __pyx_t_5 = __Pyx_PyObject_LookupSpecial(__pyx_t_1, __pyx_n_s_enter); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 36, __pyx_L11_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 18, __pyx_L11_error)
+        __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 36, __pyx_L11_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __pyx_t_5 = __pyx_t_4;
@@ -2046,10 +2051,10 @@ if (!__Pyx_RefNanny) {
             __Pyx_XGOTREF(__pyx_t_11);
             __Pyx_XGOTREF(__pyx_t_12);
             /*try:*/ {
-              if (PyDict_SetItem(__pyx_d, __pyx_n_s_fIn1, __pyx_t_5) < 0) __PYX_ERR(0, 18, __pyx_L15_error)
+              if (PyDict_SetItem(__pyx_d, __pyx_n_s_fIn1, __pyx_t_5) < 0) __PYX_ERR(0, 36, __pyx_L15_error)
               __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-              /* "Encryption.py":19
+              /* "Encryption.py":37
  * try:
  *     with open("Data.txt", "rb") as fIn1:
  *         with open("Data.txt.aes", "wb") as fOut1:             # <<<<<<<<<<<<<<
@@ -2057,13 +2062,13 @@ if (!__Pyx_RefNanny) {
  *     fIn1.close()
  */
               /*with:*/ {
-                __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 19, __pyx_L15_error)
+                __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 37, __pyx_L15_error)
                 __Pyx_GOTREF(__pyx_t_5);
-                __pyx_t_13 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_exit); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 19, __pyx_L15_error)
+                __pyx_t_13 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_exit); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 37, __pyx_L15_error)
                 __Pyx_GOTREF(__pyx_t_13);
-                __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_enter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L21_error)
+                __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_enter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L21_error)
                 __Pyx_GOTREF(__pyx_t_1);
-                __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 19, __pyx_L21_error)
+                __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 37, __pyx_L21_error)
                 __Pyx_GOTREF(__pyx_t_4);
                 __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
                 __pyx_t_1 = __pyx_t_4;
@@ -2078,30 +2083,30 @@ if (!__Pyx_RefNanny) {
                     __Pyx_XGOTREF(__pyx_t_15);
                     __Pyx_XGOTREF(__pyx_t_16);
                     /*try:*/ {
-                      if (PyDict_SetItem(__pyx_d, __pyx_n_s_fOut1, __pyx_t_1) < 0) __PYX_ERR(0, 19, __pyx_L25_error)
+                      if (PyDict_SetItem(__pyx_d, __pyx_n_s_fOut1, __pyx_t_1) < 0) __PYX_ERR(0, 37, __pyx_L25_error)
                       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-                      /* "Encryption.py":20
+                      /* "Encryption.py":38
  *     with open("Data.txt", "rb") as fIn1:
  *         with open("Data.txt.aes", "wb") as fOut1:
  *             pyAesCrypt.encryptStream(fIn1, fOut1, password, bufferSize)             # <<<<<<<<<<<<<<
  *     fIn1.close()
  *     fOut1.close()
  */
-                      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_pyAesCrypt); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L25_error)
+                      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_pyAesCrypt); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L25_error)
                       __Pyx_GOTREF(__pyx_t_1);
-                      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_encryptStream); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 20, __pyx_L25_error)
+                      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_encryptStream); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 38, __pyx_L25_error)
                       __Pyx_GOTREF(__pyx_t_5);
                       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-                      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_fIn1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L25_error)
+                      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_fIn1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L25_error)
                       __Pyx_GOTREF(__pyx_t_1);
-                      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_fOut1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 20, __pyx_L25_error)
+                      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_fOut1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 38, __pyx_L25_error)
                       __Pyx_GOTREF(__pyx_t_4);
-                      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_password); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 20, __pyx_L25_error)
+                      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_password); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 38, __pyx_L25_error)
                       __Pyx_GOTREF(__pyx_t_17);
-                      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_bufferSize); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 20, __pyx_L25_error)
+                      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_bufferSize); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 38, __pyx_L25_error)
                       __Pyx_GOTREF(__pyx_t_18);
-                      __pyx_t_19 = PyTuple_New(4); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 20, __pyx_L25_error)
+                      __pyx_t_19 = PyTuple_New(4); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 38, __pyx_L25_error)
                       __Pyx_GOTREF(__pyx_t_19);
                       __Pyx_GIVEREF(__pyx_t_1);
                       PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_1);
@@ -2115,13 +2120,13 @@ if (!__Pyx_RefNanny) {
                       __pyx_t_4 = 0;
                       __pyx_t_17 = 0;
                       __pyx_t_18 = 0;
-                      __pyx_t_18 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_19, NULL); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 20, __pyx_L25_error)
+                      __pyx_t_18 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_19, NULL); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 38, __pyx_L25_error)
                       __Pyx_GOTREF(__pyx_t_18);
                       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
                       __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
                       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-                      /* "Encryption.py":19
+                      /* "Encryption.py":37
  * try:
  *     with open("Data.txt", "rb") as fIn1:
  *         with open("Data.txt.aes", "wb") as fOut1:             # <<<<<<<<<<<<<<
@@ -2142,20 +2147,20 @@ if (!__Pyx_RefNanny) {
                     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
                     /*except:*/ {
                       __Pyx_AddTraceback("Encryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                      if (__Pyx_GetException(&__pyx_t_18, &__pyx_t_19, &__pyx_t_5) < 0) __PYX_ERR(0, 19, __pyx_L27_except_error)
+                      if (__Pyx_GetException(&__pyx_t_18, &__pyx_t_19, &__pyx_t_5) < 0) __PYX_ERR(0, 37, __pyx_L27_except_error)
                       __Pyx_GOTREF(__pyx_t_18);
                       __Pyx_GOTREF(__pyx_t_19);
                       __Pyx_GOTREF(__pyx_t_5);
-                      __pyx_t_17 = PyTuple_Pack(3, __pyx_t_18, __pyx_t_19, __pyx_t_5); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 19, __pyx_L27_except_error)
+                      __pyx_t_17 = PyTuple_Pack(3, __pyx_t_18, __pyx_t_19, __pyx_t_5); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 37, __pyx_L27_except_error)
                       __Pyx_GOTREF(__pyx_t_17);
                       __pyx_t_20 = __Pyx_PyObject_Call(__pyx_t_13, __pyx_t_17, NULL);
                       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
                       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-                      if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 19, __pyx_L27_except_error)
+                      if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 37, __pyx_L27_except_error)
                       __Pyx_GOTREF(__pyx_t_20);
                       __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_20);
                       __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
-                      if (__pyx_t_2 < 0) __PYX_ERR(0, 19, __pyx_L27_except_error)
+                      if (__pyx_t_2 < 0) __PYX_ERR(0, 37, __pyx_L27_except_error)
                       __pyx_t_3 = ((!(__pyx_t_2 != 0)) != 0);
                       if (__pyx_t_3) {
                         __Pyx_GIVEREF(__pyx_t_18);
@@ -2163,7 +2168,7 @@ if (!__Pyx_RefNanny) {
                         __Pyx_XGIVEREF(__pyx_t_5);
                         __Pyx_ErrRestoreWithState(__pyx_t_18, __pyx_t_19, __pyx_t_5);
                         __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_5 = 0; 
-                        __PYX_ERR(0, 19, __pyx_L27_except_error)
+                        __PYX_ERR(0, 37, __pyx_L27_except_error)
                       }
                       __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
                       __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
@@ -2189,7 +2194,7 @@ if (!__Pyx_RefNanny) {
                     if (__pyx_t_13) {
                       __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_13, __pyx_tuple__7, NULL);
                       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-                      if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 19, __pyx_L15_error)
+                      if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 37, __pyx_L15_error)
                       __Pyx_GOTREF(__pyx_t_16);
                       __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
                     }
@@ -2204,7 +2209,7 @@ if (!__Pyx_RefNanny) {
                 __pyx_L34:;
               }
 
-              /* "Encryption.py":18
+              /* "Encryption.py":36
  * bufferSize = 64 * 1024
  * try:
  *     with open("Data.txt", "rb") as fIn1:             # <<<<<<<<<<<<<<
@@ -2225,20 +2230,20 @@ if (!__Pyx_RefNanny) {
             __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
             /*except:*/ {
               __Pyx_AddTraceback("Encryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_19, &__pyx_t_18) < 0) __PYX_ERR(0, 18, __pyx_L17_except_error)
+              if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_19, &__pyx_t_18) < 0) __PYX_ERR(0, 36, __pyx_L17_except_error)
               __Pyx_GOTREF(__pyx_t_5);
               __Pyx_GOTREF(__pyx_t_19);
               __Pyx_GOTREF(__pyx_t_18);
-              __pyx_t_17 = PyTuple_Pack(3, __pyx_t_5, __pyx_t_19, __pyx_t_18); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 18, __pyx_L17_except_error)
+              __pyx_t_17 = PyTuple_Pack(3, __pyx_t_5, __pyx_t_19, __pyx_t_18); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 36, __pyx_L17_except_error)
               __Pyx_GOTREF(__pyx_t_17);
               __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_17, NULL);
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
               __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-              if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 18, __pyx_L17_except_error)
+              if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 36, __pyx_L17_except_error)
               __Pyx_GOTREF(__pyx_t_13);
               __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_13);
               __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-              if (__pyx_t_3 < 0) __PYX_ERR(0, 18, __pyx_L17_except_error)
+              if (__pyx_t_3 < 0) __PYX_ERR(0, 36, __pyx_L17_except_error)
               __pyx_t_2 = ((!(__pyx_t_3 != 0)) != 0);
               if (__pyx_t_2) {
                 __Pyx_GIVEREF(__pyx_t_5);
@@ -2246,7 +2251,7 @@ if (!__Pyx_RefNanny) {
                 __Pyx_XGIVEREF(__pyx_t_18);
                 __Pyx_ErrRestoreWithState(__pyx_t_5, __pyx_t_19, __pyx_t_18);
                 __pyx_t_5 = 0; __pyx_t_19 = 0; __pyx_t_18 = 0; 
-                __PYX_ERR(0, 18, __pyx_L17_except_error)
+                __PYX_ERR(0, 36, __pyx_L17_except_error)
               }
               __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
               __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
@@ -2272,7 +2277,7 @@ if (!__Pyx_RefNanny) {
             if (__pyx_t_9) {
               __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_tuple__7, NULL);
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-              if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 18, __pyx_L5_error)
+              if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 36, __pyx_L5_error)
               __Pyx_GOTREF(__pyx_t_12);
               __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
             }
@@ -2287,41 +2292,41 @@ if (!__Pyx_RefNanny) {
         __pyx_L38:;
       }
 
-      /* "Encryption.py":21
+      /* "Encryption.py":39
  *         with open("Data.txt.aes", "wb") as fOut1:
  *             pyAesCrypt.encryptStream(fIn1, fOut1, password, bufferSize)
  *     fIn1.close()             # <<<<<<<<<<<<<<
  *     fOut1.close()
  *     with open("Credentials.txt", "rb") as fIn2:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_fIn1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 21, __pyx_L5_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_fIn1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 39, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_18);
-      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_close); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 21, __pyx_L5_error)
+      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_close); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 39, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_19);
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-      __pyx_t_18 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 21, __pyx_L5_error)
+      __pyx_t_18 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 39, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_18);
       __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-      /* "Encryption.py":22
+      /* "Encryption.py":40
  *             pyAesCrypt.encryptStream(fIn1, fOut1, password, bufferSize)
  *     fIn1.close()
  *     fOut1.close()             # <<<<<<<<<<<<<<
  *     with open("Credentials.txt", "rb") as fIn2:
  *         with open("Credentials.txt.aes", "wb") as fOut2:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_fOut1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 22, __pyx_L5_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_fOut1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 40, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_18);
-      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_close); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 22, __pyx_L5_error)
+      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_close); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 40, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_19);
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-      __pyx_t_18 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 22, __pyx_L5_error)
+      __pyx_t_18 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 40, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_18);
       __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-      /* "Encryption.py":23
+      /* "Encryption.py":41
  *     fIn1.close()
  *     fOut1.close()
  *     with open("Credentials.txt", "rb") as fIn2:             # <<<<<<<<<<<<<<
@@ -2329,13 +2334,13 @@ if (!__Pyx_RefNanny) {
  *             pyAesCrypt.encryptStream(fIn2, fOut2, password, bufferSize)
  */
       /*with:*/ {
-        __pyx_t_18 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 23, __pyx_L5_error)
+        __pyx_t_18 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 41, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_18);
-        __pyx_t_9 = __Pyx_PyObject_LookupSpecial(__pyx_t_18, __pyx_n_s_exit); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 23, __pyx_L5_error)
+        __pyx_t_9 = __Pyx_PyObject_LookupSpecial(__pyx_t_18, __pyx_n_s_exit); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 41, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_19 = __Pyx_PyObject_LookupSpecial(__pyx_t_18, __pyx_n_s_enter); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 23, __pyx_L39_error)
+        __pyx_t_19 = __Pyx_PyObject_LookupSpecial(__pyx_t_18, __pyx_n_s_enter); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 41, __pyx_L39_error)
         __Pyx_GOTREF(__pyx_t_19);
-        __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 23, __pyx_L39_error)
+        __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 41, __pyx_L39_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
         __pyx_t_19 = __pyx_t_5;
@@ -2350,10 +2355,10 @@ if (!__Pyx_RefNanny) {
             __Pyx_XGOTREF(__pyx_t_11);
             __Pyx_XGOTREF(__pyx_t_10);
             /*try:*/ {
-              if (PyDict_SetItem(__pyx_d, __pyx_n_s_fIn2, __pyx_t_19) < 0) __PYX_ERR(0, 23, __pyx_L43_error)
+              if (PyDict_SetItem(__pyx_d, __pyx_n_s_fIn2, __pyx_t_19) < 0) __PYX_ERR(0, 41, __pyx_L43_error)
               __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
 
-              /* "Encryption.py":24
+              /* "Encryption.py":42
  *     fOut1.close()
  *     with open("Credentials.txt", "rb") as fIn2:
  *         with open("Credentials.txt.aes", "wb") as fOut2:             # <<<<<<<<<<<<<<
@@ -2361,13 +2366,13 @@ if (!__Pyx_RefNanny) {
  *     print("\tFiles have been Encrypted")
  */
               /*with:*/ {
-                __pyx_t_19 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 24, __pyx_L43_error)
+                __pyx_t_19 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 42, __pyx_L43_error)
                 __Pyx_GOTREF(__pyx_t_19);
-                __pyx_t_13 = __Pyx_PyObject_LookupSpecial(__pyx_t_19, __pyx_n_s_exit); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 24, __pyx_L43_error)
+                __pyx_t_13 = __Pyx_PyObject_LookupSpecial(__pyx_t_19, __pyx_n_s_exit); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 42, __pyx_L43_error)
                 __Pyx_GOTREF(__pyx_t_13);
-                __pyx_t_18 = __Pyx_PyObject_LookupSpecial(__pyx_t_19, __pyx_n_s_enter); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 24, __pyx_L49_error)
+                __pyx_t_18 = __Pyx_PyObject_LookupSpecial(__pyx_t_19, __pyx_n_s_enter); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 42, __pyx_L49_error)
                 __Pyx_GOTREF(__pyx_t_18);
-                __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_18); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 24, __pyx_L49_error)
+                __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_18); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 42, __pyx_L49_error)
                 __Pyx_GOTREF(__pyx_t_5);
                 __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
                 __pyx_t_18 = __pyx_t_5;
@@ -2382,30 +2387,30 @@ if (!__Pyx_RefNanny) {
                     __Pyx_XGOTREF(__pyx_t_15);
                     __Pyx_XGOTREF(__pyx_t_14);
                     /*try:*/ {
-                      if (PyDict_SetItem(__pyx_d, __pyx_n_s_fOut2, __pyx_t_18) < 0) __PYX_ERR(0, 24, __pyx_L53_error)
+                      if (PyDict_SetItem(__pyx_d, __pyx_n_s_fOut2, __pyx_t_18) < 0) __PYX_ERR(0, 42, __pyx_L53_error)
                       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-                      /* "Encryption.py":25
+                      /* "Encryption.py":43
  *     with open("Credentials.txt", "rb") as fIn2:
  *         with open("Credentials.txt.aes", "wb") as fOut2:
  *             pyAesCrypt.encryptStream(fIn2, fOut2, password, bufferSize)             # <<<<<<<<<<<<<<
  *     print("\tFiles have been Encrypted")
  *     fIn2.close()
  */
-                      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_pyAesCrypt); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 25, __pyx_L53_error)
+                      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_pyAesCrypt); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 43, __pyx_L53_error)
                       __Pyx_GOTREF(__pyx_t_18);
-                      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_encryptStream); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 25, __pyx_L53_error)
+                      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_encryptStream); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 43, __pyx_L53_error)
                       __Pyx_GOTREF(__pyx_t_19);
                       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-                      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_fIn2); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 25, __pyx_L53_error)
+                      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_fIn2); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 43, __pyx_L53_error)
                       __Pyx_GOTREF(__pyx_t_18);
-                      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_fOut2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 25, __pyx_L53_error)
+                      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_fOut2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 43, __pyx_L53_error)
                       __Pyx_GOTREF(__pyx_t_5);
-                      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_password); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 25, __pyx_L53_error)
+                      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_password); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 43, __pyx_L53_error)
                       __Pyx_GOTREF(__pyx_t_17);
-                      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_bufferSize); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 25, __pyx_L53_error)
+                      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_bufferSize); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 43, __pyx_L53_error)
                       __Pyx_GOTREF(__pyx_t_4);
-                      __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L53_error)
+                      __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L53_error)
                       __Pyx_GOTREF(__pyx_t_1);
                       __Pyx_GIVEREF(__pyx_t_18);
                       PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_18);
@@ -2419,13 +2424,13 @@ if (!__Pyx_RefNanny) {
                       __pyx_t_5 = 0;
                       __pyx_t_17 = 0;
                       __pyx_t_4 = 0;
-                      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 25, __pyx_L53_error)
+                      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 43, __pyx_L53_error)
                       __Pyx_GOTREF(__pyx_t_4);
                       __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
                       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
                       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-                      /* "Encryption.py":24
+                      /* "Encryption.py":42
  *     fOut1.close()
  *     with open("Credentials.txt", "rb") as fIn2:
  *         with open("Credentials.txt.aes", "wb") as fOut2:             # <<<<<<<<<<<<<<
@@ -2446,20 +2451,20 @@ if (!__Pyx_RefNanny) {
                     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
                     /*except:*/ {
                       __Pyx_AddTraceback("Encryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_1, &__pyx_t_19) < 0) __PYX_ERR(0, 24, __pyx_L55_except_error)
+                      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_1, &__pyx_t_19) < 0) __PYX_ERR(0, 42, __pyx_L55_except_error)
                       __Pyx_GOTREF(__pyx_t_4);
                       __Pyx_GOTREF(__pyx_t_1);
                       __Pyx_GOTREF(__pyx_t_19);
-                      __pyx_t_17 = PyTuple_Pack(3, __pyx_t_4, __pyx_t_1, __pyx_t_19); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 24, __pyx_L55_except_error)
+                      __pyx_t_17 = PyTuple_Pack(3, __pyx_t_4, __pyx_t_1, __pyx_t_19); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 42, __pyx_L55_except_error)
                       __Pyx_GOTREF(__pyx_t_17);
                       __pyx_t_20 = __Pyx_PyObject_Call(__pyx_t_13, __pyx_t_17, NULL);
                       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
                       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-                      if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 24, __pyx_L55_except_error)
+                      if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 42, __pyx_L55_except_error)
                       __Pyx_GOTREF(__pyx_t_20);
                       __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_20);
                       __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
-                      if (__pyx_t_2 < 0) __PYX_ERR(0, 24, __pyx_L55_except_error)
+                      if (__pyx_t_2 < 0) __PYX_ERR(0, 42, __pyx_L55_except_error)
                       __pyx_t_3 = ((!(__pyx_t_2 != 0)) != 0);
                       if (__pyx_t_3) {
                         __Pyx_GIVEREF(__pyx_t_4);
@@ -2467,7 +2472,7 @@ if (!__Pyx_RefNanny) {
                         __Pyx_XGIVEREF(__pyx_t_19);
                         __Pyx_ErrRestoreWithState(__pyx_t_4, __pyx_t_1, __pyx_t_19);
                         __pyx_t_4 = 0; __pyx_t_1 = 0; __pyx_t_19 = 0; 
-                        __PYX_ERR(0, 24, __pyx_L55_except_error)
+                        __PYX_ERR(0, 42, __pyx_L55_except_error)
                       }
                       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
                       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2493,7 +2498,7 @@ if (!__Pyx_RefNanny) {
                     if (__pyx_t_13) {
                       __pyx_t_14 = __Pyx_PyObject_Call(__pyx_t_13, __pyx_tuple__7, NULL);
                       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-                      if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 24, __pyx_L43_error)
+                      if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 42, __pyx_L43_error)
                       __Pyx_GOTREF(__pyx_t_14);
                       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
                     }
@@ -2508,7 +2513,7 @@ if (!__Pyx_RefNanny) {
                 __pyx_L62:;
               }
 
-              /* "Encryption.py":23
+              /* "Encryption.py":41
  *     fIn1.close()
  *     fOut1.close()
  *     with open("Credentials.txt", "rb") as fIn2:             # <<<<<<<<<<<<<<
@@ -2529,20 +2534,20 @@ if (!__Pyx_RefNanny) {
             __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
             /*except:*/ {
               __Pyx_AddTraceback("Encryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_19, &__pyx_t_1, &__pyx_t_4) < 0) __PYX_ERR(0, 23, __pyx_L45_except_error)
+              if (__Pyx_GetException(&__pyx_t_19, &__pyx_t_1, &__pyx_t_4) < 0) __PYX_ERR(0, 41, __pyx_L45_except_error)
               __Pyx_GOTREF(__pyx_t_19);
               __Pyx_GOTREF(__pyx_t_1);
               __Pyx_GOTREF(__pyx_t_4);
-              __pyx_t_17 = PyTuple_Pack(3, __pyx_t_19, __pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 23, __pyx_L45_except_error)
+              __pyx_t_17 = PyTuple_Pack(3, __pyx_t_19, __pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 41, __pyx_L45_except_error)
               __Pyx_GOTREF(__pyx_t_17);
               __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_17, NULL);
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
               __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-              if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 23, __pyx_L45_except_error)
+              if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 41, __pyx_L45_except_error)
               __Pyx_GOTREF(__pyx_t_13);
               __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_13);
               __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-              if (__pyx_t_3 < 0) __PYX_ERR(0, 23, __pyx_L45_except_error)
+              if (__pyx_t_3 < 0) __PYX_ERR(0, 41, __pyx_L45_except_error)
               __pyx_t_2 = ((!(__pyx_t_3 != 0)) != 0);
               if (__pyx_t_2) {
                 __Pyx_GIVEREF(__pyx_t_19);
@@ -2550,7 +2555,7 @@ if (!__Pyx_RefNanny) {
                 __Pyx_XGIVEREF(__pyx_t_4);
                 __Pyx_ErrRestoreWithState(__pyx_t_19, __pyx_t_1, __pyx_t_4);
                 __pyx_t_19 = 0; __pyx_t_1 = 0; __pyx_t_4 = 0; 
-                __PYX_ERR(0, 23, __pyx_L45_except_error)
+                __PYX_ERR(0, 41, __pyx_L45_except_error)
               }
               __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
               __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2576,7 +2581,7 @@ if (!__Pyx_RefNanny) {
             if (__pyx_t_9) {
               __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_tuple__7, NULL);
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-              if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 23, __pyx_L5_error)
+              if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 41, __pyx_L5_error)
               __Pyx_GOTREF(__pyx_t_10);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
             }
@@ -2591,50 +2596,50 @@ if (!__Pyx_RefNanny) {
         __pyx_L66:;
       }
 
-      /* "Encryption.py":26
+      /* "Encryption.py":44
  *         with open("Credentials.txt.aes", "wb") as fOut2:
  *             pyAesCrypt.encryptStream(fIn2, fOut2, password, bufferSize)
  *     print("\tFiles have been Encrypted")             # <<<<<<<<<<<<<<
  *     fIn2.close()
  *     fOut2.close()
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Files_have_been_Encrypted) < 0) __PYX_ERR(0, 26, __pyx_L5_error)
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Files_have_been_Encrypted) < 0) __PYX_ERR(0, 44, __pyx_L5_error)
 
-      /* "Encryption.py":27
+      /* "Encryption.py":45
  *             pyAesCrypt.encryptStream(fIn2, fOut2, password, bufferSize)
  *     print("\tFiles have been Encrypted")
  *     fIn2.close()             # <<<<<<<<<<<<<<
  *     fOut2.close()
  * except:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_fIn2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 27, __pyx_L5_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_fIn2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 45, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_close); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L5_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_close); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 27, __pyx_L5_error)
+      __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 45, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "Encryption.py":28
+      /* "Encryption.py":46
  *     print("\tFiles have been Encrypted")
  *     fIn2.close()
  *     fOut2.close()             # <<<<<<<<<<<<<<
  * except:
  *     print("An Error Is Encountered")
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_fOut2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 28, __pyx_L5_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_fOut2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 46, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_close); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L5_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_close); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 28, __pyx_L5_error)
+      __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 46, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "Encryption.py":17
+      /* "Encryption.py":35
  *     print("\nAs per your request, Password.txt will not be created. Please Memorize the password.\n")
  * bufferSize = 64 * 1024
  * try:             # <<<<<<<<<<<<<<
@@ -2654,7 +2659,7 @@ if (!__Pyx_RefNanny) {
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "Encryption.py":29
+    /* "Encryption.py":47
  *     fIn2.close()
  *     fOut2.close()
  * except:             # <<<<<<<<<<<<<<
@@ -2663,79 +2668,79 @@ if (!__Pyx_RefNanny) {
  */
     /*except:*/ {
       __Pyx_AddTraceback("Encryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_1, &__pyx_t_19) < 0) __PYX_ERR(0, 29, __pyx_L7_except_error)
+      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_1, &__pyx_t_19) < 0) __PYX_ERR(0, 47, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GOTREF(__pyx_t_19);
 
-      /* "Encryption.py":30
+      /* "Encryption.py":48
  *     fOut2.close()
  * except:
  *     print("An Error Is Encountered")             # <<<<<<<<<<<<<<
  *     print("Error 404:May be Files are not present at the desired location")
  *     if(choice == "Y" or choice == "y"):
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_An_Error_Is_Encountered) < 0) __PYX_ERR(0, 30, __pyx_L7_except_error)
+      if (__Pyx_PrintOne(0, __pyx_kp_s_An_Error_Is_Encountered) < 0) __PYX_ERR(0, 48, __pyx_L7_except_error)
 
-      /* "Encryption.py":31
+      /* "Encryption.py":49
  * except:
  *     print("An Error Is Encountered")
  *     print("Error 404:May be Files are not present at the desired location")             # <<<<<<<<<<<<<<
  *     if(choice == "Y" or choice == "y"):
  *         os.remove("Password.txt")
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Error_404_May_be_Files_are_not_p) < 0) __PYX_ERR(0, 31, __pyx_L7_except_error)
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Error_404_May_be_Files_are_not_p) < 0) __PYX_ERR(0, 49, __pyx_L7_except_error)
 
-      /* "Encryption.py":32
+      /* "Encryption.py":50
  *     print("An Error Is Encountered")
  *     print("Error 404:May be Files are not present at the desired location")
  *     if(choice == "Y" or choice == "y"):             # <<<<<<<<<<<<<<
  *         os.remove("Password.txt")
  *         print("We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted.")
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_choice); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 32, __pyx_L7_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_choice); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 50, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_17, __pyx_n_s_Y, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 32, __pyx_L7_except_error)
+      __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_17, __pyx_n_s_Y, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 50, __pyx_L7_except_error)
       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
       if (!__pyx_t_3) {
       } else {
         __pyx_t_2 = __pyx_t_3;
         goto __pyx_L70_bool_binop_done;
       }
-      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_choice); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 32, __pyx_L7_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_choice); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 50, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_17, __pyx_n_s_y, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 32, __pyx_L7_except_error)
+      __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_17, __pyx_n_s_y, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 50, __pyx_L7_except_error)
       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
       __pyx_t_2 = __pyx_t_3;
       __pyx_L70_bool_binop_done:;
       if (__pyx_t_2) {
 
-        /* "Encryption.py":33
+        /* "Encryption.py":51
  *     print("Error 404:May be Files are not present at the desired location")
  *     if(choice == "Y" or choice == "y"):
  *         os.remove("Password.txt")             # <<<<<<<<<<<<<<
  *         print("We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted.")
  * input("\nPress Enter to continue...")
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_os); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 33, __pyx_L7_except_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_os); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 51, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_17);
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_remove); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 33, __pyx_L7_except_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_remove); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 51, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-        __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 33, __pyx_L7_except_error)
+        __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 51, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_17);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-        /* "Encryption.py":34
+        /* "Encryption.py":52
  *     if(choice == "Y" or choice == "y"):
  *         os.remove("Password.txt")
  *         print("We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted.")             # <<<<<<<<<<<<<<
  * input("\nPress Enter to continue...")
  */
-        if (__Pyx_PrintOne(0, __pyx_kp_s_We_Have_Deleted_Password_txt_for) < 0) __PYX_ERR(0, 34, __pyx_L7_except_error)
+        if (__Pyx_PrintOne(0, __pyx_kp_s_We_Have_Deleted_Password_txt_for) < 0) __PYX_ERR(0, 52, __pyx_L7_except_error)
 
-        /* "Encryption.py":32
+        /* "Encryption.py":50
  *     print("An Error Is Encountered")
  *     print("Error 404:May be Files are not present at the desired location")
  *     if(choice == "Y" or choice == "y"):             # <<<<<<<<<<<<<<
@@ -2750,7 +2755,7 @@ if (!__Pyx_RefNanny) {
     }
     __pyx_L7_except_error:;
 
-    /* "Encryption.py":17
+    /* "Encryption.py":35
  *     print("\nAs per your request, Password.txt will not be created. Please Memorize the password.\n")
  * bufferSize = 64 * 1024
  * try:             # <<<<<<<<<<<<<<
@@ -2770,19 +2775,19 @@ if (!__Pyx_RefNanny) {
     __pyx_L10_try_end:;
   }
 
-  /* "Encryption.py":35
+  /* "Encryption.py":53
  *         os.remove("Password.txt")
  *         print("We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted.")
  * input("\nPress Enter to continue...")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_19 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_19 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_19);
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
 
   /* "Encryption.py":1
- * import pyAesCrypt             # <<<<<<<<<<<<<<
- * import os
- * #for installing pyAesCrypt please run this command(cmd):pip install pyAesCrypt
+ * """             # <<<<<<<<<<<<<<
+ *  * Password-store:Stores your Credential in AES-256 bit Encryption
+ * 
  */
   __pyx_t_19 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_19);

@@ -161,7 +161,6 @@ int inputDatafile(bool type = false, int an = 0) {
 	 * type=true  :Old data is being updated
 	************************************************************/
 	if (type == false) {
-		cin.ignore();
 		n = D.setValues();
 		ofstream ofile("Data.txt", ios::out | ios::binary | ios::trunc);
 		ofile.write((char*)&D, sizeof(D));
@@ -243,12 +242,17 @@ string stringFunctions(string str)
 {
 	for (int i = 0; i < 8; i++)
 	{
+		/**********************************************************************************
+		 * "Main.exe" substring is Deleted from str;
+		**********************************************************************************/
 		str.pop_back();
 	}
 
 	string s1 = "";
 
-
+	/**********************************************************************************
+	 * '\' is changed to '\\' as Create Process takes path in '\\'. 
+	**********************************************************************************/
 	for (unsigned int i = 0; i < str.length(); i++)
 	{
 		if (str[i] != '\\')
@@ -270,6 +274,9 @@ void PathCalculator()
 {
 	TCHAR UPath[200];
 	GetModuleFileName(NULL, UPath, MAX_PATH);
+	/**********************************************************************************
+	 * The above function calculates the path of Main.exe and stores it in UPath.
+	**********************************************************************************/
 	string temp;
 #ifndef UNICODE
 	temp = UPath;
@@ -279,6 +286,9 @@ void PathCalculator()
 #endif
 	temp = stringFunctions(temp);
 	_tcscpy_s(UPath, CA2T(temp.c_str()));
+	/**********************************************************************************
+	 * Above Function converts TCHAR to String;
+	**********************************************************************************/
 	UniPath = temp;
 }
 
@@ -385,6 +395,11 @@ void Encryption()
 	}
 	else
 	{
+		/**************************************************************
+		 * If the CreateProcess succeeds, the return value is nonzero.
+
+		 * If the function fails, the return value is zero.
+		***************************************************************/
 		cout << "\n** Unable To Execute (Encryption.exe)**\n";
 	}
 }
@@ -414,6 +429,11 @@ void Decryption()
 	}
 	else
 	{
+		/**************************************************************
+		 * If the CreateProcess succeeds, the return value is nonzero.
+
+		 * If the function fails, the return value is zero.
+		***************************************************************/
 		cout << "\n** Unable To Execute (Decryption.exe)**\n";
 	}
 }
@@ -457,6 +477,7 @@ int main()
 		cout << "4. For Encrypting Files(Data.txt, Credentials.txt)\n5. Exit\n";
 		cout << "Enter Your Choice:";
 		choice1 = getchar();
+		cin.ignore();
 		system("cls");
 		if (choice1 == '1') {
 			cout << "\n\n\t";
@@ -470,13 +491,15 @@ int main()
 				check1.open("Data.txt");
 				if (!check1) {
 					cout << "\nError 404: Data.txt Does Not Exist.\n\n";
-					system("pause");
+					cout << "Press Enter to Continue";
+					cin.ignore();
 					return 0;
 				}
 				check2.open("Credentials.txt");
 				if (!check2) {
 					cout << "\nError 404: Credentials.txt Does Not Exist.\n\n";
-					system("pause");
+					cout << "Press Enter to Continue...";
+					cin.ignore();
 					return 0;
 				}
 				check1.close();
@@ -555,13 +578,12 @@ int main()
 		}
 		else if (choice1 == '5') {
 			About();
-			system("pause");
-			return 0;
+			break;
 		}
 		getchar();
 		cout << "Menu(Y/N):";
 		ch = getchar();
-		getchar();
+		cin.ignore();
 		system("cls");
 	}
 	ifstream DataAES, CredentialsAES, DataTXT, CredentialsTXT;
@@ -584,6 +606,7 @@ int main()
 	}
 	CredentialsAES.close();
 	cout << "\n\nPlease!! Remove Data.txt and Credential.txt manually if they are present.\n";
-	system("pause");
+	cout << "Press Enter to Continue...";
+	cin.ignore();
 	return 0;
 }

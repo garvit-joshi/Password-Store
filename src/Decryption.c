@@ -1211,6 +1211,7 @@ static const char __pyx_k_An_Error_Is_Encountered[] = "An Error Is Encountered\n
 static const char __pyx_k_Press_Enter_to_continue[] = "Press Enter to continue...";
 static const char __pyx_k_An_Error_Is_Encountered_2[] = "An Error Is Encountered";
 static const char __pyx_k_Error_401_1_Password_May_be_wro[] = "\nError 401(@1): Password May be wrong";
+static const char __pyx_k_Password_store_Stores_your_Cred[] = "\n * Password-store:Stores your Credential in AES-256 bit Encryption\n\n\n * This program is free software; you can redistribute it and/or modify\n * it under the terms of the GNU General Public License as published by\n * the Free Software Foundation; either version 2 of the License, or\n * (at your option) any later version.\n\n * This program is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n * GNU General Public License for more details.\n\n * You should have received a copy of the GNU General Public License along\n * with this program; if not, write to the Free Software Foundation, Inc.,\n * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.\n";
 static const char __pyx_k_All_Data_has_been_decrypted_succ[] = "All Data has been decrypted successfully";
 static const char __pyx_k_Error_401_2_Password_May_be_wron[] = "Error 401(@2): Password May be wrong";
 static const char __pyx_k_Error_404_Encrypted_Files_Not_Fo[] = "Error 404: Encrypted Files Not Found";
@@ -1292,7 +1293,7 @@ static PyModuleDef_Slot __pyx_moduledef_slots[] = {
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
     "Decryption",
-    0, /* m_doc */
+    __pyx_k_Password_store_Stores_your_Cred, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
   #else
@@ -1366,9 +1367,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_input = __Pyx_GetBuiltinName(__pyx_n_s_input); if (!__pyx_builtin_input) __PYX_ERR(0, 5, __pyx_L1_error)
-  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 15, __pyx_L1_error)
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_builtin_input = __Pyx_GetBuiltinName(__pyx_n_s_input); if (!__pyx_builtin_input) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 39, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -1378,114 +1379,114 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "Decryption.py":5
+  /* "Decryption.py":23
  * #for installing pyAesCrypt please run this command:pip install pyAesCrypt
  * #or click "4" In Menu for Support.
  * password=input("Please Enter Your Master Password:")             # <<<<<<<<<<<<<<
  * flag=0
  * bufferSize = 64 * 1024
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_Please_Enter_Your_Master_Passwor); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_Please_Enter_Your_Master_Passwor); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "Decryption.py":9
+  /* "Decryption.py":27
  * bufferSize = 64 * 1024
  * try:
  *     encFileSize1 = os.stat("Data.txt.aes").st_size             # <<<<<<<<<<<<<<
  *     encFileSize2 = os.stat("Credentials.txt.aes").st_size
  * except:
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_Data_txt_aes); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_Data_txt_aes); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "Decryption.py":10
+  /* "Decryption.py":28
  * try:
  *     encFileSize1 = os.stat("Data.txt.aes").st_size
  *     encFileSize2 = os.stat("Credentials.txt.aes").st_size             # <<<<<<<<<<<<<<
  * except:
  *     print("Error 404: Encrypted Files Not Found")
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_Credentials_txt_aes); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_Credentials_txt_aes); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "Decryption.py":15
+  /* "Decryption.py":33
  *     flag=1
  * if(flag==0):
  *     with open("Data.txt.aes", "rb") as fIn1:             # <<<<<<<<<<<<<<
  *         try:
  *             with open("Data.txt", "wb") as fOut1:
  */
-  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_kp_s_Data_txt_aes, __pyx_n_s_rb); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_kp_s_Data_txt_aes, __pyx_n_s_rb); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "Decryption.py":17
+  /* "Decryption.py":35
  *     with open("Data.txt.aes", "rb") as fIn1:
  *         try:
  *             with open("Data.txt", "wb") as fOut1:             # <<<<<<<<<<<<<<
  *                 pyAesCrypt.decryptStream(fIn1, fOut1, password, bufferSize, encFileSize1)
  *             fOut1.close()
  */
-  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_kp_s_Data_txt, __pyx_n_s_wb); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_kp_s_Data_txt, __pyx_n_s_wb); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
-  __pyx_tuple__6 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
-  /* "Decryption.py":22
+  /* "Decryption.py":40
  *             fIn1.close()
  *         except ValueError:
  *             os.remove("Data.txt")             # <<<<<<<<<<<<<<
  *             print("An Error Is Encountered\n")
  *             print("\nError 401(@1): Password May be wrong")
  */
-  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_s_Data_txt); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_s_Data_txt); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "Decryption.py":27
+  /* "Decryption.py":45
  *             flag=1
  * if(flag==0):
  *     with open("Credentials.txt.aes", "rb") as fIn2:             # <<<<<<<<<<<<<<
  *         try:
  *             with open("Credentials.txt", "wb") as fOut2:
  */
-  __pyx_tuple__8 = PyTuple_Pack(2, __pyx_kp_s_Credentials_txt_aes, __pyx_n_s_rb); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(2, __pyx_kp_s_Credentials_txt_aes, __pyx_n_s_rb); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
 
-  /* "Decryption.py":29
+  /* "Decryption.py":47
  *     with open("Credentials.txt.aes", "rb") as fIn2:
  *         try:
  *             with open("Credentials.txt", "wb") as fOut2:             # <<<<<<<<<<<<<<
  *                 pyAesCrypt.decryptStream(fIn2, fOut2, password, bufferSize, encFileSize2)
  *             print("All Data has been decrypted successfully")
  */
-  __pyx_tuple__9 = PyTuple_Pack(2, __pyx_kp_s_Credentials_txt, __pyx_n_s_wb); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(2, __pyx_kp_s_Credentials_txt, __pyx_n_s_wb); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "Decryption.py":35
+  /* "Decryption.py":53
  *             fOut2.close()
  *         except ValueError:
  *             os.remove("Credentials.txt")             # <<<<<<<<<<<<<<
  *             print("An Error Is Encountered")
  *             print("Error 401(@2): Password May be wrong")
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_Credentials_txt); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_Credentials_txt); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
 
-  /* "Decryption.py":38
+  /* "Decryption.py":56
  *             print("An Error Is Encountered")
  *             print("Error 401(@2): Password May be wrong")
  * input("Press Enter to continue...")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_Press_Enter_to_continue); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_Press_Enter_to_continue); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
   __Pyx_RefNannyFinishContext();
@@ -1746,7 +1747,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("Decryption", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("Decryption", __pyx_methods, __pyx_k_Password_store_Stores_your_Cred, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -1792,58 +1793,61 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "Decryption.py":1
+  /* "Decryption.py":19
+ *  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ * """
  * import pyAesCrypt             # <<<<<<<<<<<<<<
  * import os
  * #for installing pyAesCrypt please run this command:pip install pyAesCrypt
  */
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_pyAesCrypt, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_pyAesCrypt, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyAesCrypt, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyAesCrypt, __pyx_t_1) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "Decryption.py":2
+  /* "Decryption.py":20
+ * """
  * import pyAesCrypt
  * import os             # <<<<<<<<<<<<<<
  * #for installing pyAesCrypt please run this command:pip install pyAesCrypt
  * #or click "4" In Menu for Support.
  */
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_os, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_os, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_os, __pyx_t_1) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_os, __pyx_t_1) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "Decryption.py":5
+  /* "Decryption.py":23
  * #for installing pyAesCrypt please run this command:pip install pyAesCrypt
  * #or click "4" In Menu for Support.
  * password=input("Please Enter Your Master Password:")             # <<<<<<<<<<<<<<
  * flag=0
  * bufferSize = 64 * 1024
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_password, __pyx_t_1) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_password, __pyx_t_1) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "Decryption.py":6
+  /* "Decryption.py":24
  * #or click "4" In Menu for Support.
  * password=input("Please Enter Your Master Password:")
  * flag=0             # <<<<<<<<<<<<<<
  * bufferSize = 64 * 1024
  * try:
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_flag, __pyx_int_0) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_flag, __pyx_int_0) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
 
-  /* "Decryption.py":7
+  /* "Decryption.py":25
  * password=input("Please Enter Your Master Password:")
  * flag=0
  * bufferSize = 64 * 1024             # <<<<<<<<<<<<<<
  * try:
  *     encFileSize1 = os.stat("Data.txt.aes").st_size
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_bufferSize, __pyx_int_65536) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_bufferSize, __pyx_int_65536) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
 
-  /* "Decryption.py":8
+  /* "Decryption.py":26
  * flag=0
  * bufferSize = 64 * 1024
  * try:             # <<<<<<<<<<<<<<
@@ -1859,49 +1863,49 @@ if (!__Pyx_RefNanny) {
     __Pyx_XGOTREF(__pyx_t_4);
     /*try:*/ {
 
-      /* "Decryption.py":9
+      /* "Decryption.py":27
  * bufferSize = 64 * 1024
  * try:
  *     encFileSize1 = os.stat("Data.txt.aes").st_size             # <<<<<<<<<<<<<<
  *     encFileSize2 = os.stat("Credentials.txt.aes").st_size
  * except:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_os); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L2_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_os); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_stat); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 9, __pyx_L2_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_stat); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 27, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L2_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_st_size); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 9, __pyx_L2_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_st_size); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 27, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (PyDict_SetItem(__pyx_d, __pyx_n_s_encFileSize1, __pyx_t_5) < 0) __PYX_ERR(0, 9, __pyx_L2_error)
+      if (PyDict_SetItem(__pyx_d, __pyx_n_s_encFileSize1, __pyx_t_5) < 0) __PYX_ERR(0, 27, __pyx_L2_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "Decryption.py":10
+      /* "Decryption.py":28
  * try:
  *     encFileSize1 = os.stat("Data.txt.aes").st_size
  *     encFileSize2 = os.stat("Credentials.txt.aes").st_size             # <<<<<<<<<<<<<<
  * except:
  *     print("Error 404: Encrypted Files Not Found")
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_os); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 10, __pyx_L2_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_os); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 28, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_stat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L2_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_stat); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 10, __pyx_L2_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 28, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_st_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L2_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_st_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (PyDict_SetItem(__pyx_d, __pyx_n_s_encFileSize2, __pyx_t_1) < 0) __PYX_ERR(0, 10, __pyx_L2_error)
+      if (PyDict_SetItem(__pyx_d, __pyx_n_s_encFileSize2, __pyx_t_1) < 0) __PYX_ERR(0, 28, __pyx_L2_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "Decryption.py":8
+      /* "Decryption.py":26
  * flag=0
  * bufferSize = 64 * 1024
  * try:             # <<<<<<<<<<<<<<
@@ -1917,7 +1921,7 @@ if (!__Pyx_RefNanny) {
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "Decryption.py":11
+    /* "Decryption.py":29
  *     encFileSize1 = os.stat("Data.txt.aes").st_size
  *     encFileSize2 = os.stat("Credentials.txt.aes").st_size
  * except:             # <<<<<<<<<<<<<<
@@ -1926,28 +1930,28 @@ if (!__Pyx_RefNanny) {
  */
     /*except:*/ {
       __Pyx_AddTraceback("Decryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_5, &__pyx_t_6) < 0) __PYX_ERR(0, 11, __pyx_L4_except_error)
+      if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_5, &__pyx_t_6) < 0) __PYX_ERR(0, 29, __pyx_L4_except_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GOTREF(__pyx_t_6);
 
-      /* "Decryption.py":12
+      /* "Decryption.py":30
  *     encFileSize2 = os.stat("Credentials.txt.aes").st_size
  * except:
  *     print("Error 404: Encrypted Files Not Found")             # <<<<<<<<<<<<<<
  *     flag=1
  * if(flag==0):
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Error_404_Encrypted_Files_Not_Fo) < 0) __PYX_ERR(0, 12, __pyx_L4_except_error)
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Error_404_Encrypted_Files_Not_Fo) < 0) __PYX_ERR(0, 30, __pyx_L4_except_error)
 
-      /* "Decryption.py":13
+      /* "Decryption.py":31
  * except:
  *     print("Error 404: Encrypted Files Not Found")
  *     flag=1             # <<<<<<<<<<<<<<
  * if(flag==0):
  *     with open("Data.txt.aes", "rb") as fIn1:
  */
-      if (PyDict_SetItem(__pyx_d, __pyx_n_s_flag, __pyx_int_1) < 0) __PYX_ERR(0, 13, __pyx_L4_except_error)
+      if (PyDict_SetItem(__pyx_d, __pyx_n_s_flag, __pyx_int_1) < 0) __PYX_ERR(0, 31, __pyx_L4_except_error)
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -1955,7 +1959,7 @@ if (!__Pyx_RefNanny) {
     }
     __pyx_L4_except_error:;
 
-    /* "Decryption.py":8
+    /* "Decryption.py":26
  * flag=0
  * bufferSize = 64 * 1024
  * try:             # <<<<<<<<<<<<<<
@@ -1975,23 +1979,23 @@ if (!__Pyx_RefNanny) {
     __pyx_L7_try_end:;
   }
 
-  /* "Decryption.py":14
+  /* "Decryption.py":32
  *     print("Error 404: Encrypted Files Not Found")
  *     flag=1
  * if(flag==0):             # <<<<<<<<<<<<<<
  *     with open("Data.txt.aes", "rb") as fIn1:
  *         try:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_flag); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_flag); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (__pyx_t_7) {
 
-    /* "Decryption.py":15
+    /* "Decryption.py":33
  *     flag=1
  * if(flag==0):
  *     with open("Data.txt.aes", "rb") as fIn1:             # <<<<<<<<<<<<<<
@@ -1999,13 +2003,13 @@ if (!__Pyx_RefNanny) {
  *             with open("Data.txt", "wb") as fOut1:
  */
     /*with:*/ {
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 15, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 33, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_exit); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 15, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_exit); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 33, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_enter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 15, __pyx_L11_error)
+      __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_enter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 33, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L11_error)
+      __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L11_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_6 = __pyx_t_1;
@@ -2020,10 +2024,10 @@ if (!__Pyx_RefNanny) {
           __Pyx_XGOTREF(__pyx_t_2);
           __Pyx_XGOTREF(__pyx_t_8);
           /*try:*/ {
-            if (PyDict_SetItem(__pyx_d, __pyx_n_s_fIn1, __pyx_t_6) < 0) __PYX_ERR(0, 15, __pyx_L15_error)
+            if (PyDict_SetItem(__pyx_d, __pyx_n_s_fIn1, __pyx_t_6) < 0) __PYX_ERR(0, 33, __pyx_L15_error)
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-            /* "Decryption.py":16
+            /* "Decryption.py":34
  * if(flag==0):
  *     with open("Data.txt.aes", "rb") as fIn1:
  *         try:             # <<<<<<<<<<<<<<
@@ -2039,7 +2043,7 @@ if (!__Pyx_RefNanny) {
               __Pyx_XGOTREF(__pyx_t_11);
               /*try:*/ {
 
-                /* "Decryption.py":17
+                /* "Decryption.py":35
  *     with open("Data.txt.aes", "rb") as fIn1:
  *         try:
  *             with open("Data.txt", "wb") as fOut1:             # <<<<<<<<<<<<<<
@@ -2047,13 +2051,13 @@ if (!__Pyx_RefNanny) {
  *             fOut1.close()
  */
                 /*with:*/ {
-                  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 17, __pyx_L21_error)
+                  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 35, __pyx_L21_error)
                   __Pyx_GOTREF(__pyx_t_6);
-                  __pyx_t_12 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_exit); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 17, __pyx_L21_error)
+                  __pyx_t_12 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_exit); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 35, __pyx_L21_error)
                   __Pyx_GOTREF(__pyx_t_12);
-                  __pyx_t_5 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_enter); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 17, __pyx_L27_error)
+                  __pyx_t_5 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_enter); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 35, __pyx_L27_error)
                   __Pyx_GOTREF(__pyx_t_5);
-                  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L27_error)
+                  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L27_error)
                   __Pyx_GOTREF(__pyx_t_1);
                   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
                   __pyx_t_5 = __pyx_t_1;
@@ -2068,32 +2072,32 @@ if (!__Pyx_RefNanny) {
                       __Pyx_XGOTREF(__pyx_t_14);
                       __Pyx_XGOTREF(__pyx_t_15);
                       /*try:*/ {
-                        if (PyDict_SetItem(__pyx_d, __pyx_n_s_fOut1, __pyx_t_5) < 0) __PYX_ERR(0, 17, __pyx_L31_error)
+                        if (PyDict_SetItem(__pyx_d, __pyx_n_s_fOut1, __pyx_t_5) < 0) __PYX_ERR(0, 35, __pyx_L31_error)
                         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-                        /* "Decryption.py":18
+                        /* "Decryption.py":36
  *         try:
  *             with open("Data.txt", "wb") as fOut1:
  *                 pyAesCrypt.decryptStream(fIn1, fOut1, password, bufferSize, encFileSize1)             # <<<<<<<<<<<<<<
  *             fOut1.close()
  *             fIn1.close()
  */
-                        __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pyAesCrypt); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 18, __pyx_L31_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pyAesCrypt); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 36, __pyx_L31_error)
                         __Pyx_GOTREF(__pyx_t_5);
-                        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_decryptStream); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 18, __pyx_L31_error)
+                        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_decryptStream); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 36, __pyx_L31_error)
                         __Pyx_GOTREF(__pyx_t_6);
                         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-                        __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_fIn1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 18, __pyx_L31_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_fIn1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 36, __pyx_L31_error)
                         __Pyx_GOTREF(__pyx_t_5);
-                        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_fOut1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L31_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_fOut1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L31_error)
                         __Pyx_GOTREF(__pyx_t_1);
-                        __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_password); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 18, __pyx_L31_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_password); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 36, __pyx_L31_error)
                         __Pyx_GOTREF(__pyx_t_16);
-                        __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_bufferSize); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 18, __pyx_L31_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_bufferSize); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 36, __pyx_L31_error)
                         __Pyx_GOTREF(__pyx_t_17);
-                        __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_encFileSize1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 18, __pyx_L31_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_encFileSize1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 36, __pyx_L31_error)
                         __Pyx_GOTREF(__pyx_t_18);
-                        __pyx_t_19 = PyTuple_New(5); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 18, __pyx_L31_error)
+                        __pyx_t_19 = PyTuple_New(5); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 36, __pyx_L31_error)
                         __Pyx_GOTREF(__pyx_t_19);
                         __Pyx_GIVEREF(__pyx_t_5);
                         PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_5);
@@ -2110,13 +2114,13 @@ if (!__Pyx_RefNanny) {
                         __pyx_t_16 = 0;
                         __pyx_t_17 = 0;
                         __pyx_t_18 = 0;
-                        __pyx_t_18 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_19, NULL); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 18, __pyx_L31_error)
+                        __pyx_t_18 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_19, NULL); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 36, __pyx_L31_error)
                         __Pyx_GOTREF(__pyx_t_18);
                         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
                         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
                         __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-                        /* "Decryption.py":17
+                        /* "Decryption.py":35
  *     with open("Data.txt.aes", "rb") as fIn1:
  *         try:
  *             with open("Data.txt", "wb") as fOut1:             # <<<<<<<<<<<<<<
@@ -2138,20 +2142,20 @@ if (!__Pyx_RefNanny) {
                       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
                       /*except:*/ {
                         __Pyx_AddTraceback("Decryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                        if (__Pyx_GetException(&__pyx_t_18, &__pyx_t_19, &__pyx_t_6) < 0) __PYX_ERR(0, 17, __pyx_L33_except_error)
+                        if (__Pyx_GetException(&__pyx_t_18, &__pyx_t_19, &__pyx_t_6) < 0) __PYX_ERR(0, 35, __pyx_L33_except_error)
                         __Pyx_GOTREF(__pyx_t_18);
                         __Pyx_GOTREF(__pyx_t_19);
                         __Pyx_GOTREF(__pyx_t_6);
-                        __pyx_t_17 = PyTuple_Pack(3, __pyx_t_18, __pyx_t_19, __pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 17, __pyx_L33_except_error)
+                        __pyx_t_17 = PyTuple_Pack(3, __pyx_t_18, __pyx_t_19, __pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 35, __pyx_L33_except_error)
                         __Pyx_GOTREF(__pyx_t_17);
                         __pyx_t_20 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_17, NULL);
                         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
                         __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-                        if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 17, __pyx_L33_except_error)
+                        if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 35, __pyx_L33_except_error)
                         __Pyx_GOTREF(__pyx_t_20);
                         __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_20);
                         __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
-                        if (__pyx_t_7 < 0) __PYX_ERR(0, 17, __pyx_L33_except_error)
+                        if (__pyx_t_7 < 0) __PYX_ERR(0, 35, __pyx_L33_except_error)
                         __pyx_t_21 = ((!(__pyx_t_7 != 0)) != 0);
                         if (__pyx_t_21) {
                           __Pyx_GIVEREF(__pyx_t_18);
@@ -2159,7 +2163,7 @@ if (!__Pyx_RefNanny) {
                           __Pyx_XGIVEREF(__pyx_t_6);
                           __Pyx_ErrRestoreWithState(__pyx_t_18, __pyx_t_19, __pyx_t_6);
                           __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_6 = 0; 
-                          __PYX_ERR(0, 17, __pyx_L33_except_error)
+                          __PYX_ERR(0, 35, __pyx_L33_except_error)
                         }
                         __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
                         __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
@@ -2185,7 +2189,7 @@ if (!__Pyx_RefNanny) {
                       if (__pyx_t_12) {
                         __pyx_t_15 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_tuple__6, NULL);
                         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-                        if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 17, __pyx_L21_error)
+                        if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 35, __pyx_L21_error)
                         __Pyx_GOTREF(__pyx_t_15);
                         __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
                       }
@@ -2200,41 +2204,41 @@ if (!__Pyx_RefNanny) {
                   __pyx_L40:;
                 }
 
-                /* "Decryption.py":19
+                /* "Decryption.py":37
  *             with open("Data.txt", "wb") as fOut1:
  *                 pyAesCrypt.decryptStream(fIn1, fOut1, password, bufferSize, encFileSize1)
  *             fOut1.close()             # <<<<<<<<<<<<<<
  *             fIn1.close()
  *         except ValueError:
  */
-                __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_fOut1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 19, __pyx_L21_error)
+                __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_fOut1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 37, __pyx_L21_error)
                 __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_close); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 19, __pyx_L21_error)
+                __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_close); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 37, __pyx_L21_error)
                 __Pyx_GOTREF(__pyx_t_19);
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 19, __pyx_L21_error)
+                __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 37, __pyx_L21_error)
                 __Pyx_GOTREF(__pyx_t_6);
                 __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-                /* "Decryption.py":20
+                /* "Decryption.py":38
  *                 pyAesCrypt.decryptStream(fIn1, fOut1, password, bufferSize, encFileSize1)
  *             fOut1.close()
  *             fIn1.close()             # <<<<<<<<<<<<<<
  *         except ValueError:
  *             os.remove("Data.txt")
  */
-                __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_fIn1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 20, __pyx_L21_error)
+                __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_fIn1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 38, __pyx_L21_error)
                 __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_close); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 20, __pyx_L21_error)
+                __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_close); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 38, __pyx_L21_error)
                 __Pyx_GOTREF(__pyx_t_19);
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 20, __pyx_L21_error)
+                __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 38, __pyx_L21_error)
                 __Pyx_GOTREF(__pyx_t_6);
                 __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-                /* "Decryption.py":16
+                /* "Decryption.py":34
  * if(flag==0):
  *     with open("Data.txt.aes", "rb") as fIn1:
  *         try:             # <<<<<<<<<<<<<<
@@ -2255,7 +2259,7 @@ if (!__Pyx_RefNanny) {
               __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-              /* "Decryption.py":21
+              /* "Decryption.py":39
  *             fOut1.close()
  *             fIn1.close()
  *         except ValueError:             # <<<<<<<<<<<<<<
@@ -2265,54 +2269,54 @@ if (!__Pyx_RefNanny) {
               __pyx_t_22 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_ValueError);
               if (__pyx_t_22) {
                 __Pyx_AddTraceback("Decryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_19, &__pyx_t_18) < 0) __PYX_ERR(0, 21, __pyx_L23_except_error)
+                if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_19, &__pyx_t_18) < 0) __PYX_ERR(0, 39, __pyx_L23_except_error)
                 __Pyx_GOTREF(__pyx_t_6);
                 __Pyx_GOTREF(__pyx_t_19);
                 __Pyx_GOTREF(__pyx_t_18);
 
-                /* "Decryption.py":22
+                /* "Decryption.py":40
  *             fIn1.close()
  *         except ValueError:
  *             os.remove("Data.txt")             # <<<<<<<<<<<<<<
  *             print("An Error Is Encountered\n")
  *             print("\nError 401(@1): Password May be wrong")
  */
-                __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_os); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 22, __pyx_L23_except_error)
+                __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_os); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 40, __pyx_L23_except_error)
                 __Pyx_GOTREF(__pyx_t_17);
-                __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_remove); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 22, __pyx_L23_except_error)
+                __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_remove); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 40, __pyx_L23_except_error)
                 __Pyx_GOTREF(__pyx_t_16);
                 __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-                __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 22, __pyx_L23_except_error)
+                __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 40, __pyx_L23_except_error)
                 __Pyx_GOTREF(__pyx_t_17);
                 __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
                 __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
 
-                /* "Decryption.py":23
+                /* "Decryption.py":41
  *         except ValueError:
  *             os.remove("Data.txt")
  *             print("An Error Is Encountered\n")             # <<<<<<<<<<<<<<
  *             print("\nError 401(@1): Password May be wrong")
  *             flag=1
  */
-                if (__Pyx_PrintOne(0, __pyx_kp_s_An_Error_Is_Encountered) < 0) __PYX_ERR(0, 23, __pyx_L23_except_error)
+                if (__Pyx_PrintOne(0, __pyx_kp_s_An_Error_Is_Encountered) < 0) __PYX_ERR(0, 41, __pyx_L23_except_error)
 
-                /* "Decryption.py":24
+                /* "Decryption.py":42
  *             os.remove("Data.txt")
  *             print("An Error Is Encountered\n")
  *             print("\nError 401(@1): Password May be wrong")             # <<<<<<<<<<<<<<
  *             flag=1
  * if(flag==0):
  */
-                if (__Pyx_PrintOne(0, __pyx_kp_s_Error_401_1_Password_May_be_wro) < 0) __PYX_ERR(0, 24, __pyx_L23_except_error)
+                if (__Pyx_PrintOne(0, __pyx_kp_s_Error_401_1_Password_May_be_wro) < 0) __PYX_ERR(0, 42, __pyx_L23_except_error)
 
-                /* "Decryption.py":25
+                /* "Decryption.py":43
  *             print("An Error Is Encountered\n")
  *             print("\nError 401(@1): Password May be wrong")
  *             flag=1             # <<<<<<<<<<<<<<
  * if(flag==0):
  *     with open("Credentials.txt.aes", "rb") as fIn2:
  */
-                if (PyDict_SetItem(__pyx_d, __pyx_n_s_flag, __pyx_int_1) < 0) __PYX_ERR(0, 25, __pyx_L23_except_error)
+                if (PyDict_SetItem(__pyx_d, __pyx_n_s_flag, __pyx_int_1) < 0) __PYX_ERR(0, 43, __pyx_L23_except_error)
                 __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
                 __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
                 __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
@@ -2321,7 +2325,7 @@ if (!__Pyx_RefNanny) {
               goto __pyx_L23_except_error;
               __pyx_L23_except_error:;
 
-              /* "Decryption.py":16
+              /* "Decryption.py":34
  * if(flag==0):
  *     with open("Data.txt.aes", "rb") as fIn1:
  *         try:             # <<<<<<<<<<<<<<
@@ -2341,7 +2345,7 @@ if (!__Pyx_RefNanny) {
               __pyx_L26_try_end:;
             }
 
-            /* "Decryption.py":15
+            /* "Decryption.py":33
  *     flag=1
  * if(flag==0):
  *     with open("Data.txt.aes", "rb") as fIn1:             # <<<<<<<<<<<<<<
@@ -2363,20 +2367,20 @@ if (!__Pyx_RefNanny) {
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           /*except:*/ {
             __Pyx_AddTraceback("Decryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-            if (__Pyx_GetException(&__pyx_t_18, &__pyx_t_19, &__pyx_t_6) < 0) __PYX_ERR(0, 15, __pyx_L17_except_error)
+            if (__Pyx_GetException(&__pyx_t_18, &__pyx_t_19, &__pyx_t_6) < 0) __PYX_ERR(0, 33, __pyx_L17_except_error)
             __Pyx_GOTREF(__pyx_t_18);
             __Pyx_GOTREF(__pyx_t_19);
             __Pyx_GOTREF(__pyx_t_6);
-            __pyx_t_17 = PyTuple_Pack(3, __pyx_t_18, __pyx_t_19, __pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 15, __pyx_L17_except_error)
+            __pyx_t_17 = PyTuple_Pack(3, __pyx_t_18, __pyx_t_19, __pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 33, __pyx_L17_except_error)
             __Pyx_GOTREF(__pyx_t_17);
             __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_17, NULL);
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 15, __pyx_L17_except_error)
+            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 33, __pyx_L17_except_error)
             __Pyx_GOTREF(__pyx_t_11);
             __pyx_t_21 = __Pyx_PyObject_IsTrue(__pyx_t_11);
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-            if (__pyx_t_21 < 0) __PYX_ERR(0, 15, __pyx_L17_except_error)
+            if (__pyx_t_21 < 0) __PYX_ERR(0, 33, __pyx_L17_except_error)
             __pyx_t_7 = ((!(__pyx_t_21 != 0)) != 0);
             if (__pyx_t_7) {
               __Pyx_GIVEREF(__pyx_t_18);
@@ -2384,7 +2388,7 @@ if (!__Pyx_RefNanny) {
               __Pyx_XGIVEREF(__pyx_t_6);
               __Pyx_ErrRestoreWithState(__pyx_t_18, __pyx_t_19, __pyx_t_6);
               __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_6 = 0; 
-              __PYX_ERR(0, 15, __pyx_L17_except_error)
+              __PYX_ERR(0, 33, __pyx_L17_except_error)
             }
             __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
             __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
@@ -2410,7 +2414,7 @@ if (!__Pyx_RefNanny) {
           if (__pyx_t_4) {
             __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__6, NULL);
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 15, __pyx_L1_error)
+            if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 33, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
             __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
           }
@@ -2425,7 +2429,7 @@ if (!__Pyx_RefNanny) {
       __pyx_L46:;
     }
 
-    /* "Decryption.py":14
+    /* "Decryption.py":32
  *     print("Error 404: Encrypted Files Not Found")
  *     flag=1
  * if(flag==0):             # <<<<<<<<<<<<<<
@@ -2434,23 +2438,23 @@ if (!__Pyx_RefNanny) {
  */
   }
 
-  /* "Decryption.py":26
+  /* "Decryption.py":44
  *             print("\nError 401(@1): Password May be wrong")
  *             flag=1
  * if(flag==0):             # <<<<<<<<<<<<<<
  *     with open("Credentials.txt.aes", "rb") as fIn2:
  *         try:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_flag); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_flag); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_19 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_19 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_19);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_19); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_19); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
   if (__pyx_t_7) {
 
-    /* "Decryption.py":27
+    /* "Decryption.py":45
  *             flag=1
  * if(flag==0):
  *     with open("Credentials.txt.aes", "rb") as fIn2:             # <<<<<<<<<<<<<<
@@ -2458,13 +2462,13 @@ if (!__Pyx_RefNanny) {
  *             with open("Credentials.txt", "wb") as fOut2:
  */
     /*with:*/ {
-      __pyx_t_19 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 27, __pyx_L1_error)
+      __pyx_t_19 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 45, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_19);
-      __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_t_19, __pyx_n_s_exit); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 27, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_t_19, __pyx_n_s_exit); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 45, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_t_19, __pyx_n_s_enter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 27, __pyx_L48_error)
+      __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_t_19, __pyx_n_s_enter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 45, __pyx_L48_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_18 = __Pyx_PyObject_CallNoArg(__pyx_t_6); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 27, __pyx_L48_error)
+      __pyx_t_18 = __Pyx_PyObject_CallNoArg(__pyx_t_6); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 45, __pyx_L48_error)
       __Pyx_GOTREF(__pyx_t_18);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_6 = __pyx_t_18;
@@ -2479,10 +2483,10 @@ if (!__Pyx_RefNanny) {
           __Pyx_XGOTREF(__pyx_t_2);
           __Pyx_XGOTREF(__pyx_t_3);
           /*try:*/ {
-            if (PyDict_SetItem(__pyx_d, __pyx_n_s_fIn2, __pyx_t_6) < 0) __PYX_ERR(0, 27, __pyx_L52_error)
+            if (PyDict_SetItem(__pyx_d, __pyx_n_s_fIn2, __pyx_t_6) < 0) __PYX_ERR(0, 45, __pyx_L52_error)
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-            /* "Decryption.py":28
+            /* "Decryption.py":46
  * if(flag==0):
  *     with open("Credentials.txt.aes", "rb") as fIn2:
  *         try:             # <<<<<<<<<<<<<<
@@ -2498,7 +2502,7 @@ if (!__Pyx_RefNanny) {
               __Pyx_XGOTREF(__pyx_t_9);
               /*try:*/ {
 
-                /* "Decryption.py":29
+                /* "Decryption.py":47
  *     with open("Credentials.txt.aes", "rb") as fIn2:
  *         try:
  *             with open("Credentials.txt", "wb") as fOut2:             # <<<<<<<<<<<<<<
@@ -2506,13 +2510,13 @@ if (!__Pyx_RefNanny) {
  *             print("All Data has been decrypted successfully")
  */
                 /*with:*/ {
-                  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 29, __pyx_L58_error)
+                  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 47, __pyx_L58_error)
                   __Pyx_GOTREF(__pyx_t_6);
-                  __pyx_t_12 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_exit); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 29, __pyx_L58_error)
+                  __pyx_t_12 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_exit); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 47, __pyx_L58_error)
                   __Pyx_GOTREF(__pyx_t_12);
-                  __pyx_t_19 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_enter); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 29, __pyx_L64_error)
+                  __pyx_t_19 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_enter); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 47, __pyx_L64_error)
                   __Pyx_GOTREF(__pyx_t_19);
-                  __pyx_t_18 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 29, __pyx_L64_error)
+                  __pyx_t_18 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 47, __pyx_L64_error)
                   __Pyx_GOTREF(__pyx_t_18);
                   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
                   __pyx_t_19 = __pyx_t_18;
@@ -2527,32 +2531,32 @@ if (!__Pyx_RefNanny) {
                       __Pyx_XGOTREF(__pyx_t_14);
                       __Pyx_XGOTREF(__pyx_t_13);
                       /*try:*/ {
-                        if (PyDict_SetItem(__pyx_d, __pyx_n_s_fOut2, __pyx_t_19) < 0) __PYX_ERR(0, 29, __pyx_L68_error)
+                        if (PyDict_SetItem(__pyx_d, __pyx_n_s_fOut2, __pyx_t_19) < 0) __PYX_ERR(0, 47, __pyx_L68_error)
                         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
 
-                        /* "Decryption.py":30
+                        /* "Decryption.py":48
  *         try:
  *             with open("Credentials.txt", "wb") as fOut2:
  *                 pyAesCrypt.decryptStream(fIn2, fOut2, password, bufferSize, encFileSize2)             # <<<<<<<<<<<<<<
  *             print("All Data has been decrypted successfully")
  *             fIn2.close()
  */
-                        __Pyx_GetModuleGlobalName(__pyx_t_19, __pyx_n_s_pyAesCrypt); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 30, __pyx_L68_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_19, __pyx_n_s_pyAesCrypt); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 48, __pyx_L68_error)
                         __Pyx_GOTREF(__pyx_t_19);
-                        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_19, __pyx_n_s_decryptStream); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 30, __pyx_L68_error)
+                        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_19, __pyx_n_s_decryptStream); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 48, __pyx_L68_error)
                         __Pyx_GOTREF(__pyx_t_6);
                         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-                        __Pyx_GetModuleGlobalName(__pyx_t_19, __pyx_n_s_fIn2); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 30, __pyx_L68_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_19, __pyx_n_s_fIn2); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 48, __pyx_L68_error)
                         __Pyx_GOTREF(__pyx_t_19);
-                        __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_fOut2); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 30, __pyx_L68_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_fOut2); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 48, __pyx_L68_error)
                         __Pyx_GOTREF(__pyx_t_18);
-                        __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_password); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 30, __pyx_L68_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_password); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 48, __pyx_L68_error)
                         __Pyx_GOTREF(__pyx_t_17);
-                        __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_bufferSize); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 30, __pyx_L68_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_bufferSize); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 48, __pyx_L68_error)
                         __Pyx_GOTREF(__pyx_t_16);
-                        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_encFileSize2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L68_error)
+                        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_encFileSize2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L68_error)
                         __Pyx_GOTREF(__pyx_t_1);
-                        __pyx_t_5 = PyTuple_New(5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 30, __pyx_L68_error)
+                        __pyx_t_5 = PyTuple_New(5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 48, __pyx_L68_error)
                         __Pyx_GOTREF(__pyx_t_5);
                         __Pyx_GIVEREF(__pyx_t_19);
                         PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_19);
@@ -2569,13 +2573,13 @@ if (!__Pyx_RefNanny) {
                         __pyx_t_17 = 0;
                         __pyx_t_16 = 0;
                         __pyx_t_1 = 0;
-                        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L68_error)
+                        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L68_error)
                         __Pyx_GOTREF(__pyx_t_1);
                         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
                         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
                         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-                        /* "Decryption.py":29
+                        /* "Decryption.py":47
  *     with open("Credentials.txt.aes", "rb") as fIn2:
  *         try:
  *             with open("Credentials.txt", "wb") as fOut2:             # <<<<<<<<<<<<<<
@@ -2597,20 +2601,20 @@ if (!__Pyx_RefNanny) {
                       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
                       /*except:*/ {
                         __Pyx_AddTraceback("Decryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                        if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_5, &__pyx_t_6) < 0) __PYX_ERR(0, 29, __pyx_L70_except_error)
+                        if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_5, &__pyx_t_6) < 0) __PYX_ERR(0, 47, __pyx_L70_except_error)
                         __Pyx_GOTREF(__pyx_t_1);
                         __Pyx_GOTREF(__pyx_t_5);
                         __Pyx_GOTREF(__pyx_t_6);
-                        __pyx_t_16 = PyTuple_Pack(3, __pyx_t_1, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 29, __pyx_L70_except_error)
+                        __pyx_t_16 = PyTuple_Pack(3, __pyx_t_1, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 47, __pyx_L70_except_error)
                         __Pyx_GOTREF(__pyx_t_16);
                         __pyx_t_20 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_16, NULL);
                         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
                         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-                        if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 29, __pyx_L70_except_error)
+                        if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 47, __pyx_L70_except_error)
                         __Pyx_GOTREF(__pyx_t_20);
                         __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_20);
                         __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
-                        if (__pyx_t_7 < 0) __PYX_ERR(0, 29, __pyx_L70_except_error)
+                        if (__pyx_t_7 < 0) __PYX_ERR(0, 47, __pyx_L70_except_error)
                         __pyx_t_21 = ((!(__pyx_t_7 != 0)) != 0);
                         if (__pyx_t_21) {
                           __Pyx_GIVEREF(__pyx_t_1);
@@ -2618,7 +2622,7 @@ if (!__Pyx_RefNanny) {
                           __Pyx_XGIVEREF(__pyx_t_6);
                           __Pyx_ErrRestoreWithState(__pyx_t_1, __pyx_t_5, __pyx_t_6);
                           __pyx_t_1 = 0; __pyx_t_5 = 0; __pyx_t_6 = 0; 
-                          __PYX_ERR(0, 29, __pyx_L70_except_error)
+                          __PYX_ERR(0, 47, __pyx_L70_except_error)
                         }
                         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
                         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -2644,7 +2648,7 @@ if (!__Pyx_RefNanny) {
                       if (__pyx_t_12) {
                         __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_tuple__6, NULL);
                         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-                        if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 29, __pyx_L58_error)
+                        if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 47, __pyx_L58_error)
                         __Pyx_GOTREF(__pyx_t_13);
                         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
                       }
@@ -2659,50 +2663,50 @@ if (!__Pyx_RefNanny) {
                   __pyx_L77:;
                 }
 
-                /* "Decryption.py":31
+                /* "Decryption.py":49
  *             with open("Credentials.txt", "wb") as fOut2:
  *                 pyAesCrypt.decryptStream(fIn2, fOut2, password, bufferSize, encFileSize2)
  *             print("All Data has been decrypted successfully")             # <<<<<<<<<<<<<<
  *             fIn2.close()
  *             fOut2.close()
  */
-                if (__Pyx_PrintOne(0, __pyx_kp_s_All_Data_has_been_decrypted_succ) < 0) __PYX_ERR(0, 31, __pyx_L58_error)
+                if (__Pyx_PrintOne(0, __pyx_kp_s_All_Data_has_been_decrypted_succ) < 0) __PYX_ERR(0, 49, __pyx_L58_error)
 
-                /* "Decryption.py":32
+                /* "Decryption.py":50
  *                 pyAesCrypt.decryptStream(fIn2, fOut2, password, bufferSize, encFileSize2)
  *             print("All Data has been decrypted successfully")
  *             fIn2.close()             # <<<<<<<<<<<<<<
  *             fOut2.close()
  *         except ValueError:
  */
-                __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_fIn2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 32, __pyx_L58_error)
+                __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_fIn2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 50, __pyx_L58_error)
                 __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_close); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 32, __pyx_L58_error)
+                __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_close); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 50, __pyx_L58_error)
                 __Pyx_GOTREF(__pyx_t_5);
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 32, __pyx_L58_error)
+                __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 50, __pyx_L58_error)
                 __Pyx_GOTREF(__pyx_t_6);
                 __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-                /* "Decryption.py":33
+                /* "Decryption.py":51
  *             print("All Data has been decrypted successfully")
  *             fIn2.close()
  *             fOut2.close()             # <<<<<<<<<<<<<<
  *         except ValueError:
  *             os.remove("Credentials.txt")
  */
-                __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_fOut2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 33, __pyx_L58_error)
+                __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_fOut2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 51, __pyx_L58_error)
                 __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_close); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 33, __pyx_L58_error)
+                __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_close); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 51, __pyx_L58_error)
                 __Pyx_GOTREF(__pyx_t_5);
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 33, __pyx_L58_error)
+                __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 51, __pyx_L58_error)
                 __Pyx_GOTREF(__pyx_t_6);
                 __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-                /* "Decryption.py":28
+                /* "Decryption.py":46
  * if(flag==0):
  *     with open("Credentials.txt.aes", "rb") as fIn2:
  *         try:             # <<<<<<<<<<<<<<
@@ -2723,7 +2727,7 @@ if (!__Pyx_RefNanny) {
               __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-              /* "Decryption.py":34
+              /* "Decryption.py":52
  *             fIn2.close()
  *             fOut2.close()
  *         except ValueError:             # <<<<<<<<<<<<<<
@@ -2733,44 +2737,44 @@ if (!__Pyx_RefNanny) {
               __pyx_t_22 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_ValueError);
               if (__pyx_t_22) {
                 __Pyx_AddTraceback("Decryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_5, &__pyx_t_1) < 0) __PYX_ERR(0, 34, __pyx_L60_except_error)
+                if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_5, &__pyx_t_1) < 0) __PYX_ERR(0, 52, __pyx_L60_except_error)
                 __Pyx_GOTREF(__pyx_t_6);
                 __Pyx_GOTREF(__pyx_t_5);
                 __Pyx_GOTREF(__pyx_t_1);
 
-                /* "Decryption.py":35
+                /* "Decryption.py":53
  *             fOut2.close()
  *         except ValueError:
  *             os.remove("Credentials.txt")             # <<<<<<<<<<<<<<
  *             print("An Error Is Encountered")
  *             print("Error 401(@2): Password May be wrong")
  */
-                __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_os); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 35, __pyx_L60_except_error)
+                __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_os); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 53, __pyx_L60_except_error)
                 __Pyx_GOTREF(__pyx_t_16);
-                __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_remove); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 35, __pyx_L60_except_error)
+                __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_remove); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 53, __pyx_L60_except_error)
                 __Pyx_GOTREF(__pyx_t_17);
                 __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-                __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_17, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 35, __pyx_L60_except_error)
+                __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_17, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 53, __pyx_L60_except_error)
                 __Pyx_GOTREF(__pyx_t_16);
                 __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
                 __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-                /* "Decryption.py":36
+                /* "Decryption.py":54
  *         except ValueError:
  *             os.remove("Credentials.txt")
  *             print("An Error Is Encountered")             # <<<<<<<<<<<<<<
  *             print("Error 401(@2): Password May be wrong")
  * input("Press Enter to continue...")
  */
-                if (__Pyx_PrintOne(0, __pyx_kp_s_An_Error_Is_Encountered_2) < 0) __PYX_ERR(0, 36, __pyx_L60_except_error)
+                if (__Pyx_PrintOne(0, __pyx_kp_s_An_Error_Is_Encountered_2) < 0) __PYX_ERR(0, 54, __pyx_L60_except_error)
 
-                /* "Decryption.py":37
+                /* "Decryption.py":55
  *             os.remove("Credentials.txt")
  *             print("An Error Is Encountered")
  *             print("Error 401(@2): Password May be wrong")             # <<<<<<<<<<<<<<
  * input("Press Enter to continue...")
  */
-                if (__Pyx_PrintOne(0, __pyx_kp_s_Error_401_2_Password_May_be_wron) < 0) __PYX_ERR(0, 37, __pyx_L60_except_error)
+                if (__Pyx_PrintOne(0, __pyx_kp_s_Error_401_2_Password_May_be_wron) < 0) __PYX_ERR(0, 55, __pyx_L60_except_error)
                 __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
                 __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
                 __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2779,7 +2783,7 @@ if (!__Pyx_RefNanny) {
               goto __pyx_L60_except_error;
               __pyx_L60_except_error:;
 
-              /* "Decryption.py":28
+              /* "Decryption.py":46
  * if(flag==0):
  *     with open("Credentials.txt.aes", "rb") as fIn2:
  *         try:             # <<<<<<<<<<<<<<
@@ -2799,7 +2803,7 @@ if (!__Pyx_RefNanny) {
               __pyx_L63_try_end:;
             }
 
-            /* "Decryption.py":27
+            /* "Decryption.py":45
  *             flag=1
  * if(flag==0):
  *     with open("Credentials.txt.aes", "rb") as fIn2:             # <<<<<<<<<<<<<<
@@ -2821,20 +2825,20 @@ if (!__Pyx_RefNanny) {
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           /*except:*/ {
             __Pyx_AddTraceback("Decryption", __pyx_clineno, __pyx_lineno, __pyx_filename);
-            if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_5, &__pyx_t_6) < 0) __PYX_ERR(0, 27, __pyx_L54_except_error)
+            if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_5, &__pyx_t_6) < 0) __PYX_ERR(0, 45, __pyx_L54_except_error)
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_GOTREF(__pyx_t_6);
-            __pyx_t_16 = PyTuple_Pack(3, __pyx_t_1, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 27, __pyx_L54_except_error)
+            __pyx_t_16 = PyTuple_Pack(3, __pyx_t_1, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 45, __pyx_L54_except_error)
             __Pyx_GOTREF(__pyx_t_16);
             __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_16, NULL);
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 27, __pyx_L54_except_error)
+            if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 45, __pyx_L54_except_error)
             __Pyx_GOTREF(__pyx_t_9);
             __pyx_t_21 = __Pyx_PyObject_IsTrue(__pyx_t_9);
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            if (__pyx_t_21 < 0) __PYX_ERR(0, 27, __pyx_L54_except_error)
+            if (__pyx_t_21 < 0) __PYX_ERR(0, 45, __pyx_L54_except_error)
             __pyx_t_7 = ((!(__pyx_t_21 != 0)) != 0);
             if (__pyx_t_7) {
               __Pyx_GIVEREF(__pyx_t_1);
@@ -2842,7 +2846,7 @@ if (!__Pyx_RefNanny) {
               __Pyx_XGIVEREF(__pyx_t_6);
               __Pyx_ErrRestoreWithState(__pyx_t_1, __pyx_t_5, __pyx_t_6);
               __pyx_t_1 = 0; __pyx_t_5 = 0; __pyx_t_6 = 0; 
-              __PYX_ERR(0, 27, __pyx_L54_except_error)
+              __PYX_ERR(0, 45, __pyx_L54_except_error)
             }
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -2868,7 +2872,7 @@ if (!__Pyx_RefNanny) {
           if (__pyx_t_4) {
             __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__6, NULL);
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 27, __pyx_L1_error)
+            if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           }
@@ -2883,7 +2887,7 @@ if (!__Pyx_RefNanny) {
       __pyx_L83:;
     }
 
-    /* "Decryption.py":26
+    /* "Decryption.py":44
  *             print("\nError 401(@1): Password May be wrong")
  *             flag=1
  * if(flag==0):             # <<<<<<<<<<<<<<
@@ -2892,19 +2896,19 @@ if (!__Pyx_RefNanny) {
  */
   }
 
-  /* "Decryption.py":38
+  /* "Decryption.py":56
  *             print("An Error Is Encountered")
  *             print("Error 401(@2): Password May be wrong")
  * input("Press Enter to continue...")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "Decryption.py":1
- * import pyAesCrypt             # <<<<<<<<<<<<<<
- * import os
- * #for installing pyAesCrypt please run this command:pip install pyAesCrypt
+ * """             # <<<<<<<<<<<<<<
+ *  * Password-store:Stores your Credential in AES-256 bit Encryption
+ * 
  */
   __pyx_t_6 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
