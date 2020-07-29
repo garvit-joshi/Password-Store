@@ -30,7 +30,7 @@ Note : Please click on 'Add Python 3.xx to PATH' while installing.
 
 ### Notes:
 
-1. Please Install **Microsoft Visual C++ Redistributable for Visual Studio 2019** for running binaries:
+1. Please Install **Microsoft Visual C++ Redistributable for Visual Studio 2019** before running binaries:
     1. For [x64](https://aka.ms/vs/16/release/VC_redist.x64.exe),
     2. For [x86](https://aka.ms/vs/16/release/VC_redist.x86.exe),
     3. For [ARM64](https://aka.ms/vs/16/release/VC_redist.arm64.exe).
