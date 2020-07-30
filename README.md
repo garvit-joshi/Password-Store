@@ -1,6 +1,6 @@
 # Password-Store:
-Saves your password in two Encrypted files.<br>
-Added Support to AES-256-CBC bit Encryption.<br>
+Saves your password in two Encrypted files,<br>
+with AES-256-CBC bit Encryption.<br>
 
 ## Prerequisite (for only building app from source):
 1. [Python 3 (>=3.8.5)](https://www.python.org/)
