@@ -24,9 +24,8 @@ Although Everything is compiled and you can directly run [Main.exe](https://gith
 1. For Downloading Python, [click here](https://www.python.org/) <br>
 Note : Please click on 'Add Python 3.xx to PATH' while installing.
 2. Install Required Modules:
-    1. Open command prompt.
-    2. Run ```pip install pyAesCrypt```
-    3. Run ```pip install cython```
+    1. Open command prompt, in src folder.
+    2. Run ```pip install -r requirements.txt```
 
 ### Notes:
 
