@@ -6,7 +6,6 @@ libstdc++-6.dll
 #Unecrypted text files(for testing)
 Credentials.txt
 Data.txt
-*.txt
 
 #vscode(compiler settings),__pycache__(python precompiled files) folder
 *.vscode
