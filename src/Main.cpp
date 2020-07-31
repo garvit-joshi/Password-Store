@@ -243,7 +243,7 @@ string stringFunctions(string str)
 	for (int i = 0; i < 8; i++)
 	{
 		/**********************************************************************************
-		 * "Main.exe" substring is Deleted from str;
+		 * "Main.exe" substring is Deleted from str(path);
 		**********************************************************************************/
 		str.pop_back();
 	}
@@ -475,7 +475,7 @@ int main()
 		cout << "\t\t\t\t\tMain Menu\n";
 		cout << "1. New User\n2. Retrive Your Passwords\n3. About\n";
 		cout << "4. For Encrypting Files(Data.txt, Credentials.txt)\n5. Exit\n";
-		cout << "Enter Your Choice:";
+		cout << "Enter Your Choice:"<<flush;
 		choice1 = getchar();
 		cin.ignore();
 		system("cls");
