@@ -452,7 +452,7 @@ void About() {
 	cout << "\t ||                                                                                         ||\n";
 	cout << "\t=================================================================================================\n";
 	cout << "\t ||  Git-Hub: https://github.com/garvit-joshi/Password-Store                                ||\n";
-	cout << "\t ||  E-mail:  garvitjoshi9@gmail.com, garvitjoshi9@studentpartner.com                       ||\n";
+	cout << "\t ||  E-mail:  garvitjoshi9@gmail.com,                                                       ||\n";
 	cout << "\t ||                                                                                         ||\n";
 	cout << "\t=================================================================================================\n";
 	cout << "\t ||                                                                                         ||\n";
