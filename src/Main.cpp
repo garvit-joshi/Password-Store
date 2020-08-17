@@ -251,7 +251,7 @@ string stringFunctions(string str)
 	string s1 = "";
 
 	/**********************************************************************************
-	 * '\' is changed to '\\' as Create Process takes path in '\\'. 
+	 * '\' is changed to '\\' as Create Process takes path in '\\'.
 	**********************************************************************************/
 	for (unsigned int i = 0; i < str.length(); i++)
 	{
@@ -452,7 +452,7 @@ void About() {
 	cout << "\t ||                                                                                         ||\n";
 	cout << "\t=================================================================================================\n";
 	cout << "\t ||  Git-Hub: https://github.com/garvit-joshi/Password-Store                                ||\n";
-	cout << "\t ||  E-mail:  garvitjoshi9@gmail.com,                                                       ||\n";
+	cout << "\t ||  E-mail:  garvitjoshi9@gmail.com                                                        ||\n";
 	cout << "\t ||                                                                                         ||\n";
 	cout << "\t=================================================================================================\n";
 	cout << "\t ||                                                                                         ||\n";
@@ -475,7 +475,7 @@ int main()
 		cout << "\t\t\t\t\tMain Menu\n";
 		cout << "1. New User\n2. Retrive Your Passwords\n3. About\n";
 		cout << "4. For Encrypting Files(Data.txt, Credentials.txt)\n5. Exit\n";
-		cout << "Enter Your Choice:"<<flush;
+		cout << "Enter Your Choice:" << flush;
 		choice1 = getchar();
 		cin.ignore();
 		system("cls");
