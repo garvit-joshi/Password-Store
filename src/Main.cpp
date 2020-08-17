@@ -22,7 +22,7 @@
 
 #include<Windows.h>
 
-#include <atlstr.h>
+#include<atlstr.h>
 
 using namespace std;
 
@@ -272,7 +272,7 @@ string stringFunctions(string str)
 
 void PathCalculator()
 {
-	TCHAR UPath[200];
+	TCHAR UPath[400];
 	GetModuleFileName(NULL, UPath, MAX_PATH);
 	/**********************************************************************************
 	 * The above function calculates the path of Main.exe and stores it in UPath.
@@ -373,7 +373,7 @@ int editCredential(int an)
 void Encryption()
 {
 	string Encryption_File = UniPath;
-	TCHAR Path[200];
+	TCHAR PathF[400];
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi;
 
@@ -384,8 +384,9 @@ void Encryption()
 
 
 	Encryption_File.append("Encryption.exe");
-	_tcscpy_s(Path, CA2T(Encryption_File.c_str()));
-	if (CreateProcess(Path, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
+	Encryption_File.push_back('\0');            //Zero Terminated
+	_tcscpy_s(PathF, CA2T(Encryption_File.c_str()));
+	if (CreateProcess(PathF, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
 	{
 		// Wait until child process exits.
 		WaitForSingleObject(pi.hProcess, INFINITE);
@@ -407,7 +408,7 @@ void Encryption()
 void Decryption()
 {
 	string Decryption_File = UniPath;
-	TCHAR Path[200];
+	TCHAR PathF[400];
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi;
 
@@ -418,8 +419,9 @@ void Decryption()
 
 
 	Decryption_File.append("Decryption.exe");
-	_tcscpy_s(Path, CA2T(Decryption_File.c_str()));
-	if (CreateProcess(Path, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
+	Decryption_File.push_back('\0');   //Zero Terminated 
+	_tcscpy_s(PathF, CA2T(Decryption_File.c_str()));
+	if (CreateProcess(PathF, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
 	{
 		// Wait until child process exits.
 		WaitForSingleObject(pi.hProcess, INFINITE);
