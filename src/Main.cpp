@@ -591,20 +591,16 @@ int main()
 	ifstream DataAES, CredentialsAES, DataTXT, CredentialsTXT;
 	DataAES.open("Data.txt.aes");
 	DataTXT.open("Data.txt");
-	if (DataAES) {
-		if (DataTXT) {
-			DataTXT.close();
-			remove("Data.txt");
-		}
+	if (DataAES && DataTXT) {
+		DataTXT.close();
+		remove("Data.txt");
 	}
 	DataAES.close();
 	CredentialsAES.open("Credentials.txt.aes");
 	CredentialsTXT.open("Credentials.txt");
-	if (CredentialsAES) {
-		if (CredentialsTXT) {
-			CredentialsTXT.close();
-			remove("Credentials.txt");
-		}
+	if (CredentialsAES && CredentialsTXT) {
+		CredentialsTXT.close();
+		remove("Credentials.txt");
 	}
 	CredentialsAES.close();
 	cout << "\n\nPlease!! Remove Data.txt and Credential.txt manually if they are present.\n";
