@@ -130,25 +130,15 @@ void inputCredentialData(int n, bool type = false)
 	 * type=false :New data is being written
 	 * type=true  :Old data is being updated
 	***************************************************************/
-	if (type == false) {
-		ofstream ofile("Credentials.txt", ios::out | ios::binary | ios::trunc);
-		for (int i = 0; i < n; i++) {
-			cout << "\nEntry " << i + 1 << " of " << n << " \n";
-			a.setData();
-			ofile.write((char*)&a, sizeof(a));
-		}
-		ofile.close();
+	auto trunc_or_app = type ? ios::app : ios::trunc;
+	
+	ofstream ofile("Credentials.txt", ios::out | ios::binary | trunc_or_app);
+	for (int i = 0; i < n; i++) {
+		cout << "\nEntry " << i + 1 << " of " << n << " \n";
+		a.setData();
+		ofile.write((char*)&a, sizeof(a));
 	}
-	else
-	{
-		ofstream ofile("Credentials.txt", ios::out | ios::binary | ios::app);
-		for (int i = 0; i < n; i++) {
-			cout << "\nEntry " << i + 1 << " of " << n << " \n";
-			a.setData();
-			ofile.write((char*)&a, sizeof(a));
-		}
-		ofile.close();
-	}
+	ofile.close();
 }
 
 
