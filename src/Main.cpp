@@ -230,32 +230,21 @@ int deleteCredential(int an)
 
 string stringFunctions(string str)
 {
-	for (int i = 0; i < 8; i++)
-	{
-		/**********************************************************************************
-		 * "Main.exe" substring is Deleted from str(path);
-		**********************************************************************************/
-		str.pop_back();
-	}
-
-	string s1 = "";
-
 	/**********************************************************************************
 	 * '\' is changed to '\\' as Create Process takes path in '\\'.
+	 * "Main.exe" substring is ignored from str(path);
 	**********************************************************************************/
-	for (unsigned int i = 0; i < str.length(); i++)
+	string s1 = "";
+	
+	for (unsigned int i = 0; i < str.find("Main.exe"); i++)
 	{
-		if (str[i] != '\\')
-		{
-			s1 = s1 + str[i];
-		}
-		else
-		{
-			s1 = s1 + str[i] + "\\";
+		s1.push_back(str[i]);
 
+		if (str[i] == '\\') 
+		{
+			s1.push_back('\\');
 		}
 	}
-
 
 	return s1;
 }
