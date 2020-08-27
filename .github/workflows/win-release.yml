@@ -1,0 +1,35 @@
+name: Windows
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Setup MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: build
+      run: |
+        pip install cython
+        cd src
+        cython Encryption.py --embed
+        cython Decryption.py --embed
+        cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.7.9\x64\include /link c:\hostedtoolcache\windows\python\3.7.9\x64\libs\python37.lib
+        cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.7.9\x64\include /link c:\hostedtoolcache\windows\python\3.7.9\x64\libs\python37.lib
+        cl.exe Main.cpp
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        path: D:\a\Password-Store\Password-Store\src\Encryption.exe
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        path: D:\a\Password-Store\Password-Store\src\Decryption.exe
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        path: D:\a\Password-Store\Password-Store\src\Main.exe
