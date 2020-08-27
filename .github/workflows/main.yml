@@ -1,0 +1,21 @@
+name: Windows
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run: |
+        cd src
+        pip install cython
+        cython Encryption.py --embed
+        cython Decryption.py --embed
+        cl --version
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        path: D:\a\Password-Store\Password-Store\src\Main.exe
