@@ -36,4 +36,4 @@ jobs:
     - name: Upload Python3.7.9 Lib
       uses: actions/upload-artifact@v2
       with:
-        path: c:\hostedtoolcache\windows\python\3.7.9\x64\libs\python37.lib
+        path: c:\hostedtoolcache\windows\python\3.7.9\python37.dll
