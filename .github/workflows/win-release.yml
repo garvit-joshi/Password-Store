@@ -21,15 +21,19 @@ jobs:
         cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.7.9\x64\include /link c:\hostedtoolcache\windows\python\3.7.9\x64\libs\python37.lib
         cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.7.9\x64\include /link c:\hostedtoolcache\windows\python\3.7.9\x64\libs\python37.lib
         cl.exe Main.cpp
-    - name: Upload a Build Artifact
+    - name: Upload Encryption.exe
       uses: actions/upload-artifact@v2
       with:
         path: D:\a\Password-Store\Password-Store\src\Encryption.exe
-    - name: Upload a Build Artifact
+    - name: Upload Decryption.exe
       uses: actions/upload-artifact@v2
       with:
         path: D:\a\Password-Store\Password-Store\src\Decryption.exe
-    - name: Upload a Build Artifact
+    - name: Upload Main.exe
       uses: actions/upload-artifact@v2
       with:
         path: D:\a\Password-Store\Password-Store\src\Main.exe
+    - name: Upload Python3.7.9 Lib
+      uses: actions/upload-artifact@v2
+      with:
+        path: c:\hostedtoolcache\windows\python\3.7.9\x64\libs\python37.lib
