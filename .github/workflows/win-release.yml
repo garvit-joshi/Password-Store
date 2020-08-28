@@ -33,7 +33,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         path: D:\a\Password-Store\Password-Store\src\Main.exe
-    - name: Upload Python3.7.9 Lib
+    - name: Upload Python3.7.9 DLL
       uses: actions/upload-artifact@v2
       with:
         path: c:\hostedtoolcache\windows\python\3.7.9\python37.dll
