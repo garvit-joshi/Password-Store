@@ -1,4 +1,4 @@
-name: Windows-x32-Build
+name: Windows x86
 
 on: [push]
 
