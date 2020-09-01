@@ -22,3 +22,7 @@ __pycache__
 
 #used by linker(MSVC)
 *.ilk
+
+#cython files
+Encryption.c
+Decryption.c
