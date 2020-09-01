@@ -1,6 +1,8 @@
 # Password-Store:
 Saves your password in two Encrypted files,<br>
 with AES-256-CBC bit Encryption.<br>
+![Windows x86](https://github.com/garvit-joshi/Password-Store/workflows/Windows%20x86/badge.svg)
+![Windows x64](https://github.com/garvit-joshi/Password-Store/workflows/Windows%20x64/badge.svg)
 
 ## Prerequisite (for only building app from source):
 1. [Python 3 (>=3.8.5)](https://www.python.org/)
