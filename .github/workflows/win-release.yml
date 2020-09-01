@@ -8,6 +8,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.5'
+          architecture: 'x64'
 
     - name: Setup MSVC
       uses: ilammy/msvc-dev-cmd@v1
@@ -19,8 +23,8 @@ jobs:
         cd src
         cython Encryption.py --embed
         cython Decryption.py --embed
-        cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.7.9\x64\include /link c:\hostedtoolcache\windows\python\3.7.9\x64\libs\python37.lib
-        cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.7.9\x64\include /link c:\hostedtoolcache\windows\python\3.7.9\x64\libs\python37.lib
+        cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.8.5\x64\include /link c:\hostedtoolcache\windows\python\3.8.5\x64\libs\python38.lib
+        cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.8.5\x64\include /link c:\hostedtoolcache\windows\python\3.8.5\x64\libs\python38.lib
         cl /EHsc Main.cpp
     - name: Upload Encryption.exe
       uses: actions/upload-artifact@v2
@@ -34,7 +38,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         path: D:\a\Password-Store\Password-Store\src\Main.exe
-    - name: Upload Python3.7.9 DLL
+    - name: Upload Python3.8.5 DLL
       uses: actions/upload-artifact@v2
       with:
-        path: c:\hostedtoolcache\windows\python\3.7.9\x64\python37.dll
+        path: c:\hostedtoolcache\windows\python\3.8.9\x64\python38.dll
