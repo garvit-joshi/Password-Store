@@ -12,10 +12,10 @@ jobs:
     - name: Delete all python Installation Folders
       run: |
         cd c:\hostedtoolcache\windows\python\
-        rmdir 2.7.18
-        rmdir 3.5.4
-        rmdir 3.6.8
-        rmdir 3.7.9
+        rmdir /Q /S 2.7.18
+        rmdir /Q /S 3.5.4
+        rmdir /Q /S 3.6.8
+        rmdir /Q /S 3.7.9
 
     - uses: actions/setup-python@v2
       with:
