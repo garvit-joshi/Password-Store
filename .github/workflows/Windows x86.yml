@@ -8,6 +8,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2.3.2
+
+    - name: Delete all python Installation Folders
+      run: |
+        cd c:\hostedtoolcache\windows\python
+        DEL /F/Q/S *.* > NUL
+
     - uses: actions/setup-python@v2
       with:
         python-version: '3.8.5'
@@ -28,8 +34,7 @@ jobs:
         cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.8.5\x86\include /link c:\hostedtoolcache\windows\python\3.8.5\x86\libs\python38.lib
         cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.8.5\x86\include /link c:\hostedtoolcache\windows\python\3.8.5\x86\libs\python38.lib
         cl /EHsc Main.cpp
-        cd c:\hostedtoolcache\windows\python
-        dir
+
     - name: Upload Encryption.exe
       uses: actions/upload-artifact@v2
       with:
