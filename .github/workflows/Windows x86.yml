@@ -11,7 +11,7 @@ jobs:
 
     - name: Delete all python Installation Folders
       run: |
-        rmdir /s /q "c:\hostedtoolcache\windows\python"
+        rmdir /s /q "c:\hostedtoolcache\windows\python\"
 
     - uses: actions/setup-python@v2
       with:
