@@ -20,7 +20,6 @@ jobs:
 
     - name: build
       run: |
-        pip3 -V
         pip3 install cython
         pip3 install pyAesCrypt
         cd src
@@ -29,9 +28,6 @@ jobs:
         cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.8.5\x86\include /link c:\hostedtoolcache\windows\python\3.8.5\x86\libs\python38.lib
         cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.8.5\x86\include /link c:\hostedtoolcache\windows\python\3.8.5\x86\libs\python38.lib
         cl /EHsc Main.cpp
-        cd c:\hostedtoolcache\windows\python\3.8.5\x86\Scripts\
-        dir
-        tree /f
     - name: Upload Encryption.exe
       uses: actions/upload-artifact@v2
       with:
