@@ -18,8 +18,8 @@ jobs:
 
     - name: build
       run: |
-        pip install cython
-        pip install pyAesCrypt
+        pip3 install cython
+        pip3 install pyAesCrypt
         cd src
         cython Encryption.py --embed
         cython Decryption.py --embed
