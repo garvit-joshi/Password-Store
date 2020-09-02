@@ -20,6 +20,7 @@ jobs:
 
     - name: build
       run: |
+        pip -V
         pip install cython
         pip install pyAesCrypt
         cd src
