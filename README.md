@@ -29,7 +29,7 @@ Note : Please click on 'Add Python 3.xx to PATH' while installing.
     1. Open command prompt, in src folder.
     2. Run ```pip install -r requirements.txt```
 
-### Notes:
+## Notes:
 
 1. Please Install **Microsoft Visual C++ Redistributable for Visual Studio 2019** before running binaries:
     1. For [x64](https://aka.ms/vs/16/release/VC_redist.x64.exe),
