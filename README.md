@@ -15,8 +15,8 @@ Although Everything is compiled and you can directly run [Main.exe](https://gith
 1. Install Python3 with Environment Path. [click here](https://www.python.org/)
 2. Install a C++ Compiler (Copiler Used In this project: [Microsoft C++ Compiler-MSVC](https://visualstudio.microsoft.com/downloads/))
 3. Open cmd in folder and type <br>
-3.1. ```cython Encryption.py --embed```  
-3.2. ```cython Decryption.py --embed```
+    1. ```cython Encryption.py --embed```  
+    2. ```cython Decryption.py --embed```
 4. The above step will create ```Encryption.c``` and ```Decryption.c```.
 5. Build ```Encryption.c``` , ```Decryption.c``` and ```Main.cpp```.
     1. ```cl Encryption.c /I C:\Python38\include /link C:\Python38\libs\python38.lib```
