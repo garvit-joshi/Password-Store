@@ -19,6 +19,8 @@ Although Everything is compiled and you can directly run [Main.exe](https://gith
 3.2. ```cython Decryption.py --embed```
 4. The above step will create ```Encryption.c``` and ```Decryption.c```.
 5. Build ```Encryption.c``` , ```Decryption.c``` and ```Main.cpp```.
+    1. ```cl Encryption.c /I C:\Python38\include /link C:\Python38\libs\python38.lib```
+    2. ```cl Decryption.c /I C:\Python38\include /link C:\Python38\libs\python38.lib```
 6. Run [Main.exe](https://github.com/garvit-joshi/Password-Store/tree/master/bin64)
 
 ### Support (for only building app from source):
