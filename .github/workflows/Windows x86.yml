@@ -23,7 +23,7 @@ jobs:
         pip3 install cython
         pip3 install pyAesCrypt
         cd src
-        cd
+        %cd%
         cython Encryption.py --embed
         cython Decryption.py --embed
         cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.9.0\x86\include /link c:\hostedtoolcache\windows\python\3.9.0\x86\libs\python38.lib
