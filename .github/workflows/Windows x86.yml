@@ -33,10 +33,17 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Application-x86
-        path: |
-          D:/a/assword-Store/Password-Store/src/Encryption.exe
-          D:/a/Password-Store/Password-Store/src/Decryption.exe
-          D:/a/Password-Store/Password-Store/src/Main.exe
+        path: D:/a/assword-Store/Password-Store/src/Encryption.exe
+    - name: Upload Executables and DLLs(x86)
+      uses: actions/upload-artifact@v2
+      with:
+        name: Application-x86
+        path: D:/a/Password-Store/Password-Store/src/Decryption.exe
+    - name: Upload Executables and DLLs(x86)
+      uses: actions/upload-artifact@v2
+      with:
+        name: Application-x86
+        path: D:/a/Password-Store/Password-Store/src/Main.exe
     - name: Upload Executables and DLLs(x86)
       uses: actions/upload-artifact@v2
       with:
