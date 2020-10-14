@@ -131,7 +131,7 @@ void inputCredentialData(int n, bool type = false)
 	 * type=true  :Old data is being updated
 	***************************************************************/
 	auto trunc_or_app = type ? ios::app : ios::trunc;
-	
+
 	ofstream ofile("Credentials.txt", ios::out | ios::binary | trunc_or_app);
 	for (int i = 0; i < n; i++) {
 		cout << "\nEntry " << i + 1 << " of " << n << " \n";
@@ -235,12 +235,12 @@ string stringFunctions(string str)
 	 * "Main.exe" substring is ignored from str(path);
 	**********************************************************************************/
 	string s1 = "";
-	
+
 	for (unsigned int i = 0; i < str.find("Main.exe"); i++)
 	{
 		s1.push_back(str[i]);
 
-		if (str[i] == '\\') 
+		if (str[i] == '\\')
 		{
 			s1.push_back('\\');
 		}
