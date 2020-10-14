@@ -26,6 +26,7 @@ jobs:
         cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.9.0\x64\include /link c:\hostedtoolcache\windows\python\3.9.0\x64\libs\python39.lib
         cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.9.0\x64\include /link c:\hostedtoolcache\windows\python\3.9.0\x64\libs\python39.lib
         cl /EHsc Main.cpp
+
     - name: Upload Executables and DLLs
       uses: actions/upload-artifact@v2
       with:
@@ -34,7 +35,6 @@ jobs:
           D:/a/assword-Store/Password-Store/src/Encryption.exe
           D:/a/Password-Store/Password-Store/src/Decryption.exe
           D:/a/Password-Store/Password-Store/src/Main.exe
-          c:/hostedtoolcache/windows/python/3.9.0/x64/python39.dll
     - name: Upload Executables and DLLs
       uses: actions/upload-artifact@v2
       with:
