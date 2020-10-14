@@ -31,7 +31,7 @@ jobs:
       with:
         name: Application-x64
         path: |
-          D:\a\Password-Store\Password-Store\src\Encryption.exe
-          D:\a\Password-Store\Password-Store\src\Decryption.exe
-          D:\a\Password-Store\Password-Store\src\Main.exe
-          c:\hostedtoolcache\windows\python\3.9.0\x64\python39.dll
+          D:/a/assword-Store/Password-Store/src/Encryption.exe
+          D:/a/Password-Store/Password-Store/src/Decryption.exe
+          D:/a/Password-Store/Password-Store/src/Main.exe
+          c:/hostedtoolcache/windows/python/3.9.0/x64/python39.dll
