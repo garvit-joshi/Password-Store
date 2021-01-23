@@ -1,3 +1,2 @@
-cryptography==3.2
 Cython==0.29.21
-pyAesCrypt==0.4.3
+pyAesCrypt==5.0.0
