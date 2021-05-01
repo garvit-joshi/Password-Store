@@ -10,6 +10,7 @@ Data.txt
 #vscode(compiler settings),__pycache__(python precompiled files) folder
 *.vscode
 __pycache__
+env
 
 #Encrypted files
 *.aes

@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
-        python-version: '3.9.1'
+        python-version: '3.9.4'
         architecture: 'x86'
 
     - name: Setup MSVC
@@ -20,13 +20,12 @@ jobs:
 
     - name: build
       run: |
-        pip3 install cython
-        pip3 install pyAesCrypt
         cd src
+        pip3 install -r requirements.txt
         cython Encryption.py --embed
         cython Decryption.py --embed
-        cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.9.1\x86\include /link c:\hostedtoolcache\windows\python\3.9.1\x86\libs\python39.lib
-        cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.9.1\x86\include /link c:\hostedtoolcache\windows\python\3.9.1\x86\libs\python39.lib
+        cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.9.4\x86\include /link c:\hostedtoolcache\windows\python\3.9.4\x86\libs\python39.lib
+        cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.9.4\x86\include /link c:\hostedtoolcache\windows\python\3.9.4\x86\libs\python39.lib
         cl /EHsc Main.cpp
 
     - name: Upload Executables and DLLs(x86)
@@ -48,4 +47,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Application-x86
-        path: c:/hostedtoolcache/windows/python/3.9.1/x86/python39.dll
+        path: c:/hostedtoolcache/windows/python/3.9.4/x86/python39.dll
