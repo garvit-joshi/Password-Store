@@ -16,25 +16,26 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 *******************************************************************************/
-#include<iostream>
+#include <iostream>
 
-#include<fstream>
+#include <fstream>
 
-#include<Windows.h>
+#include <Windows.h>
 
-#include<atlstr.h>
+#include <atlstr.h>
 
 using namespace std;
 
+string UniPath; //Will Contain Folder Location
 
-string UniPath;           //Will Contain Folder Location
-
-
-class Data {
+class Data
+{
 	char Name[100] = "None";
 	int n = 0;
+
 public:
-	int setValues() {
+	int setValues()
+	{
 		cout << "Please Enter Your Name:";
 		cin.get(Name, 100);
 		cout << "\n\n\tHello!! " << Name << " I will asist you in the process\n\n\n";
@@ -43,27 +44,32 @@ public:
 		system("cls");
 		return n;
 	}
-	int getValues() {
+	int getValues()
+	{
 		system("cls");
 		cout << "Welcome!! " << Name;
 		cout << "\nNo. Of Passwords you have saved:" << n;
 		return n;
 	}
-	int incNumber(int an) {
+	int incNumber(int an)
+	{
 		n += an;
 		return n;
 	}
-	int decNumber() {
+	int decNumber()
+	{
 		n--;
 		return n;
 	}
 };
 
-
-class Credentials {
+class Credentials
+{
 	char company[100], username[100], password[100];
+
 public:
-	void setData() {
+	void setData()
+	{
 		cin.ignore();
 		cout << "\t\tEnter The Companies Name:";
 		cin.get(company, 100);
@@ -74,30 +80,31 @@ public:
 		cin.ignore();
 		cin.get(password, 100);
 	}
-	void printData() {
+	void printData()
+	{
 		cout << "\n\t\tThe Companies Name:" << company;
 		cout << "\n\t\tYour Username/Email:" << username;
 		cout << "\n\t\tYour Password:" << password << endl;
 	}
-	void setCompName() {
+	void setCompName()
+	{
 		cout << "Enter The Companies Name:";
 		cin.ignore();
 		cin.get(company, 100);
 	}
-	void setUserEmail() {
+	void setUserEmail()
+	{
 		cout << "Enter Your Username/Email:";
 		cin.ignore();
 		cin.get(username, 100);
 	}
-	void setPassword() {
+	void setPassword()
+	{
 		cout << "Enter Your Password:";
 		cin.ignore();
 		cin.get(password, 100);
 	}
 };
-
-
-
 
 void outputCredentialData(int n)
 {
@@ -111,7 +118,8 @@ void outputCredentialData(int n)
 	ifile.seekg(0);
 	cout << "\n\n======================================================================\n";
 	cout << "\n==================================================================\n\n";
-	while (ifile.read((char*)&a, sizeof(a))) {
+	while (ifile.read((char *)&a, sizeof(a)))
+	{
 		cout << "Entry " << EntryNumber << " of " << n;
 		a.printData();
 		cout << "\n==================================================================\n\n";
@@ -120,7 +128,6 @@ void outputCredentialData(int n)
 	cout << "======================================================================\n\n";
 	ifile.close();
 }
-
 
 void inputCredentialData(int n, bool type = false)
 {
@@ -133,16 +140,17 @@ void inputCredentialData(int n, bool type = false)
 	auto trunc_or_app = type ? ios::app : ios::trunc;
 
 	ofstream ofile("Credentials.txt", ios::out | ios::binary | trunc_or_app);
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
+	{
 		cout << "\nEntry " << i + 1 << " of " << n << " \n";
 		a.setData();
-		ofile.write((char*)&a, sizeof(a));
+		ofile.write((char *)&a, sizeof(a));
 	}
 	ofile.close();
 }
 
-
-int inputDatafile(bool type = false, int an = 0) {
+int inputDatafile(bool type = false, int an = 0)
+{
 	Data D;
 	int n = 0;
 	/***********************************************************
@@ -150,25 +158,26 @@ int inputDatafile(bool type = false, int an = 0) {
 	 * type=false :New data is being written
 	 * type=true  :Old data is being updated
 	************************************************************/
-	if (type == false) {
+	if (type == false)
+	{
 		n = D.setValues();
 		ofstream ofile("Data.txt", ios::out | ios::binary | ios::trunc);
-		ofile.write((char*)&D, sizeof(D));
+		ofile.write((char *)&D, sizeof(D));
 		ofile.close();
-		inputCredentialData(n);   //new data will be written
+		inputCredentialData(n); //new data will be written
 	}
-	else if (type == true) {
+	else if (type == true)
+	{
 		ifstream DataFile1("Data.txt", ios::in | ios::binary);
-		DataFile1.read((char*)&D, sizeof(D));
+		DataFile1.read((char *)&D, sizeof(D));
 		n = D.incNumber(an);
 		DataFile1.close();
 		ofstream DataFile2("Data.txt", ios::in | ios::binary | ios::trunc);
-		DataFile2.write((char*)&D, sizeof(D));
+		DataFile2.write((char *)&D, sizeof(D));
 		DataFile2.close();
 	}
 	return n;
 }
-
 
 int deleteCredential(int an)
 {
@@ -181,7 +190,7 @@ int deleteCredential(int an)
 	Credentials a;
 	ifstream Credentialsfile("Credentials.txt", ios::in | ios::binary);
 	ofstream tempfile("Temp.txt", ios::out | ios::binary | ios::trunc);
-	while (Credentialsfile.read((char*)&a, sizeof(a)))
+	while (Credentialsfile.read((char *)&a, sizeof(a)))
 	{
 		if (count == an)
 		{
@@ -191,7 +200,7 @@ int deleteCredential(int an)
 		}
 		else
 		{
-			tempfile.write((char*)&a, sizeof(a));
+			tempfile.write((char *)&a, sizeof(a));
 		}
 		count++;
 	}
@@ -205,16 +214,16 @@ int deleteCredential(int an)
 	{
 		ifstream datafile("Data.txt", ios::binary | ios::in);
 		Data D;
-		datafile.read((char*)&D, sizeof(D));
+		datafile.read((char *)&D, sizeof(D));
 		D.decNumber();
 		datafile.close();
 		ofstream newdatafile("Data.txt", ios::binary | ios::out | ios::trunc);
-		newdatafile.write((char*)&D, sizeof(D));
+		newdatafile.write((char *)&D, sizeof(D));
 		ifstream newtempfile("Temp.txt", ios::in | ios::binary);
 		ofstream newCredentialsfile("Credentials.txt", ios::out | ios::binary | ios::trunc);
-		while (newtempfile.read((char*)&a, sizeof(a)))
+		while (newtempfile.read((char *)&a, sizeof(a)))
 		{
-			newCredentialsfile.write((char*)&a, sizeof(a));
+			newCredentialsfile.write((char *)&a, sizeof(a));
 		}
 		newdatafile.close();
 		newCredentialsfile.close();
@@ -271,7 +280,6 @@ void PathCalculator()
 	UniPath = temp;
 }
 
-
 int editCredential(int an)
 {
 	/*********************************************************************************
@@ -281,7 +289,7 @@ int editCredential(int an)
 	Credentials a;
 	ifstream Credentialsfile("Credentials.txt", ios::in | ios::binary);
 	ofstream tempfile("Temp.txt", ios::out | ios::binary | ios::trunc);
-	while (Credentialsfile.read((char*)&a, sizeof(a)))
+	while (Credentialsfile.read((char *)&a, sizeof(a)))
 	{
 		if (count == an)
 		{
@@ -300,26 +308,30 @@ int editCredential(int an)
 			cout << "\n4. Edit Whole Credential";
 			cout << "\n\t\tChoice:";
 			cin >> choice;
-			if (choice == 1) {
+			if (choice == 1)
+			{
 				a.setCompName();
 			}
-			else if (choice == 2) {
+			else if (choice == 2)
+			{
 				a.setUserEmail();
 			}
-			else if (choice == 3) {
+			else if (choice == 3)
+			{
 				a.setPassword();
 			}
-			else if (choice == 4) {
+			else if (choice == 4)
+			{
 				a.setData();
 			}
-			tempfile.write((char*)&a, sizeof(a));
+			tempfile.write((char *)&a, sizeof(a));
 			/******************************************
 			 * Write the new data in a temp file
 			******************************************/
 		}
 		else
 		{
-			tempfile.write((char*)&a, sizeof(a));
+			tempfile.write((char *)&a, sizeof(a));
 			/*****************************************
 			 * Everydata that has not to be edited is
 			 * written as it is into temp.txt
@@ -338,9 +350,9 @@ int editCredential(int an)
 		*************************************************************/
 		ifstream newtempfile("Temp.txt", ios::in | ios::binary);
 		ofstream newCredentialsfile("Credentials.txt", ios::out | ios::binary | ios::trunc);
-		while (newtempfile.read((char*)&a, sizeof(a)))
+		while (newtempfile.read((char *)&a, sizeof(a)))
 		{
-			newCredentialsfile.write((char*)&a, sizeof(a));
+			newCredentialsfile.write((char *)&a, sizeof(a));
 		}
 		newCredentialsfile.close();
 		newtempfile.close();
@@ -356,20 +368,18 @@ void Encryption()
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi;
 
-
 	ZeroMemory(&si, sizeof(si));
 	si.cb = sizeof(si);
 	ZeroMemory(&pi, sizeof(pi));
 
-
 	Encryption_File.append("Encryption.exe");
-	Encryption_File.push_back('\0');            //Zero Terminated
+	Encryption_File.push_back('\0'); //Zero Terminated
 	_tcscpy_s(PathF, CA2T(Encryption_File.c_str()));
 	if (CreateProcess(PathF, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
 	{
 		// Wait until child process exits.
 		WaitForSingleObject(pi.hProcess, INFINITE);
-		// Close process and thread handles. 
+		// Close process and thread handles.
 		CloseHandle(pi.hProcess);
 		CloseHandle(pi.hThread);
 	}
@@ -391,20 +401,18 @@ void Decryption()
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi;
 
-
 	ZeroMemory(&si, sizeof(si));
 	si.cb = sizeof(si);
 	ZeroMemory(&pi, sizeof(pi));
 
-
 	Decryption_File.append("Decryption.exe");
-	Decryption_File.push_back('\0');   //Zero Terminated 
+	Decryption_File.push_back('\0'); //Zero Terminated
 	_tcscpy_s(PathF, CA2T(Decryption_File.c_str()));
 	if (CreateProcess(PathF, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
 	{
 		// Wait until child process exits.
 		WaitForSingleObject(pi.hProcess, INFINITE);
-		// Close process and thread handles. 
+		// Close process and thread handles.
 		CloseHandle(pi.hProcess);
 		CloseHandle(pi.hThread);
 	}
@@ -419,7 +427,8 @@ void Decryption()
 	}
 }
 
-void About() {
+void About()
+{
 	system("CLS");
 	cout << "\n\n\n";
 	cout << "\t ||                                                                                         ||\n";
@@ -438,8 +447,6 @@ void About() {
 	cout << "\t=================================================================================================\n";
 	cout << "\t ||                                                                                         ||\n";
 }
-
-
 
 int main()
 {
@@ -460,24 +467,29 @@ int main()
 		choice1 = getchar();
 		cin.ignore();
 		system("cls");
-		if (choice1 == '1') {
+		if (choice1 == '1')
+		{
 			cout << "\n\n\t";
 			inputDatafile();
 			Encryption();
 		}
-		else if (choice1 == '2') {
+		else if (choice1 == '2')
+		{
 			ifstream check1, check2;
 			Decryption();
-			while (ch1 == 'Y' || ch1 == 'y') {
+			while (ch1 == 'Y' || ch1 == 'y')
+			{
 				check1.open("Data.txt");
-				if (!check1) {
+				if (!check1)
+				{
 					cout << "\nError 404: Data.txt Does Not Exist.\n\n";
 					cout << "Press Enter to Continue";
 					cin.ignore();
 					return 0;
 				}
 				check2.open("Credentials.txt");
-				if (!check2) {
+				if (!check2)
+				{
 					cout << "\nError 404: Credentials.txt Does Not Exist.\n\n";
 					cout << "Press Enter to Continue...";
 					cin.ignore();
@@ -487,7 +499,7 @@ int main()
 				check2.close();
 				Data D;
 				ifstream ifile("Data.txt", ios::in | ios::binary);
-				ifile.read((char*)&D, sizeof(D));
+				ifile.read((char *)&D, sizeof(D));
 				n = D.getValues();
 				ifile.close();
 				outputCredentialData(n);
@@ -496,14 +508,16 @@ int main()
 				cout << "4. No Action\n";
 				cout << "Enter Your Choice:";
 				cin >> choice2;
-				if (choice2 == '1') {
+				if (choice2 == '1')
+				{
 					cout << "\nHow Many New Credential do you want to add:";
 					cin >> an;
 					inputCredentialData(an, true);
 					n = inputDatafile(true, an);
 					Encryption();
 				}
-				else if (choice2 == '2') {
+				else if (choice2 == '2')
+				{
 					cout << "Which Creddential Entry do you want to delete:";
 					cin >> an;
 					flag = deleteCredential(an);
@@ -516,14 +530,17 @@ int main()
 						cout << "Data Deleted Successfully";
 					}
 				}
-				else if (choice2 == '3') {
+				else if (choice2 == '3')
+				{
 					cout << "Which Creddential Entry do you want to Edit:";
 					cin >> an;
 					flag = editCredential(an);
-					if (flag == 0) {
+					if (flag == 0)
+					{
 						cout << "\n No Record Found for that Perticular Entry";
 					}
-					else {
+					else
+					{
 						cout << "\n Data Has been Edited Successfully\n";
 					}
 				}
@@ -534,19 +551,23 @@ int main()
 			cout << "Program will be Encrypting your file again(You are free to choose a new password.)\n";
 			Encryption();
 		}
-		else if (choice1 == '3') {
+		else if (choice1 == '3')
+		{
 			About();
 		}
-		else if (choice1 == '4') {
+		else if (choice1 == '4')
+		{
 			ifstream DataTXT, CredentialsTXT;
 			DataTXT.open("Data.txt");
-			if (!DataTXT) {
+			if (!DataTXT)
+			{
 				cout << "\n** No Data.txt Found **\n";
 				flag1 = 1;
 			}
 			DataTXT.close();
 			CredentialsTXT.open("Credentials.txt");
-			if (!CredentialsTXT) {
+			if (!CredentialsTXT)
+			{
 				cout << "\n** No Credentials.txt Found **\n";
 				flag1 = 1;
 			}
@@ -557,7 +578,8 @@ int main()
 			}
 			flag1 = 0;
 		}
-		else if (choice1 == '5') {
+		else if (choice1 == '5')
+		{
 			About();
 			break;
 		}
@@ -570,14 +592,16 @@ int main()
 	ifstream DataAES, CredentialsAES, DataTXT, CredentialsTXT;
 	DataAES.open("Data.txt.aes");
 	DataTXT.open("Data.txt");
-	if (DataAES && DataTXT) {
+	if (DataAES && DataTXT)
+	{
 		DataTXT.close();
 		remove("Data.txt");
 	}
 	DataAES.close();
 	CredentialsAES.open("Credentials.txt.aes");
 	CredentialsTXT.open("Credentials.txt");
-	if (CredentialsAES && CredentialsTXT) {
+	if (CredentialsAES && CredentialsTXT)
+	{
 		CredentialsTXT.close();
 		remove("Credentials.txt");
 	}

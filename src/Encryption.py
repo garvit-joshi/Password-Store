@@ -19,15 +19,16 @@
 """
 import os
 import pyAesCrypt
-#for installing pyAesCrypt please run this command(cmd):pip install pyAesCrypt
-password=input("Please Enter A master password:")
+# for installing pyAesCrypt please run this command(cmd):pip install pyAesCrypt
+password = input("Please Enter A master password:")
 print("\nFor Your Ease, the program can store your password in a file(Password.txt)")
-choice=input("\nDo you want to save the file in Password.txt(Y/N):")
+choice = input("\nDo you want to save the file in Password.txt(Y/N):")
 if choice in ('Y', 'y'):
-    ofile=open("Password.txt","w")
+    ofile = open("Password.txt", "w")
     ofile.write("Password:"+password)
     print("\nPassword has been stored in Password.txt")
-    ofile.write("\nPlease copy this password in a diary and delete this file Permanently.\n")
+    ofile.write(
+        "\nPlease copy this password in a diary and delete this file Permanently.\n")
     ofile.close()
 else:
     print("\nAs per your request, Password.txt will not be created.\n")
