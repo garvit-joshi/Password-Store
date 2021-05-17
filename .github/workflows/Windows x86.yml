@@ -35,7 +35,7 @@ jobs:
           D:/a/Password-Store/Password-Store/src/Encryption.exe
           D:/a/Password-Store/Password-Store/src/Decryption.exe
           D:/a/Password-Store/Password-Store/src/Main.exe
-    - name: Upload Third Parth Lib(x86)
+    - name: Upload Third Party Lib(x86)
       uses: actions/upload-artifact@v2
       with:
         name: Application-x86
@@ -66,5 +66,5 @@ jobs:
         git config user.name 'github-actions[bot]'
         git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
         git pull --ff-only
-        git commit -am "bot: updated bin32 Binaries"
+        git commit -am "bot: updated bin32 Binaries and Python Lib"
         git push
