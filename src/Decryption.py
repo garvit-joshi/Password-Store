@@ -35,8 +35,6 @@ if FLAG == 0:
             with open("Data.txt", "wb") as fOut1:
                 pyAesCrypt.decryptStream(
                     fIn1, fOut1, password, BUFFERSIZE, encFileSize1)
-            fOut1.close()
-            fIn1.close()
         except ValueError:
             os.remove("Data.txt")
             print("An Error Is Encountered\n")
@@ -49,8 +47,6 @@ if FLAG == 0:
                 pyAesCrypt.decryptStream(
                     fIn2, fOut2, password, BUFFERSIZE, encFileSize2)
             print("All Data has been decrypted successfully")
-            fIn2.close()
-            fOut2.close()
         except ValueError:
             os.remove("Credentials.txt")
             print("An Error Is Encountered")
