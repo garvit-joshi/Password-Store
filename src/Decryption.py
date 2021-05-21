@@ -22,7 +22,7 @@ import pyAesCrypt
 # for installing pyAesCrypt please run this command:pip install pyAesCrypt.
 password = input("Please Enter Your Master Password:")
 FLAG = 0
-BUFFERSIZE = 64 * 1024
+BUFFERSIZE = 128 * 1024
 try:
     encFileSize1 = os.stat("Data.txt.aes").st_size
     encFileSize2 = os.stat("Credentials.txt.aes").st_size

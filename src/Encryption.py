@@ -33,7 +33,7 @@ if choice in ('Y', 'y'):
 else:
     print("\nAs per your request, Password.txt will not be created.\n")
     print("Please Memorize the password.\n")
-BUFFERSIZE = 64 * 1024
+BUFFERSIZE = 128 * 1024
 try:
     with open("Data.txt", "rb") as fIn1:
         with open("Data.txt.aes", "wb") as fOut1:
