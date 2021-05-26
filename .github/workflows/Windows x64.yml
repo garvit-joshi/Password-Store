@@ -19,6 +19,7 @@ jobs:
     - name: build
       run: |
         cd src
+        cl
         pip3 install -r requirements.txt
         cython Encryption.py --embed
         cython Decryption.py --embed
@@ -48,7 +49,7 @@ jobs:
         name: Application-x64
         path: |
           c:/hostedtoolcache/windows/python/3.9.5/x64/python39.dll
-    - name: Move Binaries to bin32
+    - name: Move Binaries to bin64
       run: |
         mv D:/a/Password-Store/Password-Store/src/Encryption.exe D:/a/Password-Store/Password-Store/bin64 -Force
         mv D:/a/Password-Store/Password-Store/src/Decryption.exe D:/a/Password-Store/Password-Store/bin64 -Force
