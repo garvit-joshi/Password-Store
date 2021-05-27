@@ -27,9 +27,11 @@ if (os.path.exists("Data.txt.aes") == False or
     print("Error 404: Encrypted File(s) Not Found")
     input("Press Enter to continue...")
     sys.exit()
+BUFFERSIZE = 128 * 1024
 try:
-    pyAesCrypt.decryptFile("Data.txt.aes", "Data.txt", password)
-    pyAesCrypt.decryptFile("Credentials.txt.aes", "Credentials.txt", password)
+    pyAesCrypt.decryptFile("Data.txt.aes", "Data.txt", password, BUFFERSIZE)
+    pyAesCrypt.decryptFile("Credentials.txt.aes",
+                           "Credentials.txt", password, BUFFERSIZE)
 except ValueError:
     print("An Error Is Encountered\n")
     print("\nError 401: Password May be wrong")

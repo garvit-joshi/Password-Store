@@ -23,6 +23,7 @@ import pyAesCrypt
 password = input("Please Enter A master password:")
 print("\nFor Your Ease, the program can store your password in a file(Password.txt)")
 choice = input("\nDo you want to save the file in Password.txt(Y/N):")
+BUFFERSIZE = 128 * 1024
 if choice in ('Y', 'y'):
     ofile = open("Password.txt", "w")
     ofile.write("Password:"+password)
@@ -34,8 +35,9 @@ else:
     print("\nAs per your request, Password.txt will not be created.\n")
     print("Please Memorize the password.\n")
 try:
-    pyAesCrypt.encryptFile("Data.txt", "Data.txt.aes", password)
-    pyAesCrypt.encryptFile("Credentials.txt", "Credentials.txt.aes", password)
+    pyAesCrypt.encryptFile("Data.txt", "Data.txt.aes", password, BUFFERSIZE)
+    pyAesCrypt.encryptFile(
+        "Credentials.txt", "Credentials.txt.aes", password, BUFFERSIZE)
     print("\tFiles have been Encrypted")
 except:
     print("An Error Is Encountered")
