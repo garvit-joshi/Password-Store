@@ -33,18 +33,13 @@ if choice in ('Y', 'y'):
 else:
     print("\nAs per your request, Password.txt will not be created.\n")
     print("Please Memorize the password.\n")
-BUFFERSIZE = 128 * 1024
 try:
-    with open("Data.txt", "rb") as fIn1:
-        with open("Data.txt.aes", "wb") as fOut1:
-            pyAesCrypt.encryptStream(fIn1, fOut1, password, BUFFERSIZE)
-    with open("Credentials.txt", "rb") as fIn2:
-        with open("Credentials.txt.aes", "wb") as fOut2:
-            pyAesCrypt.encryptStream(fIn2, fOut2, password, BUFFERSIZE)
+    pyAesCrypt.encryptFile("Data.txt", "Data.txt.aes", password)
+    pyAesCrypt.encryptFile("Credentials.txt", "Credentials.txt.aes", password)
     print("\tFiles have been Encrypted")
 except:
     print("An Error Is Encountered")
-    print("Error 404:May be Files are not present at the desired location")
+    print("Error 404: May be File(s) are not present at the desired location")
     if choice in ('Y', 'y'):
         os.remove("Password.txt")
         print("We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted.")
