@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
-        python-version: '3.9.5'
+        python-version: '3.9.6'
         architecture: 'x86'
 
     - name: Setup MSVC
@@ -25,8 +25,8 @@ jobs:
         pip3 install -r requirements.txt
         cython Encryption.py --embed
         cython Decryption.py --embed
-        cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.9.5\x86\include /link c:\hostedtoolcache\windows\python\3.9.5\x86\libs\python39.lib
-        cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.9.5\x86\include /link c:\hostedtoolcache\windows\python\3.9.5\x86\libs\python39.lib
+        cl.exe Encryption.c /I c:\hostedtoolcache\windows\python\3.9.6\x86\include /link c:\hostedtoolcache\windows\python\3.9.6\x86\libs\python39.lib
+        cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.9.6\x86\include /link c:\hostedtoolcache\windows\python\3.9.6\x86\libs\python39.lib
         cl /EHsc Main.cpp
     - name: Upload Executables(x86)
       uses: actions/upload-artifact@v2
@@ -41,26 +41,26 @@ jobs:
       with:
         name: Application-x86
         path: |
-          c:/hostedtoolcache/windows/python/3.9.5/x86/Lib/site-packages/cryptography
-          c:/hostedtoolcache/windows/python/3.9.5/x86/Lib/site-packages/pyAesCrypt
-          c:/hostedtoolcache/windows/python/3.9.5/x86/Lib/site-packages/cffi
-          c:/hostedtoolcache/windows/python/3.9.5/x86/Lib/site-packages/pycparser
+          c:/hostedtoolcache/windows/python/3.9.6/x86/Lib/site-packages/cryptography
+          c:/hostedtoolcache/windows/python/3.9.6/x86/Lib/site-packages/pyAesCrypt
+          c:/hostedtoolcache/windows/python/3.9.6/x86/Lib/site-packages/cffi
+          c:/hostedtoolcache/windows/python/3.9.6/x86/Lib/site-packages/pycparser
     - name: Upload Python DLL(x86)
       uses: actions/upload-artifact@v2
       with:
         name: Application-x86
         path: |
-          c:/hostedtoolcache/windows/python/3.9.5/x86/python39.dll
+          c:/hostedtoolcache/windows/python/3.9.6/x86/python39.dll
     - name: Move Binaries to bin32
       run: |
         mv D:/a/Password-Store/Password-Store/src/Encryption.exe D:/a/Password-Store/Password-Store/bin32 -Force
         mv D:/a/Password-Store/Password-Store/src/Decryption.exe D:/a/Password-Store/Password-Store/bin32 -Force
         mv D:/a/Password-Store/Password-Store/src/Main.exe D:/a/Password-Store/Password-Store/bin32 -Force
-        cp c:/hostedtoolcache/windows/python/3.9.5/x86/Lib/site-packages/cryptography D:/a/Password-Store/Password-Store/bin32 -Force
-        cp c:/hostedtoolcache/windows/python/3.9.5/x86/Lib/site-packages/pyAesCrypt D:/a/Password-Store/Password-Store/bin32 -Force
-        cp c:/hostedtoolcache/windows/python/3.9.5/x86/Lib/site-packages/cffi D:/a/Password-Store/Password-Store/bin32 -Force
-        cp c:/hostedtoolcache/windows/python/3.9.5/x86/Lib/site-packages/pycparser D:/a/Password-Store/Password-Store/bin32 -Force
-        cp c:/hostedtoolcache/windows/python/3.9.5/x86/python39.dll D:/a/Password-Store/Password-Store/bin32 -Force
+        cp c:/hostedtoolcache/windows/python/3.9.6/x86/Lib/site-packages/cryptography D:/a/Password-Store/Password-Store/bin32 -Force
+        cp c:/hostedtoolcache/windows/python/3.9.6/x86/Lib/site-packages/pyAesCrypt D:/a/Password-Store/Password-Store/bin32 -Force
+        cp c:/hostedtoolcache/windows/python/3.9.6/x86/Lib/site-packages/cffi D:/a/Password-Store/Password-Store/bin32 -Force
+        cp c:/hostedtoolcache/windows/python/3.9.6/x86/Lib/site-packages/pycparser D:/a/Password-Store/Password-Store/bin32 -Force
+        cp c:/hostedtoolcache/windows/python/3.9.6/x86/python39.dll D:/a/Password-Store/Password-Store/bin32 -Force
         sleep 120
     - name: Commit change & Push
       run: |
