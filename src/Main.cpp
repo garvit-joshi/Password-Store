@@ -390,7 +390,7 @@ void Encryption()
 
 		 * If the function fails, the return value is zero.
 		***************************************************************/
-		cout << "\n** Unable To Execute (Encryption.py)**\n";
+		cout << "\n** Unable To Execute: " << Encryption_File << "**\n";
 	}
 }
 
@@ -423,7 +423,7 @@ void Decryption()
 
 		 * If the function fails, the return value is zero.
 		***************************************************************/
-		cout << "\n** Unable To Execute (Decryption.py)**\n";
+		cout << "\n** Unable To Execute: " << Decryption_File << "**\n";
 	}
 }
 
