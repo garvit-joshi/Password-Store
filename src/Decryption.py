@@ -1,4 +1,3 @@
-# cython: language_level=3, boundscheck=False
 """
  * Password-store:Stores your Credential in AES-256 bit Encryption
 

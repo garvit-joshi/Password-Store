@@ -372,7 +372,7 @@ void Encryption()
 	si.cb = sizeof(si);
 	ZeroMemory(&pi, sizeof(pi));
 
-	Encryption_File.append("Encryption.exe");
+	Encryption_File.append("Encryption.py");
 	Encryption_File.push_back('\0'); //Zero Terminated
 	_tcscpy_s(PathF, CA2T(Encryption_File.c_str()));
 	if (CreateProcess(PathF, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
@@ -390,7 +390,7 @@ void Encryption()
 
 		 * If the function fails, the return value is zero.
 		***************************************************************/
-		cout << "\n** Unable To Execute (Encryption.exe)**\n";
+		cout << "\n** Unable To Execute (Encryption.py)**\n";
 	}
 }
 
@@ -405,7 +405,7 @@ void Decryption()
 	si.cb = sizeof(si);
 	ZeroMemory(&pi, sizeof(pi));
 
-	Decryption_File.append("Decryption.exe");
+	Decryption_File.append("Decryption.py");
 	Decryption_File.push_back('\0'); //Zero Terminated
 	_tcscpy_s(PathF, CA2T(Decryption_File.c_str()));
 	if (CreateProcess(PathF, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
@@ -423,7 +423,7 @@ void Decryption()
 
 		 * If the function fails, the return value is zero.
 		***************************************************************/
-		cout << "\n** Unable To Execute (Decryption.exe)**\n";
+		cout << "\n** Unable To Execute (Decryption.py)**\n";
 	}
 }
 
