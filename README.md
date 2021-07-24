@@ -4,6 +4,8 @@ with AES-256-CBC bit Encryption.<br>
 ![Windows x86](https://github.com/garvit-joshi/Password-Store/workflows/Windows%20x86/badge.svg?branch=master)
 ![Windows x64](https://github.com/garvit-joshi/Password-Store/workflows/Windows%20x64/badge.svg?branch=master)
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/garvit-joshi/Password-Store)
+
 ## Prerequisite (for only building app from source):
 1. [Python 3 (>=3.8.5)](https://www.python.org/)
 2. [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
