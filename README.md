@@ -1,6 +1,9 @@
 # Password-Store:
 Saves your password in two Encrypted files,<br>
 with AES-256-CBC bit Encryption.<br>
+
+A Cross Platform Application [Redux](https://github.com/garvit-joshi/Redux) is more secure and reliable.
+
 ![Windows x86](https://github.com/garvit-joshi/Password-Store/workflows/Windows%20x86/badge.svg?branch=master)
 ![Windows x64](https://github.com/garvit-joshi/Password-Store/workflows/Windows%20x64/badge.svg?branch=master)
 
