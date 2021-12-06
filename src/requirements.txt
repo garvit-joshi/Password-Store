@@ -1,2 +1,2 @@
-Cython==0.29.24
+Cython==0.29.25
 pyAesCrypt==6.0.0
