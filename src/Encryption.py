@@ -19,17 +19,19 @@
 """
 import os
 import pyAesCrypt
+
 # for installing pyAesCrypt please run this command(cmd):pip install pyAesCrypt
 password = input("Please Enter A master password:")
 print("\nFor Your Ease, the program can store your password in a file(Password.txt)")
 choice = input("\nDo you want to save the file in Password.txt(Y/N):")
 BUFFERSIZE = 128 * 1024
-if choice in ('Y', 'y'):
+if choice in ("Y", "y"):
     ofile = open("Password.txt", "w")
-    ofile.write("Password:"+password)
+    ofile.write("Password:" + password)
     print("\nPassword has been stored in Password.txt")
     ofile.write(
-        "\nPlease copy this password in a diary and delete this file Permanently.\n")
+        "\nPlease copy this password in a diary and delete this file Permanently.\n"
+    )
     ofile.close()
 else:
     print("\nAs per your request, Password.txt will not be created.\n")
@@ -37,12 +39,15 @@ else:
 try:
     pyAesCrypt.encryptFile("Data.txt", "Data.txt.aes", password, BUFFERSIZE)
     pyAesCrypt.encryptFile(
-        "Credentials.txt", "Credentials.txt.aes", password, BUFFERSIZE)
+        "Credentials.txt", "Credentials.txt.aes", password, BUFFERSIZE
+    )
     print("\tFiles have been Encrypted")
 except:
     print("An Error Is Encountered")
     print("Error 404: May be File(s) are not present at the desired location")
-    if choice in ('Y', 'y'):
+    if choice in ("Y", "y"):
         os.remove("Password.txt")
-        print("We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted.")
+        print(
+            "We Have Deleted Password.txt for your convenience as the File(s) could not be Encrypted."
+        )
 input("\nPress Enter to continue...")

@@ -26,7 +26,7 @@
 
 using namespace std;
 
-string UniPath; //Will Contain Folder Location
+string UniPath; // Will Contain Folder Location
 
 class Data
 {
@@ -111,7 +111,7 @@ void outputCredentialData(int n)
 	/********************************************
 	 * n = No of credential that are present in
 	 * Credential.txt
-	*********************************************/
+	 *********************************************/
 	int EntryNumber = 1;
 	Credentials a;
 	ifstream ifile("Credentials.txt", ios::in | ios::binary);
@@ -136,7 +136,7 @@ void inputCredentialData(int n, bool type = false)
 	 * Type Will Tell If data is appended or new data is written
 	 * type=false :New data is being written
 	 * type=true  :Old data is being updated
-	***************************************************************/
+	 ***************************************************************/
 	auto trunc_or_app = type ? ios::app : ios::trunc;
 
 	ofstream ofile("Credentials.txt", ios::out | ios::binary | trunc_or_app);
@@ -157,14 +157,14 @@ int inputDatafile(bool type = false, int an = 0)
 	 * Type Will Tell If data is appended or new data is written
 	 * type=false :New data is being written
 	 * type=true  :Old data is being updated
-	************************************************************/
+	 ************************************************************/
 	if (type == false)
 	{
 		n = D.setValues();
 		ofstream ofile("Data.txt", ios::out | ios::binary | ios::trunc);
 		ofile.write((char *)&D, sizeof(D));
 		ofile.close();
-		inputCredentialData(n); //new data will be written
+		inputCredentialData(n); // new data will be written
 	}
 	else if (type == true)
 	{
@@ -184,7 +184,7 @@ int deleteCredential(int an)
 	/**************************************************
 	Will Delete A credential from the decrypted file.
 	The (an) argument in the function tells the number
-	of the credential which has to be deleted.
+	of that credential which has to be deleted.
 	**************************************************/
 	int count = 1, flag = 0;
 	Credentials a;
@@ -233,7 +233,7 @@ int deleteCredential(int an)
 	/**********************************************************************************
 	 * The data in temporary file is now written back into Credential.txt
 	 * and Temp.txt(Temporary File) is deleted after this operation
-	**********************************************************************************/
+	 **********************************************************************************/
 	return flag;
 }
 
@@ -242,7 +242,7 @@ string stringFunctions(string str)
 	/**********************************************************************************
 	 * '\' is changed to '\\' as Create Process takes path in '\\'.
 	 * "Main.exe" substring is ignored from str(path);
-	**********************************************************************************/
+	 **********************************************************************************/
 	string s1 = "";
 
 	for (unsigned int i = 0; i < str.find("Main.exe"); i++)
@@ -264,7 +264,7 @@ void PathCalculator()
 	GetModuleFileName(NULL, UPath, MAX_PATH);
 	/**********************************************************************************
 	 * The above function calculates the path of Main.exe and stores it in UPath.
-	**********************************************************************************/
+	 **********************************************************************************/
 	string temp;
 #ifndef UNICODE
 	temp = UPath;
@@ -276,7 +276,7 @@ void PathCalculator()
 	_tcscpy_s(UPath, CA2T(temp.c_str()));
 	/**********************************************************************************
 	 * Above Function converts TCHAR to String;
-	**********************************************************************************/
+	 **********************************************************************************/
 	UniPath = temp;
 }
 
@@ -284,7 +284,7 @@ int editCredential(int an)
 {
 	/*********************************************************************************
 	 * the an arument tells the numbber of the credential that is to be edited
-	*********************************************************************************/
+	 *********************************************************************************/
 	int count = 1, flag = 0, choice;
 	Credentials a;
 	ifstream Credentialsfile("Credentials.txt", ios::in | ios::binary);
@@ -297,7 +297,7 @@ int editCredential(int an)
 			 * if the data is found then prompt the user that credential
 			 * is found and ask him what to edit in that credential,
 			 * and flag is set to 1.
-			***********************************************************/
+			 ***********************************************************/
 			flag = 1;
 			cout << "Credential Found!!";
 			a.printData();
@@ -327,7 +327,7 @@ int editCredential(int an)
 			tempfile.write((char *)&a, sizeof(a));
 			/******************************************
 			 * Write the new data in a temp file
-			******************************************/
+			 ******************************************/
 		}
 		else
 		{
@@ -335,7 +335,7 @@ int editCredential(int an)
 			/*****************************************
 			 * Everydata that has not to be edited is
 			 * written as it is into temp.txt
-			*****************************************/
+			 *****************************************/
 		}
 		count++;
 	}
@@ -347,7 +347,7 @@ int editCredential(int an)
 		 * flag=1 tells that data has been edited sucsesfully and new
 		 * data is present in temp.txt so the new data is now written
 		 * into Credential.txt
-		*************************************************************/
+		 *************************************************************/
 		ifstream newtempfile("Temp.txt", ios::in | ios::binary);
 		ofstream newCredentialsfile("Credentials.txt", ios::out | ios::binary | ios::trunc);
 		while (newtempfile.read((char *)&a, sizeof(a)))
@@ -373,7 +373,7 @@ void Encryption()
 	ZeroMemory(&pi, sizeof(pi));
 
 	Encryption_File.append("Encryption.exe");
-	Encryption_File.push_back('\0'); //Zero Terminated
+	Encryption_File.push_back('\0'); // Zero Terminated
 	_tcscpy_s(PathF, CA2T(Encryption_File.c_str()));
 	if (CreateProcess(PathF, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
 	{
@@ -406,7 +406,7 @@ void Decryption()
 	ZeroMemory(&pi, sizeof(pi));
 
 	Decryption_File.append("Decryption.exe");
-	Decryption_File.push_back('\0'); //Zero Terminated
+	Decryption_File.push_back('\0'); // Zero Terminated
 	_tcscpy_s(PathF, CA2T(Decryption_File.c_str()));
 	if (CreateProcess(PathF, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
 	{
@@ -453,7 +453,7 @@ int main()
 	char ch = 'Y', ch1 = 'Y';
 	/******************************
 	 *  This is menu driven program
-	*******************************/
+	 *******************************/
 	int n, an, flag = 0, flag1 = 0;
 	char choice1, choice2;
 	cout << "\t\t\t\tWelcome To Password-Store \n\n\n";
