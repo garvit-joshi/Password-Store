@@ -29,7 +29,7 @@ jobs:
         cl.exe Decryption.c /I c:\hostedtoolcache\windows\python\3.9.6\x86\include /link c:\hostedtoolcache\windows\python\3.9.6\x86\libs\python39.lib
         cl /EHsc Main.cpp
     - name: Upload Executables(x86)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Application-x86
         path: |
@@ -37,7 +37,7 @@ jobs:
           D:/a/Password-Store/Password-Store/src/Decryption.exe
           D:/a/Password-Store/Password-Store/src/Main.exe
     - name: Upload Third Party Lib(x86)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Application-x86
         path: |
@@ -46,7 +46,7 @@ jobs:
           c:/hostedtoolcache/windows/python/3.9.6/x86/Lib/site-packages/cffi
           c:/hostedtoolcache/windows/python/3.9.6/x86/Lib/site-packages/pycparser
     - name: Upload Python DLL(x86)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Application-x86
         path: |
