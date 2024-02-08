@@ -1,2 +1,2 @@
 Cython==3.0.8
-pyAesCrypt==6.0.0
+pyAesCrypt==6.1.1
